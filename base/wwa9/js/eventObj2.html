@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>마우스 무브 이벤트 객체</title>
+        <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+        <style type="text/css">
+            #cursor {
+                position: absolute;
+                width: 100px;
+                height: 100px;
+                border: 1px solid;
+                z-index: 0;
+            }
+            input {
+                position: relative;
+                z-index: 1;
+            }
+        </style>
+        <script type="text/javascript">
+            window.onmousemove = function(e) {
+                var cursor = document.getElementById("cursor");
+                cursor.style.top = (e.clientY - 50) + "px";
+                cursor.style.left = e.clientX - 50 + "px";
+                cursor.innerHTML = "top: " + e.clientY + "px<br>left: " + e.clientX + "px";
+                // console.dir(e.clientX + " : " + e.clientY);
+
+                // console.log(e);
+            };
+
+            window.addEventListener('mousemove', function(e) {
+
+            });
+
+            window.onload = function(loadEvent) {
+                var uid = document.getElementById("uid");
+                uid.onkeydown = function(keyEvent) {
+
+                    console.log(keyEvent.keyCode);
+                    if(keyEvent.keyCode === 13) {
+                        alert('전송');
+                    } else if (keyEvent.keyCode === 9 ||
+                        keyEvent.Keycode === 123 || keyEvent.keyCode === 116) {
+                        keyEvent.preventDefault();
+                    }
+                }
+            }
+
+            window.addEventListener('load', function(e) {
+                
+            })
+        </script>
+    </head>
+    <body>
+        <div class="wrap">
+            <h3>마우스 무브 이벤트 객체</h3>
+            <hr>
+            <div id="cursor"></div>
+            <input type="text" id="uid">
+        </div>
+    </body>
+</html>

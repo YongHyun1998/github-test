@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>이벤트 객체</title>
+		<link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+		<script type="text/javascript">
+			window.addEventListener('load', function(event) {
+				console.log(event);
+
+				var body = document.body;
+				body.style.height = '10000px';
+				body.addEventListener('click', function(event) {
+					console.dir(event);
+				});
+				body.addEventListener('keyup', function(e) {
+					//r, g, b
+					console.log(e.key.toLowerCase() === 'r');
+					console.log(e.key.toLowerCase() === 'g');
+					console.log(e.key.toLowerCase() === 'b'); 
+					console.dir(this);
+
+					if (e.key.toLowerCase() === 'r') {
+						this.style.backgroundColor = 'red';
+						this.style.color = 'blue';
+					} else if (e.key.toLowerCase() === 'g') {
+						this.style.backgroundColor = 'green';
+						this.style.color = 'red';
+					} else if (e.key.toLowerCase() === 'b') {
+						this.style.backgroundColor = 'blue';
+						this.style.color = 'red';
+					}
+				});
+
+				var loginForm = document.getElementById("loginForm");
+				var uid = document.getElementById("uid");
+				var upwd = document.getElementById("upwd");
+				loginForm.addEventListener('submit', function(e) {
+					console.dir(this);
+					console.log(uid.value);
+					// this.submit();
+					e.preventDefault(); //기본 이벤트 막음.
+					return false; //submit 취소
+				});
+			});
+
+			window.addEventListener('scroll', function(event) {
+				console.log(event);
+			});
+		</script>
+	</head>
+	<body>
+		<div class="wrap">
+			<h3>이벤트 객체</h3>
+			<hr>
+			<p>이벤트가 일어나면 발생하는 객체</p>
+			<form action="#" method="GET" id="loginForm">
+				<input type="text" id="uid" name="uid">
+				<input type="password" id="upwd" name="upwd">
+				<input type="submit" value="로그인">
+			</form>
+		</div>
+	</body>
+</html>

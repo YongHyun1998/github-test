@@ -1,0 +1,7 @@
+h3:not(.wrap > h3) {
+	width: 389px;
+	border: 1px solid #aaa;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}

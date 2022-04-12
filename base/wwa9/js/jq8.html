@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>클래스 메서드</title>
+		<link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			#m2 {
+				text-align: center;
+			}
+			.box {
+				border-bottom: 2px solid #ccc;
+				text-align: center;
+				padding: 20px;
+				margin-bottom: 10px;
+			}
+			#m2 > div {
+				opacity: 0;
+				transform: translateX(100px);
+				transition: .7s;
+			}
+			#m2 > .circle0, #m2 > .circle1, #m2 > .circle2 {
+				opacity: 1 !important;
+				transform: translateX(0) !important;
+				width: 200px;
+				height: 200px;
+				border-radius: 100px;
+				border: 4px solid #ff6600;
+				line-height: 200px;
+				display: inline-block;
+			}
+			ul {
+				list-style: none;
+
+			}
+			#m_menu {}
+			#m_menu {}
+			#m_menu > li {}
+			#m_menu > li > a {
+				display: block;
+				padding: 5px 25px;
+			}
+			#m_menu > li > a.on {}
+			#m_menu > li > a + ul {
+				display: none;
+			}
+			#m_menu > li > a.on + ul {
+				display: block;
+			}
+			#m_menu > li > a + ul > li {}
+			#m_menu > li > a + ul > li > a {}
+			#m_menu > li > a + ul > li > a.on {}
+			#m_menu > li > a + ul > li > ul {
+				display: none;
+			}
+			#m_menu > li > a + ul > li > a.on + ul {
+				display: block;
+			}
+			#m_menu > li > a + ul > li > ul > li {}
+		</style>
+
+		<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+		<script type="text/javascript">
+			//setTimeout 설정된 시간 후 실행
+			$(function() {
+				$.noConflict();
+
+				$("#m1 > div").addClass("box");
+				for (var i = 0; i < $("#m2 > div").length; i++) {
+					(function(i) {
+						setTimeout(function() {
+							$("#m2 > div:nth-child(" + (i + 1) + ")").addClass("circle" + i);
+						}, 700 * i)
+					}(i));
+				}
+
+				$("#m2 + button").click(function() {
+					$("#m1 > div").removeClass("box");
+					$("#m2 > div").removeClass(function(index) {
+						//모든 클래스 삭제
+						if (index >= 1) { //not
+							return true;
+						}
+					});
+				});
+
+				$("#m2 + button + button").click(function() {
+					$("#m1 > div").toggleClass("box");
+					$("#m2 > div").toggleClass(function(index, className, state) {
+						// //클래스가 존재하면 삭제, 없으면 삽입
+						console.log(className);
+					});
+				});
+
+				$("#m_menu a.m").click(function() {
+					// $(this).next().addBack().toggleClass("on").end().find(".m, ul").removeClass("on").end().parent().siblings().find(".m, ul").removeClass("on");
+
+					// console.log($(this).next().addBack().end().find(".m, ul").end());
+
+
+					$("#m_menu *").removeClass("on");
+					$(this).next().addBack().addClass("on");
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div class="wrap">
+			<h3>클래스 메서드</h3>
+			<hr>
+			<ul>
+				<li>addClass : 클래스를 추가</li>
+				<li>removeClass: 클래스를 삭제</li>
+				<li>toggleClass: 클래스 토글</li>
+				<li>hasClass: 클래스 유무체크</li>
+			</ul>
+			<div id="m1">
+				<div>jQuery</div>
+			</div>
+			<div id="m2">
+				<div class="bg">html</div>
+				<div class="bg">css</div>
+				<div class="bg">javascript</div>
+			</div>
+			<button>.box 삭제</button>
+			<button>토글 삭제</button>
+
+			<ul id="m_menu">
+				<li><a href="#" class="m">메뉴1
+					<ul>
+						<li><a href="#" class="m">메뉴1_1</a>
+							<ul>
+								<li><a href="#">메뉴1_1_1</a></li>
+								<li><a href="#">메뉴1_1_2</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="m">메뉴1_2</a>
+							<ul>
+								<li><a href="#">메뉴1_2_1</a></li>
+								<li><a href="#">메뉴1_2_2</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="m">메뉴1_3</a>
+							<ul>
+								<li><a href="#">메뉴1_3_1</a></li>
+								<li><a href="#">메뉴1_3_2</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li><a href="#" class="m">메뉴2
+					<ul>
+						<li><a href="#" class="m">메뉴2_1</a>
+							<ul>
+								<li><a href="#">메뉴2_1_1</a></li>
+								<li><a href="#">메뉴2_1_2</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="m">메뉴2_2</a>
+							<ul>
+								<li><a href="#">메뉴2_2_1</a></li>
+								<li><a href="#">메뉴2_2_2</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="m">메뉴2_3</a>
+							<ul>
+								<li><a href="#">메뉴2_3_1</a></li>
+								<li><a href="#">메뉴2_3_2</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li><a href="#" class="m">메뉴3
+					<ul>
+						<li><a href="#" class="m">메뉴3_1</a>
+							<ul>
+								<li><a href="#">메뉴3_1_1</a></li>
+								<li><a href="#">메뉴3_1_2</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="m">메뉴3_2</a>
+							<ul>
+								<li><a href="#">메뉴3_2_1</a></li>
+								<li><a href="#">메뉴3_2_2</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="m">메뉴3_3</a>
+							<ul>
+								<li><a href="#">메뉴3_3_1</a></li>
+								<li><a href="#">메뉴3_3_2</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

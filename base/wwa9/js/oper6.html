@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>삼항 연산자</title>
+        <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+    </head>
+    <body>
+        <div class="wrap">
+            <script>
+                var age = 28;
+                var result = age >= 18 ? '성인' : '미성년';
+                console.log(result);
+    
+                function chkAge() {
+                    var userAge = document.getElementById("userAge");
+                    var display = document.getElementById("display");
+    
+                    //형변환(타입변환)
+                    console.log(typeof userAge.value);
+                    console.log(typeof Number(userAge.value));
+    
+                    //Number(숫자형문자) => 숫자형문자를 숫자로 변경
+                    display.innerHTML = Number(userAge.value) >= 18 ? '성인' : '미성년';
+                }
+            </script>
+            <h3>삼항 연산자</h3>
+            <hr>
+            <p>조건 ? 참 : 거짓</p>
+            <div id="display"></div>
+            <input type="number" placeholder="나이를 입력하세요." id="userAge">
+            &nbsp;<button onclick="chkAge();">성인여부체크</button>
+        </div>
+    </body>
+</html>

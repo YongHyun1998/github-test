@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 생성 및 추가, 제거</title>
+    <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+    <style type="text/css">
+        div.js {
+            width: 50px;
+            height: 50px;
+            background-color: #718c00;
+            display: inline-block;
+        }
+    </style>
+    <script type="text/javascript">
+        function createEle() {
+            var bt = document.getElementById("bt");
+            var at = document.getElementById("at");
+            var removeH4 = document.getElementById("removeH4");
+            var removeJs = document.getElementById("removeJs");
+            
+            function popup() {
+                var wrap = document.getElementsByClassName("wrap");
+                var div = document.createElement("div");
+                var p = document.createElement("p");
+                var txt = document.createTextNode("자스");
+                div.setAttribute("class", "js");
+                p.appendChild(txt); // <p>자스</p>
+                div.appendChild(p); // <div><p>자스</p></div>
+                document.body.insertBefore(div, wrap[0]);
+
+            }				
+
+            function popdown() {
+                var div = document.createElement("div"); //요소 생성 메서드
+                var p = document.createElement("p");
+                var txt = document.createTextNode("자스"); //텍스트 생성 메서드
+                div.setAttribute("class", "js");
+                p.appendChild(txt); // <p>자스</p>
+                div.appendChild(p); // <div><p>자스</p></div>
+                document.body.appendChild(div); //부모요소(body).자식요소(appendChild) 메서드
+            }
+
+            function delH4() {
+                var h4 = document.getElementsByTagName("h4");
+                // console.log(h4);
+                // for (var i = 0, max = h4.length; i < max; i += 1) {
+                //     h4[i].remove();
+                // }
+                h4.forEach(function (item) {
+                    item.remove();
+                });
+            }
+
+            function delJs() {
+                var js = document.querySelectorAll(".js");
+                console.dir(js);
+                js.forEach(function (item, index, array) {
+                    document.body.removeChild(item); //부모요소(body).자식요소(removeChild) 요소 제거 메서드
+                });
+            }
+
+            bt.onclick = popup;
+            at.onclick = popdown;
+            removeH4.onclick = delH4;
+            removeJs.onclick = delJs;
+        }
+
+        addEventListener('load', createEle);
+        // window.onload = function () {
+        // 	createEle();
+        // }
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <!-- insertBefore() -->
+        <h3>DOM 생성 및 추가, 제거</h3>
+        <hr>
+        <h4>요소 만들기</h4>
+        <p>creareElement(), createTextNode()</p>
+        <hr>
+        <h4>요소 추가</h4>
+        <p>appendChild(), insertBefore()</p>
+        <!-- appendChild() -->
+        <button id="bt">앞에 추가</button>
+        <button id="at">뒤에 추가</button>
+        <hr>
+        <h4>요소 제거</h4>
+        <p>remove(), removeChild()</p>
+        <button id="removeH4">h4 삭제</button>
+        <button id="removeJs">Js 삭제</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>ex4-47</title>
+		<link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			#gnb {
+				position: relative;
+			}
+			#gnb > ul {
+				list-style: none;
+				margin: 0;
+			}
+			#gnb > ul::after {
+				clear: both;
+				display: table;
+				content: '';
+			}
+			#gnb > ul > li {
+				float: left;
+				/*width: 150px;*/
+				height: 50px;
+				padding: 5px 25px;
+				text-align: center;
+			}
+			#gnb > ul > li > a {
+				display: block;
+				height: 100%;
+				transition: .4s;
+			}
+			#gnb > ul > li > a.on {
+				color: #ff6600;
+			}
+		</style>
+		<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js" integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous"></script>
+		<script type="text/javascript">
+			$(function() {
+				$.noConflict();
+
+				(function() {
+					//var w = $("#gnb > ul > li").width();
+					var w = [];
+					$("#gnb > ul > li").each(function(key, value) {
+						w.push($(value).innerWidth());
+					});
+					
+					$("#gnb").append("<span></span>");
+					$("#gnb > span").css({
+						display: 'block',
+						position: 'absolute',
+						// width: w + 'px',
+						height: '5px',
+						borderRadius: '2.5px',
+						backgroundColor: "#ff6600"
+					});
+					$("#gnb > ul > li").on("mouseenter focusin", function() {
+						var index = $(this).index();
+						//console.log(index);
+						$(this).find("a").addClass("on")
+							.end().siblings().find("a").removeClass("on");
+						//console.log(w[index]);
+						var spLeft = 0;
+						for(var i = 0; i < index; i++) {
+							console.log("w[i]: " + w[i])
+							spLeft += w[i];
+						}
+						console.log("spLeft: " +spLeft);
+						$("#gnb > span").stop().animate({
+							//left: index * w,
+							left: spLeft,
+							width: w[index]
+						}, 700, "easeOutBounce")
+					});
+
+					$("#gnb > ul > li:eq(0)").trigger("mouseenter");
+				}());
+			});
+		</script>
+	</head>
+	<body>
+		<div class="wrap">
+			<h3>ex4-47</h3>
+			<hr>
+			<div id="gnb">
+				<ul>
+					<li><a href="#">HTML</a></li>
+					<li><a href="#">CSS</a></li>
+					<li><a href="#">Javascript</a></li>
+					<li><a href="#">jQuery</a></li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

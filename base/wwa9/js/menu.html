@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메뉴</title>
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;
+            margin-left: 0;
+        }
+        .menu > ul::after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+        .menu > ul > li {
+            float: left;
+        }
+        .menu > ul > li {
+            float: left;
+            width: 20%;
+            text-align: center;
+        }
+        .menu > ul:nth-child(2) {
+            /* display: none; */
+            /* opacity: 0;
+            visibility: hidden; */
+            height: 0;
+            overflow: hidden;
+            transition: .4s;
+            /* 첫번째 부모 
+            display:none
+               첫번째 자식
+            display:block */
+            /* 두번째 부모
+            opacity:0
+            visivility:hidden
+               두번째 자식
+            opacity: 1
+            visibility: visible
+            height: 141px */
+            /* 세번째 부모
+            height: 0;
+            overflow: hidden;
+            transition: 1s;
+               세번째 자식 */
+        }
+        .menu.on > ul:nth-child(2) { 
+            display: block;
+            opacity: 1;
+            visibility: visible;
+            height: 141px;
+        }
+    </style>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- jquery ui cdn -->
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js" integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous"></script>
+    <!-- javascript -->
+    <script type="text/javascript">
+    /*
+        1. menu요소에 마우스를 올린다.
+        2. 두번째 ul를 표시한다.
+        3. menu요소에서 마우스를 뺀다.
+        4. 두번째 ul를 숨긴다.
+    */
+        window.onload = function() {
+            const menu = document.getElementsByClassName("menu");
+            const subMenu = document.querySelector(".menu > ul:nth-child(2)") //ul요소 선택
+            subMenu.style.transition = '.4s';
+            // console.dir(menu[0]);
+            // console.dir(subMenu);
+            menu[0].onmouseover = function () { //1. menu요소에 마우스를 올린다.
+                // subMenu.style.transition = '.4s'; //2. 두번째 ul를 표시한다.
+                // subMenu.style.height = '141px';
+                this.classList.add('on');
+            };
+            menu[0].onmouseout = function () { //3. menu요소에서 마우스를 뺀다.
+                // subMenu.style.transition = '1s'; //4. 두번째 ul를 숨긴다.
+                // subMenu.style.height = '0px';
+                this.classList.remove('on');
+            };
+        };
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <h3>메뉴</h3>
+        <hr>
+        <div class="menu">
+            <ul>
+                <li>menu1</li>
+                <li>menu2</li>
+                <li>menu3</li>
+                <li>menu4</li>
+                <li>menu5</li>
+            </ul>
+            <ul>
+                <li>
+                    <ul>
+                        <li>sub1-1</li>
+                        <li>sub1-2</li>
+                        <li>sub1-3</li>
+                        <li>sub1-4</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul>
+                        <li>sub2-1</li>
+                        <li>sub2-2</li>
+                        <li>sub2-3</li>
+                        <li>sub2-4</li>
+                        <li>sub2-5</li>
+                        <li>sub2-6</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul>
+                        <li>sub3-1</li>
+                        <li>sub3-2</li>
+                        <li>sub3-3</li>
+                        <li>sub3-4</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul>
+                        <li>sub4-1</li>
+                        <li>sub4-2</li>
+                        <li>sub4-3</li>
+                        <li>sub4-4</li>
+                        <li>sub4-5</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul>
+                        <li>sub5-1</li>
+                        <li>sub5-2</li>
+                        <li>sub5-3</li>
+                        <li>sub5-4</li>
+                        <li>sub5-5</li>
+                        <li>sub5-6</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

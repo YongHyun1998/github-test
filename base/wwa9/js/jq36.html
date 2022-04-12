@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datepicker</title>
+    <!-- jquery ui datepicker -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+    <style type="text/css">
+        .ui-datepicker-trigger {
+				width: 25px;
+			}
+    </style>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- jquery ui cdn -->
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js" integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous"></script>
+    <!-- javascript -->
+    <script type="text/javascript">
+        $(function() {
+            //1.4.4버전에서 $.noConflict();으로 3.6.0버전변경
+            $.noConflict();
+
+            $.datepicker.setDefaults({
+                showOn: "button",
+                buttonImage: "https://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/calendar-icon.png",
+                buttonImageOnly: true,
+                buttonText: '달력',
+                changeYear: true,
+                dateFormat: "yy년 mm월 dd일"
+            });
+
+            $(".datepic").draggable();
+            
+            $(".cls-date").datepicker(); //생성
+            $("#ed").datepicker({
+                dateFormat: "y-m-d"
+            });
+
+            $("button:eq(0)").on("click", function() {
+                $("#sd").datepicker("show"); //보여주기
+            });
+            $("button:eq(1)").on("click", function() {
+                $("#ed").datepicker("show"); //보여주기
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <h3>Datepicker</h3>
+        <hr>
+        <button>1달력보기</button>
+        <button>2달력보기</button>
+        <div class="datepic">
+            <input type="text" class="cls-date" name="start-date" id="sd"> - <input type="text" class="cls-date" name="end-date" id="ed">
+        </div>
+    </div>
+</body>
+</html>

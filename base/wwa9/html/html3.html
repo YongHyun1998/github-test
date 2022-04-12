@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>HTML 구조</title>
+		<style type="text/css">
+			.of {
+				overflow: hidden;
+			}
+			.lfloat {
+				float: left;
+			}
+			.width {
+				width: 120px;
+			}
+			.height {
+				height: 100px;
+			}
+			.marBottom {
+				margin-bottom: 5px;
+			}
+			.marRight {
+				margin-right: 5px;
+			}
+			.totWidth {
+				width: 495px;
+			}
+			.thrWidth {
+				width: 370px;
+			}
+			.twoHeight {
+				height: 205px;
+			}
+			.boRadius {
+				border-radius: 5px;
+			}
+			.backColor {
+				background-color: #4e4e4e;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<div class="totWidth height boRadius backColor marBottom"></div>
+			<div class="marBottom of">
+				<div class="marRight lfloat">
+					<div class="width height boRadius backColor marBottom"></div>
+					<div class="width height boRadius backColor marBottom"></div>
+					<div class="width twoHeight boRadius backColor"></div>
+				</div>
+				<div class="lfloat">
+					<div class="marBottom of">
+						<div class="marRight lfloat">
+							<div class="width height backColor boRadius marBottom"></div>
+							<div class="width height backColor boRadius marBottom"></div>
+							<div class="width height backColor boRadius"></div>
+						</div>
+						<div class="marRight lfloat">
+							<div class="width twoHeight backColor boRadius marBottom"></div>
+							<div class="width height backColor boRadius"></div>
+						</div>
+						<div class="lfloat">
+							<div class="width height backColor boRadius marBottom"></div>
+							<div class="width twoHeight backColor boRadius"></div>
+						</div>
+					</div>
+					<div class="height boRadius backColor thrWidth"></div>
+				</div>
+			</div>
+			<div class="totWidth height boRadius backColor"></div>
+		</div>
+	</body>
+</html>

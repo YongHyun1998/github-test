@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>제목을 입력하세요.</title>
+        <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+        <script type="text/javascript">
+			function People(name, age, inCountry) {
+				this.name = name;
+				this.age = age;
+				this.inCountry = inCountry;
+				this.printOut = function() {
+					var inOut = "내국인";
+					if (!this.inCountry) {
+						var inOut = "외국인";
+					}
+
+					return (`안녕하세요~\n저의 이름은 ${this.name}이고 나이는 ${this.age}이며 ${inOut} 입니다~\n잘부탁드립니다!`);
+				}
+			}
+
+			People.prototype.height = 177;
+			People.prototype.printOut = function() {
+				return this.height;
+			}
+
+			window.onload = function() {
+				var hang = new People("홍길동", 28, true);
+				var kim = new People("김길동", 17, true);
+				var lo = new People("Lo vert", 35, false);
+				var p1 = document.getElementById("p1");
+				var p2 = document.getElementById("p2");
+				var p3 = document.getElementById("p3");
+				hang.weight = 72;
+				p1.innerHTML = hang.printOut();
+				console.dir(hang);
+				console.dir(kim);
+				console.dir(lo);
+				console.log(lo.height = 180);
+				p2.innerHTML = kim.printOut();
+				p3.innerHTML = lo.printOut();
+
+				for(var key in hang) {
+					console.log(key + " : " + hang[key]);
+				}
+			}
+		</script>
+    </head>
+    <body>
+        <div class="wrap">
+            <h3>제목을 입력하세요.</h3>
+            <hr>
+            제목을 입력하세요.
+        </div>
+    </body>
+</html>

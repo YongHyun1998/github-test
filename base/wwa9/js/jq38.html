@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>ajax + rss</title>
+		<link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+		<style type="text/css">
+			#loader {
+				position: absolute;
+				top: 0px;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: white;
+				/*display: none;*/
+				opacity: 0;
+				visibility: hidden;
+				transition: 0.7s;
+			}
+			#loader.show {
+				/*display: block;*/
+				opacity: 1;
+				visibility: visible;
+			}
+			#loader > span {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				font-size: 52px;
+			}
+			.thum {
+				width: 70px;
+			}
+			.wrap img {
+				max-width: 100%;
+			}
+		</style>
+		<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+		<script type="text/javascript">
+			$(function() {
+				$("button").click(function() {
+					$.ajax({
+						type: "GET",
+						dataType: "json",
+						url: "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fhellodoor.tistory.com%2Frss",
+						success: function (data) {
+							console.log(data);
+
+							console.log(data.feed);
+							console.log(data.feed.url);
+							console.log(data.feed.title);
+							$(".title").text("타이틀: " + data.feed.title);
+							console.log(data.feed.author);
+							console.log(data.feed.image);
+							console.log(data.feed.link);
+							$(".addr").html("<a href='" + data.feed.link + "' target='_blank'>" + data.feed.link + "</a>");
+							console.log(data.feed.description);
+							$(".des").text("설명: " + data.feed.description);
+							
+							console.log(data.items);
+							$.each(data.items, function(index, value) {
+								console.log(value.author);
+								console.log(value.content);
+								console.log(value.link);
+								console.log(value.pubDate);
+								console.log(value.thumbnail);
+								console.log(value.title);
+								var elem = "";
+								elem += '<div>';
+								elem += value.author;
+								elem += '<span>' + value.pubDate + '</span>'
+								elem += '<a href="' + value.link + '">';
+								elem += '<img src="' + value.thumbnail + '" alt="' + value.title + '">';
+								elem += '</a>';
+								elem += '</div>';
+								elem += '<div>';
+								elem += value.content;
+								elem += '</div><hr>';
+								$(".contents").append(elem);
+
+								// $(".contents").append('<div>' + value.author + '<span>' + value.pubDate + '</span><a href="' + value.link + '" target="_blank"><img src="' + value.thumbnail + '" alt="' + value.title + '" class="thum"></a></div><div>' + value.content + '</div><hr>');
+							});
+							console.log(data.status);
+						},
+						error: function (xhr) {
+							console.log(xhr);
+						},
+						beforeSend: function(xhr) {
+							console.log("시작");
+							$('#loader').addClass('show');
+						},
+						complete: function(xhr) {
+							$('#loader').removeClass('show');
+							//alert('완료');
+						}
+					});
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div class="wrap">
+			<h3>ajax + rss</h3>
+			<hr>
+			<button>가져오기</button>
+			<p class="title"></p>
+			<p class="addr"></p>
+			<p class="des"></p>
+			<hr>
+			<div class="contents"></div>
+		</div>
+		<div id="loader"><span><img src="https://miro.medium.com/max/1400/1*CsJ05WEGfunYMLGfsT2sXA.gif" alt="loader"></span></div>
+	</body>
+</html>

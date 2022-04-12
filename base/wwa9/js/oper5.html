@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>비트 연산자</title>
+        <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+    </head>
+    <body>
+        <script type="text/javascript">
+			var num1 = 2;
+			var num2 = 3;
+			console.log(num1 && num2); // 3
+			console.log(num1 & num2); // 2
+
+			console.log(num1 || num2); //2
+			console.log(num1 | num2); //3
+
+			console.log(~num1);
+			console.log(~num2);
+
+			console.log(num1 ^ num2);
+
+			console.log(num1 << 2);
+			console.log(num1 >> 2);
+		</script>
+        <div class="wrap">
+			<h3>비트 연산자</h3>
+			<hr>
+			<table>
+				<tr>
+					<th>비트 연산자</th>
+					<th>설명</th>
+				</tr>
+				<tr>
+					<td rowspan="2">&(And)</td>
+					<td>1 & 1 = 1, 1 & 0 = 0, 0 & 0 = 0</td>
+				</tr>
+				<tr>
+					<td>2(0010) & 3(0011) = 2(0010)</td>
+				</tr>
+				<tr>
+					<td rowspan="2">|(Or)</td>
+					<td>1 | 1 = 1, 1 | 0 = 1, 0 & 0 = 0</td>
+				</tr>
+				<tr>
+					<td>2(0010) & 3(0011) = 3(0011)</td>
+				</tr>
+				<tr>
+					<td rowspan="2">~(Not)</td>
+					<td>0 => 1, 1 => 0</td>
+				</tr>
+				<tr>
+					<td>~2(0010) = 13(1101) / ~3(0011) = 12(1100)</td>
+				</tr>
+				<tr>
+					<td rowspan="2">^(XOR)</td>
+					<td>1 ^ 1 = 0, 1 ^ 0 = 1, 0 ^ 0 = 0</td>
+				</tr>
+				<tr>
+					<td>2(0010) ^ 3(0011) = 1(0001)</td>
+				</tr>
+				<tr>
+					<td><<(Left Shift)</td>
+					<td>2(0010) << 2 = 8(1000)</td>
+				</tr>
+				<tr>
+					<td>>>(Right Shift)</td>
+					<td>2(0010) >> 2 = 0(0000)</td>
+				</tr>
+			</table>
+		</div>
+    </body>
+</html>

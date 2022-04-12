@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>scroll()</title>
+		<link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+		<style type="text/css">
+
+        </style>
+        <script type="text/javascript">
+            window.onload = function() {
+                //"d","div","myDiv"를 읽음
+                //getElementsByClassName() class 요소선택
+                var d = document.getElementsByClassName("d");
+                //getElementsByTagName() 태그 요소선택
+                var div = document.getElementsByTagName("div");
+                //getElementsByName() name 요소선택
+                var myDiv = document.getElementsByName("myDiv");
+                //객체이므로 .dir사용
+                // (d[0].style) 첫번째 'd'선택
+                console.dir(d[0].style);
+                // (d[1].style.width = '100px') 두번째 'd' width 100px
+                console.dir(d[1].style.width = '100px')
+                console.dir(div);
+                console.dir(myDiv);
+            }
+        </script>
+            <title>Document</title>
+        </head>
+        <body>
+            <div class="wrap">
+                <h3>DOM 선택</h3>
+                <hr>
+                <div></div>
+                <div class="d"></div>
+                <div></div>
+                <div class="d"></div>
+                <div></div>
+                <div class="d"></div>
+                <div></div>
+                <div class="d"></div>
+                <div name="mydiv"></div>
+                <div name="mydiv"></div>
+                <div name="mydiv"></div>
+            </div>
+        </body>
+        </html>

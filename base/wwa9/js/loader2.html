@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로딩중 플러그인</title>
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+    <style type="text/css">
+        .queryloader__overlay {
+            position: relative;
+        }
+        .queryloader__overlay::after {
+            content: '';
+            background-image: url(https://miro.medium.com/max/1400/1*CsJ05WEGfunYMLGfsT2sXA.gif);
+            position: absolute;
+            background-size: 100%;
+            width: 800px;
+            height: 284px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .queryloader__overlay__bar {
+            z-index: 99999;
+            /*display: none;*/
+        }
+        .queryloader__overlay__percentage {
+            z-index: 99999;
+            font-size: 20vw !important;
+        }
+    </style>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- jquery ui cdn -->
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js" integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous"></script>
+    <!-- queryloader2 cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/queryloader2@3.2.3/queryloader2.min.js" type="text/javascript"></script>
+    <!-- javascript -->
+    <script type="text/javascript">
+        window.addEventListener('DOMContentLoaded', function() {
+            QueryLoader2(document.querySelector("body"), {
+                barColor: "#ff0000",
+		        backgroundColor: "#fff",
+                percentage: true,
+                barHeight: 1,
+                minimumTime: 5000,
+                fadeOutTime: 5000
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <h3>로딩중 플러그인</h3>
+			<hr>
+			<img src="https://www.sjpost.co.kr/news/photo/202007/53199_48342_4214.jpg" alt="풍경">
+			&nbsp;<img src="https://www.sjpost.co.kr/news/photo/202007/53199_48342_4214.jpg" alt="풍경">
+			&nbsp;<img src="https://www.sjpost.co.kr/news/photo/202007/53199_48342_4214.jpg" alt="풍경">
+			&nbsp;<img src="https://post-phinf.pstatic.net/MjAyMDAyMjNfMjUg/MDAxNTgyNDQ2NjY4Njcw.e4Nyqa_l7zj9lUtk5XI7pFWZ3W-0eA2fb7nAPFrWQk0g.7kphg-aiLtGEyDMb_QpwCsqF1qohXZnrXbIwrvH1wFQg.PNG/1.png?type=w1200" alt="풍경">
+			&nbsp;<img src="https://post-phinf.pstatic.net/MjAyMDAyMjNfMjUg/MDAxNTgyNDQ2NjY4Njcw.e4Nyqa_l7zj9lUtk5XI7pFWZ3W-0eA2fb7nAPFrWQk0g.7kphg-aiLtGEyDMb_QpwCsqF1qohXZnrXbIwrvH1wFQg.PNG/1.png?type=w1200" alt="풍경">
+			&nbsp;<img src="https://post-phinf.pstatic.net/MjAyMDAyMjNfMjUg/MDAxNTgyNDQ2NjY4Njcw.e4Nyqa_l7zj9lUtk5XI7pFWZ3W-0eA2fb7nAPFrWQk0g.7kphg-aiLtGEyDMb_QpwCsqF1qohXZnrXbIwrvH1wFQg.PNG/1.png?type=w1200" alt="풍경">
+			&nbsp;<img src="https://images.chosun.com/resizer/MDVnaCy0FWd63y8e_oQ1WsSEYrU=/1280x0/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosun/DZYTYIIKABBMTANFQ4GZIOSO2Y.jpg" alt="풍경">
+			&nbsp;<img src="https://images.chosun.com/resizer/MDVnaCy0FWd63y8e_oQ1WsSEYrU=/1280x0/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosun/DZYTYIIKABBMTANFQ4GZIOSO2Y.jpg" alt="풍경">
+			&nbsp;<img src="https://images.chosun.com/resizer/MDVnaCy0FWd63y8e_oQ1WsSEYrU=/1280x0/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosun/DZYTYIIKABBMTANFQ4GZIOSO2Y.jpg" alt="풍경">
+			&nbsp;<img src="https://images.chosun.com/resizer/MDVnaCy0FWd63y8e_oQ1WsSEYrU=/1280x0/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosun/DZYTYIIKABBMTANFQ4GZIOSO2Y.jpg" alt="풍경">
+			&nbsp;<img src="https://blog.kakaocdn.net/dn/EuKLQ/btqJ9186ndQ/qCWszO1jtexgmSyFLkAoLk/img.jpg" alt="풍경">
+			&nbsp;<img src="https://blog.kakaocdn.net/dn/EuKLQ/btqJ9186ndQ/qCWszO1jtexgmSyFLkAoLk/img.jpg" alt="풍경">
+			&nbsp;<img src="https://blog.kakaocdn.net/dn/EuKLQ/btqJ9186ndQ/qCWszO1jtexgmSyFLkAoLk/img.jpg" alt="풍경">
+			&nbsp;<img src="https://blog.kakaocdn.net/dn/EuKLQ/btqJ9186ndQ/qCWszO1jtexgmSyFLkAoLk/img.jpg" alt="풍경">
+			&nbsp;<img src="https://i.ytimg.com/vi/YFtI2BNdiFI/maxresdefault.jpg" alt="풍경">
+			&nbsp;<img src="https://i.ytimg.com/vi/YFtI2BNdiFI/maxresdefault.jpg" alt="풍경">
+			&nbsp;<img src="https://i.ytimg.com/vi/YFtI2BNdiFI/maxresdefault.jpg" alt="풍경">
+			&nbsp;<img src="https://i.ytimg.com/vi/YFtI2BNdiFI/maxresdefault.jpg" alt="풍경">
+			&nbsp;<img src="https://i.ytimg.com/vi/YFtI2BNdiFI/maxresdefault.jpg" alt="풍경">
+		</div>
+</body>
+</html>

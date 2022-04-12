@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>위치 메서드</title>
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+    <style type="text/css">
+
+    </style>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- javascript -->
+    <script type="text/javascript">
+        $(function() {
+            $(".parent").css({
+                width: "500px",
+                height: "500px",
+                backgroundColor: "lightgreen",
+                border: "1px solid pink",
+                position: "relative"
+            });
+            $(".child").css({
+                position: "absolute",
+                width: "50px",
+                height: "50px",
+                top: "0px",
+                left: "0px",
+                backgroundColor: "red"
+            });
+
+            console.log("offset left: " + $(".child").offset().left);
+            console.log("offset top: " + $(".child").offset().top);
+            console.log("position left: " + $(".child").position().left);
+            console.log("position left: " + $(".child").position().top);
+
+            var outside = $(".outside") //jquery 객체를 담아놓음
+            outside.css({ //담아놓은 객체만 사용함
+                width: "100px",
+                height: "100px",
+                position: "absolute",
+                backgroundColor: "brown"
+            });
+            console.log(outside.position().top = 250); //변경X
+            console.log(outside.position().top);
+            // outside.css("top", "850px"); //jquery활용 css로 변경
+            // console.log(outside.position().top); //변경됨
+
+            var childLeft = 0;
+            var timer = setInterval(function() {
+                childLeft += 1;
+                //childLeft >= 450 (부모의 넓이 - 자신의 넓이)↓
+                if (childLeft >= $(".parent").innerWidth() - $(".child").outerWidth()) {
+                    clearInterval(timer);
+                }
+                $(".child").css({
+                    "left": childLeft + "px"
+                });
+            }, 10);
+
+            $("body").height(10000);
+
+            var outsideTop = $(".outside").offset().top;
+
+            $(window).scroll(function() {
+                console.log("스크롤의 위치: " + window.scrollY); //scrollY: 수직스크롤
+                console.log("아웃사이드의 위치: " + $(".outside").offset().top);
+                console.log($(".outside").offset().top <= window.scrollY);
+
+                if (outsideTop <= window.scrollY) {
+                    $(".outside").css({
+                        "position": "fixed",
+                        "top": "0px"
+                    });
+                } else {
+                    $(".outside").css({
+                        "position": "static",
+                        "top": outsideTop + "px"
+                    });
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <h3>위치 메서드</h3>
+        <hr>
+        <div class="parent">
+            <div class="child"></div>
+        </div>
+        <div class="outside"></div>
+    </div>
+</body>
+</html>

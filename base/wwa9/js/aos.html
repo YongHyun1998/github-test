@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AOS</title>
+    <!-- css -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+    <style type="text/css">
+        body {
+            height: 10000px;
+        }
+        .fi {
+            position: absolute;
+            top: 1500px;
+            width: 250px;
+            height: 300px;
+            background-color: orange;
+        }
+        #item-list {
+            width: 960px;
+            margin: 0 auto;
+            overflow: hidden;
+            padding-top: 300px;
+            border: 1px solid black;
+        }
+        #item-list .item {
+            float: left;
+            width: 313.3333333px;
+            margin-right: 10px;
+            height: 300px;
+            background-color: red;
+        }
+        #item-list .item:last-child {
+            margin-right: 0;
+        }
+        .blank {
+            height: 750px;
+        }
+    </style>
+    <!-- jquery -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+		<script type="text/javascript">
+			window.onload = function() {
+				AOS.init({
+					disable: false,
+					startEvent: 'DOMContentLoaded',
+					initClassName: 'aos-init',
+					animatedClassName: 'aos-animate',
+					useClassNames: false,
+					disableMutationObserver: false,
+					debounceDelay: 50,
+					throttleDelay: 99,
+					offset: 120,
+					delay: 0,
+					duration: 400,
+					easing: 'ease',
+					once: false,
+					mirror: false,
+					anchorPlacement: 'top-bottom',
+				});
+			}
+
+            window.onresize = function() {
+                AOS.refresh();
+            }
+		</script>
+</head>
+<body>
+    <div class="wrap">
+        <h3>AOS</h3>
+        <hr>
+        <div class="fi"
+            data-aos="fade-in"
+            data-aos-duration="3000"
+            data-aos-anchorPlacement="top-top"
+        >fade-in</div>
+        <div class="blank">어떤 디자인</div>
+        <div class="blank">어떤 디자인</div>
+        <div class="blank">어떤 디자인</div>
+        <div id="item-list"
+            data-aos="fade-up"
+            data-aos-anchorPlacement="bottom-bottom"
+        >
+            <div class="item"
+                data-aos="fade-up"
+                data-aos-anchorPlacement="bottom-bottom"
+                data-aos-delay="50"
+                data-aos-anchor="#item-list"
+            ></div>
+            <div class="item"
+                data-aos="fade-up"
+                data-aos-anchorPlacement="bottom-bottom"
+                data-aos-delay="100"
+            ></div>
+            <div class="item"
+                data-aos="fade-up"
+                data-aos-anchorPlacement="bottom-bottom"
+                data-aos-delay="150"
+            ></div>
+        </div>
+        <div class="blank">어떤 디자인</div>
+        <div class="blank">어떤 디자인</div>
+        <div class="blank">어떤 디자인</div>
+    </div>
+</body>
+</html>

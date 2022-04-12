@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>복제/감싸기 메서드</title>
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+    <style type="text/css">
+        li {
+            display: inline-block;
+        }
+        li img {
+            width: 100px;
+        }
+        #m2 strong {
+            transition: 1s;
+        }
+        #m2 div {
+            background: orange;
+        }
+        #m2 div strong {
+            color: red;
+        }
+
+        div#m5 {
+            background-color: red;
+            transition: 1s;
+        }
+        p#m5 {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h3>복제/감싸기 메서드</h3>
+        <hr>
+        <ul class="m1">
+            <li><img src="/wwa9/images/a_01.png" alt="1"></li>
+            <li><img src="/wwa9/images/a_02.png" alt="2"></li>
+            <li><img src="/wwa9/images/a_03.png" alt="3"></li>
+            <li><img src="/wwa9/images/a_04.png" alt="4"></li>
+        </ul>
+        <div id="m2">
+            <strong>내용1</strong>
+            <strong>내용2</strong>
+        </div>
+        <button>#m2 strong</button>
+        <div id="m3">
+            <strong>내용3</strong>
+            <span>중간</span>
+            <strong>내용4</strong>
+        </div>
+        <button>#m3 strong</button>
+        <div id="m4">내용5</div>
+        <button>#m4 strong</button>
+        <div id="m5">내용6</div>
+        <button>#m5 strong</button>
+        <div id="m6">내용7</div>
+        <button>#m6 strong</button>
+    </div>
+        <!-- 자바스크립트를 로드할 때 다른 요소는 대기 -->
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            //$(function() {
+    
+            //});
+    
+            $(".m1").clone().insertAfter(".m1");
+            
+            $("button").click(function(e) {
+                console.log($(this).text());
+                console.dir(e.target.innerText);
+                switch (e.target.innerText) {
+                    case "#m2 strong":
+                        $("#m2 strong").wrap("<div></div>");
+                        break;
+                    case "#m3 strong":
+                        $("#m3 span").wrapAll("<div></div>");
+                        break;
+                    case "#m4 strong":
+                        $("#m4").wrapInner("<div></div>");
+                        break;
+                    case "#m5 strong":
+                        $("#m5").replaceWith("<p id='m5'>변경6</p>");
+                        break;
+                    case "#m6 strong":
+                        $("<p>변경7</p>").replaceAll("#m6");
+                        break;
+                }
+            });			
+        </script>
+</body>
+</html>

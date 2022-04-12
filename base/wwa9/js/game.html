@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가위, 바위, 보</title>
+    <!-- swiper css -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+    <!DOCTYPE html>
+    <html lang="ko">
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>가위, 바위, 보</title>
+            <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+            <style type="text/css">
+                .game {
+                    width: 100%;
+                }
+                h1 {
+                    text-align: center;
+                    font-size: 105px;
+                    color: red;
+                }
+                .board::after {
+                    content: '';
+                    clear: both;
+                    display: table;
+                }
+                .board > div {
+                    float: left;
+                    width: 50%;
+                    height: 600px;
+                }
+                .board img {
+                    width: 100%;
+                }
+                #man img {
+                    transform: rotate(45deg);
+                }
+                #com img {
+                    transform: rotate(-83deg);
+                }
+                .btns::after {
+                    content: '';
+                    clear: both;
+                    display: table;
+                }
+                .btns > div {
+                    float: left;
+                    width: 33.3333333333%;
+                }
+                button {
+                    width: 100%;
+                }
+                button > img {
+                    width: 100%;
+                }
+            </style>
+            <script type="text/javascript">
+                //1. 사용자가 가위,바위,보 중 하나를 선택
+                //2. 컴퓨터가 가위,바위,보 중 하나를 선택
+                //3. 두 값을 비교
+                //4. 우승자 표시
+    
+                //가위 - s - 0 - https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyNIQL-P7OBBMLsZW_V1F2iDgSBFQc6WcNTYa37m5EaE-y2ZK_1PFVV1d66GmceEWb8OA&usqp=CAU
+                //바위 - r - 1 - https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT88tsMxUxoy3ZuLnRXZsgWzGemAnIoTILuGZHdoOwpOrILCiBIjd13edydKgeiC27nTD0&usqp=CAU
+                //보 - p - 2 - https://blog.kakaocdn.net/dn/bmjB2s/btqXHhp6kpG/TH14W4U612SxKo9uuR2sB0/img.png
+    
+                function setImg(i, el) {
+                    var src = '';
+                    switch(i) {
+                        case 0:
+                            src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyNIQL-P7OBBMLsZW_V1F2iDgSBFQc6WcNTYa37m5EaE-y2ZK_1PFVV1d66GmceEWb8OA&usqp=CAU";
+                            break;
+                        case 1:
+                            src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT88tsMxUxoy3ZuLnRXZsgWzGemAnIoTILuGZHdoOwpOrILCiBIjd13edydKgeiC27nTD0&usqp=CAU";
+                            break;
+                        case 2:
+                            src = "https://blog.kakaocdn.net/dn/bmjB2s/btqXHhp6kpG/TH14W4U612SxKo9uuR2sB0/img.png";
+                            break;
+                    }
+                    el.setAttribute('src', src);
+                }
+    
+                window.onload = function () {
+                    var btns = document.getElementsByTagName("button");
+                    var manImg = document.querySelector("#man img");
+                    var comImg = document.querySelector("#com img");
+                    var display = document.getElementById("display");
+                    var manInt = 0, comInt = 0;
+                    var vs = '';
+                    for (var i = 0; i < btns.length; i++) {
+                        btns[i].onclick = function () {
+                            manInt = Number(this.id);
+                            setImg(manInt, manImg);
+    
+                            comInt = Math.floor(Math.random() * 3);
+                            setImg(comInt, comImg);
+    
+    
+                            //0 - 가위, 1 - 바위, 2 - 보
+                            //0 - 0 무, 0 - 1 패, 0 - 2 승
+                            //1 - 0 승, 1 - 1 무, 1 - 2 패
+                            //2 - 0 패, 2 - 1 승, 2 - 2 무
+                            //manInt - 사람, comInt - 컴퓨터
+                            if (manInt === comInt) {
+                                vs = '무';
+                            } else {
+                                switch(manInt) {
+                                    case 0:
+                                        if (comInt === 1) {
+                                            vs = '패';
+                                        } else {
+                                            vs = '승';
+                                        }
+                                        break;
+                                    case 1:
+                                        if (comInt === 0) {
+                                            vs = '승';
+                                        } else {
+                                            vs = '패';
+                                        }
+                                        break;
+                                    case 2:
+                                        if (comInt === 0) {
+                                            vs = '패';
+                                        } else {
+                                            vs = '승';
+                                        }
+                                        break;
+                                }
+                            }
+    
+                            display.innerText = vs;
+                        };
+                    }
+                };
+    
+    
+            </script>
+        </head>
+        <body>
+            <div class="wrap">
+                <h3>가위, 바위, 보</h3>
+                <hr>
+                <div class="game">
+                    <h1 id="display">게임시작</h1>
+                    <div class="board">
+                        <div id="man">
+                            <div>MAN</div>
+                            <div><img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/screen-shot-2022-03-18-at-5-05-09-pm-1647648368.png?resize=320:*" alt="man"></div>
+                        </div>
+                        <div id="com">
+                            <div>COM</div>
+                            <div><img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/screen-shot-2022-03-18-at-5-05-09-pm-1647648368.png?resize=320:*" alt="com"></div>
+                        </div>
+                    </div>
+                    <div class="btns">
+                        <div><button id="0"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyNIQL-P7OBBMLsZW_V1F2iDgSBFQc6WcNTYa37m5EaE-y2ZK_1PFVV1d66GmceEWb8OA&usqp=CAU" atl="가위"></button></div>
+                        <div><button id="1"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT88tsMxUxoy3ZuLnRXZsgWzGemAnIoTILuGZHdoOwpOrILCiBIjd13edydKgeiC27nTD0&usqp=CAU" atl="바위"></button></div>
+                        <div><button id="2"><img src="https://blog.kakaocdn.net/dn/bmjB2s/btqXHhp6kpG/TH14W4U612SxKo9uuR2sB0/img.png" atl="바위"></button></div>
+                    </div>
+                </div>
+            </div>
+        </body>
+    </html>
+</head>
+<body>
+    <div class="wrap">
+        <h3>가위, 바위, 보</h3>
+        <hr>
+        <div class="game">
+            <h1 id="display">게임시작</h1>
+            <div class="board">
+                <div id="man">
+                    <div>MAN</div>
+                    <div><img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/screen-shot-2022-03-18-at-5-05-09-pm-1647648368.png?resize=320:*" alt="man"></div>
+                </div>
+                <div id="com">
+                    <div>COM</div>
+                    <div><img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/screen-shot-2022-03-18-at-5-05-09-pm-1647648368.png?resize=320:*" alt="com"></div>
+                </div>
+            </div>
+            <div class="btns">
+                <div><button id="0"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyNIQL-P7OBBMLsZW_V1F2iDgSBFQc6WcNTYa37m5EaE-y2ZK_1PFVV1d66GmceEWb8OA&usqp=CAU" atl="가위"></button></div>
+                <div><button id="1"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT88tsMxUxoy3ZuLnRXZsgWzGemAnIoTILuGZHdoOwpOrILCiBIjd13edydKgeiC27nTD0&usqp=CAU" atl="바위"></button></div>
+                <div><button id="2"><img src="https://blog.kakaocdn.net/dn/bmjB2s/btqXHhp6kpG/TH14W4U612SxKo9uuR2sB0/img.png" atl="바위"></button></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

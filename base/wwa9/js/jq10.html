@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스타일 메서드</title>
+    <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- javascript -->
+    <script type="text/javascript">
+        $(function() { //로드
+            $("h3").css("font-size", "35px"); //모든 h3태그
+            $("h3").css({ //여러객체가 들어갈 땐 {}중괄호
+                "color": "rgb(255, 0, 0)",
+                "text-decoration": "underline",
+                "background-color": "orange",
+                "font-size": "72px" //마지막은 쉼표 X
+            });
+            console.dir($("div:not(.wrap)"));
+            console.dir($("div").not(".wrap"));
+            $("div").each(function(i, v) {
+                // console.log(v);
+                if(!$(v).hasClass("wrap")) { //!(부정=not)hasClass("wrap")
+                    console.log($(v));
+                };
+            });
+
+            $("div:not(.wrap)").css({
+                "width": function(i, v) { //index, value
+                    return i * 100 + 100; //div(0) = 100px, div(1) = 200px, div(2) = 300px
+                // console.log(i); // 0, 1, 2
+                // console.log(v); // px
+                },
+                "height": function(i, h) { //index, height
+                    return i * 50 + 50; //div(0) = 50px, div(1) = 100px, div(2) = 150px
+                },
+                "color": function(i, c) { //index, color
+                    switch (i) { //div(0) = red, div(1) = blue, div(2) = green
+                        case 0:
+                            return "red";
+                            break;
+                        case 1:
+                            return "blue";
+                            break;
+                        case 2:
+                            return "green";
+                            break;
+                    }
+                }
+            });
+            
+            console.log($("span").width()); //32px(글자넓이)
+            console.log($("span").css({
+                "display": "inline-block",
+                "padding": "25px",
+                "margin": "25px",
+                "backgroundColor": "gray",
+                "border": "2px solid red"
+            }).width(100));
+            console.log("넓이: " + $("span").width());
+            console.log("넓이 + 패딩: " + $("span").innerWidth());
+            console.log("넓이 + 패딩 + 보더: " + $("span").outerWidth());
+            console.log("넓이 + 패딩 + 보더 + 마진: " + $("span").outerWidth(true));
+
+            $("span").width(32); //set
+            //var spanWidth = $("span").width(); //get
+            //var timer = setInterval(function() { //setInterva(애니메이션반복)
+            //    spanWidth+=10; //width: 10px씩 증가
+            //    $("span").width(spanWidth);
+            //    console.log(spanWidth);
+            //    if (spanWidth >= 102) { //102px보다 크거나 같으면
+            //        clearInterval(timer); //timer 멈춤
+            //    }
+            //}, 100); //0.1초
+
+            var timer = null;
+            var spanWidth = $("span").width(); //get
+
+            $("span").mouseover(function() { //span에 마우스를 올리면 실행
+                var timer = setInterval(function() { //setInterva(애니메이션반복)
+                    spanWidth = $("span").width();
+                    spanWidth+=10; //width: 10px씩 증가
+                    if (spanWidth >= 102) { //102px보다 크거나 같으면
+                        clearInterval(timer); //timer 멈춤
+                        return false;
+                    }
+                    $("span").width(spanWidth);
+                    console.log(spanWidth);
+                }, 100); //0.1초
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <h3>스타일 메서드</h3>
+        <hr>
+        <div>내용1</div>
+        <div>내용2</div>
+        <div>내용3</div>
+        <span>스판</span>
+    </div>
+</body>
+</html>

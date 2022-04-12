@@ -1,0 +1,51 @@
+#cb {
+	display: none;
+}
+#cb + label {
+	cursor: pointer;
+	display: block;
+	width: 70px;
+	height: 70px;
+	/*스프라이트 이미지 사용*/
+	background-image: url(/wwa9/images/checkbox.jpg);
+	background-position: -525px -246px;
+	/*border: 1px solid black;*/
+}
+#cb:checked + label {
+	background-position: -227px -335px;
+}
+
+
+#ro1 {
+	display: none;
+}
+#ro1 + label {
+	cursor: pointer;
+	display: block;
+	width: 81px;
+	height: 81px;
+	/*스프라이트 이미지 사용*/
+	background-image: url(/wwa9/images/checkbox.jpg);
+	background-position: -521px -151px;
+	/*border: 1px solid black;*/
+}
+#ro1:checked + label {
+	background-position: -521px -333px;
+}
+
+#ro2 {
+	display: none;
+}
+#ro2 + label {
+	cursor: pointer;
+	display: block;
+	width: 81px;
+	height: 81px;
+	/*스프라이트 이미지 사용*/
+	background-image: url(/wwa9/images/checkbox.jpg);
+	background-position: -521px -151px;
+	/*border: 1px solid black;*/
+}
+#ro2:checked + label {
+	background-position: -521px -333px;
+}

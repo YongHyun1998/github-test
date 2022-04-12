@@ -1,0 +1,17 @@
+body {
+	background-color: green;
+}
+h3 {
+	font-size: 52px;
+}
+.row::after {
+	content: '';
+	clear: both;
+	display: table;
+}
+.row > div {
+	float: left;
+}
+.row > div:first-child, .row > div:nth-child(2) {
+	width: calc(50% - 2px);
+}

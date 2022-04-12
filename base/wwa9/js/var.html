@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>변수</title>
+        <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+        <script type="text/javascript">
+            var num; // 변수 선언
+            var num = 10; // 변수 num에 10을 할당(대입)
+            
+            var str = 'script'; //변수를 'script'값으로 초기화
+            var temp = true;
+             
+            var one, two, three;
+            one = 1;
+            two = 2;
+            three = 3;
+
+            var test = test2 = test3 = 0; //0으로 초기화
+
+            //카멜표기법
+            var userAgeOfYear , userFirstName, userHeight, userWeight;
+
+            //파스칼 표기법
+            var People = {userAge: 22, userName: '홍길동'}
+            console.log(People.userAge);
+            console.log(People.userName);
+
+            //헝가리언 표기법
+            var intNum, strUserName, blnOk;
+
+            var myWord = '나는';
+            console.log(myWord);
+            var myWord = '너는'; //재선언
+            console.log(myWord);
+
+            let yourWord = '우리는';
+            console.log(yourWord);
+            // let yourWord = '당신들은'; //불가능 에러
+            // console.log(yourword);
+            let blockLet = 'out';
+
+            { //실행영역
+                var blockVar = 'var';
+                let blockLet = 'let'; //블록단위 변수
+                console.log(myWord);
+                console.log(yourWord);
+                console.log(blockLet); //let
+                {
+                    console.log(blockLet); //let
+                }
+            }
+            console.log(blockVar); //인식
+            console.log(blockLet); //out
+            
+            const PI = 3.14; //초기화
+            
+            console.log(Math);
+            console.dir(Number);
+        </script>
+    </head>
+    <body>
+        <div class="wrap">
+            <h3>변수와 상수</h3>
+            <hr>
+            <p>변수(var, let) : 데이터를 저장하는 장소</p>
+            <p>변수는 특수문자 중에서 _, $만 사용하고 숫자로 시작할 수 없음</p>
+            <p>카멜표기법(변수) : 두 번째 단어부터 첫자를 대문자로 사용</p>
+            <p>파스칼표기법(객체) : 첫자는 대문자로 사용</p>
+            <p>헝가리언표기법(변수) : 타입을 첫음에 붙임</p>
+            <p>let : 변수 선언 키워드</p>
+            <p>var과 let의 차이점</p>
+            <p> - var은 재선언이 가능하지만 let 재선언이 불가능</p>
+            <p> - var은 함수단위 실행, let 블록단위 실행</p>
+            <hr>
+            <p>상수(const) : 변하지 않는 고정된 값(대문자만 사용)</p>
+        </div>
+    </body>
+</html>

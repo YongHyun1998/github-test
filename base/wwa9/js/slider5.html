@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제목</title>
+        <!-- css -->
+    <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+    <style type="text/css">
+        .swiper {
+            width: 600px;
+            height: 300px;
+        }
+    </style>
+        <!-- jquery -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            const swiper = new Swiper('.swiper', {
+                // Optional parameters
+                // direction: 'vertical',
+                loop: true,
+
+                // If we need pagination
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+
+                // Navigation arrows
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+
+                // And if we need scrollbar
+                scrollbar: {
+                    el: '.swiper-scrollbar',
+                },
+            });
+
+            var next = document.querySelector(".next");
+            var prev = document.querySelector(".prev");
+            next.onclick = function() {
+                swiper.slideNext(5000);
+            };
+            prev.onclick = function() {
+                swiper.slidePrev(5000);
+            };
+            // next.addEventListener("click", function() {
+
+            // });
+            // $(".next").click(function() {
+
+            // });
+
+            var btn = document.querySelector("button");
+            var numInput = document.querySelector("input[type=number]");
+            numInput.placeholder = "0 ~ " + (swiper.slides.length - 1) + "의 값을 입력";
+
+            btn.onclick = function() {
+                num = Number(numInput.value);
+                if (num <= 0) num = 0;
+                if (num > swiper.slides.length - 1) num = swiper.slides.length - 1;
+                numInput.value = num;
+                swiper.slideTo(num, 1000);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <h3>Swiper 1</h3>
+        <hr>
+        <!-- Slider main container -->
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">Slide 1</div>
+                <div class="swiper-slide">Slide 2</div>
+                <div class="swiper-slide">Slide 3</div>
+                <div class="swiper-slide">Slide 4</div>
+                <div class="swiper-slide">Slide 5</div>
+                <div class="swiper-slide">Slide 6</div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </div>
+    <div class="prev">Prev</div>
+    <div class="next">Next</div>
+    <div><input type="number" placeholder="index번호 입력"><button>GO</button></div>
+</body>
+</html>

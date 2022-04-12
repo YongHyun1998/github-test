@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>제목을 입력하세요.</title>
+        <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+        <script type="text/javascript">
+			var date = new Date();
+			console.log(date.getFullYear());
+			console.log(date.toString());
+			console.log(date.toLocaleString());
+			console.log(date.toLocaleTimeString());
+			console.log(date.getHours() + "시 " + date.getMinutes() + "분 " + date.getSeconds() + "초");
+
+			window.onload = function() {
+				var timer = document.getElementById("timer");
+				
+				setTime(timer); //로드한 후 한번 실행
+
+				//1000 == 1초
+				setInterval(function() {
+					setTime(timer);
+				}, 1000);
+
+			}
+
+			function setTime(div) {
+				var date = new Date();
+				div.innerText = date.toLocaleTimeString();
+				if(date.getHours() === 12 && date.getMinutes() === 19) {
+					document.body.style.backgroundColor = 'red';
+				}
+			}
+
+			//setInterval - 설정된 시간마다 다시 실행
+
+			var today = new Date().getTime();
+
+			console.log(today); //1970년 1월 1일 밀리세컨드 1000 
+			console.log(new Date(today));
+			console.log("------------------------------")
+			console.log(new Date(new Date().getTime()));
+			console.log(new Date(new Date(2022, 2, 18).getTime()));
+
+			//월은 0을 1월로 처리
+			var day1 = new Date(2022, 1, 1); //3월 1일
+			var day2 = new Date(); //2월 18일
+			console.log(day2.getTime());
+			console.log(day1.getTime());
+			var diffDay = day2.getTime() - day1.getTime();
+			var day = 1000 * 60 * 60 * 24;
+			console.log(day);
+			console.log((diffDay / day) + '일');
+
+			console.log(Math.ceil(new Date().getTime() / day) + "일");
+			/*	
+				1초 = 1000
+				1분 = 60초
+				1시간 = 60 * 60;
+				1시간 = 3600초
+				2시간 = 7200초	
+				7200 / 3600 = 2시간
+			*/
+		</script>
+    </head>
+    <body>
+        <div class="wrap">
+			<h3>Date</h3>
+			<hr>
+			<div id="timer">오후 2:28:06</div>
+		</div>
+    </body>
+</html>

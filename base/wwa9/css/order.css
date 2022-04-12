@@ -1,0 +1,15 @@
+p {
+    color: pink;
+}
+#ctxt {
+    color: orange;
+}
+p.atxt {
+    color: blue !important;
+}
+p.atxt.btxt {
+    color: magenta;
+}
+p:first-child {
+    color: red;
+}

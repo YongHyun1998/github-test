@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카카오맵</title>
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+    <style type="text/css">
+        html, body {
+            height: 100%;
+        }
+        body {
+            padding-top: 15px;
+        }
+        .wrap {
+            height: calc(100% - 70px);
+            margin-top: 0;
+        }
+        #map {
+            width: 100%;
+            height: calc(100% - 57px);
+        }
+        #point {
+            border: 2px solid lightskyblue;
+            width: 256px;
+            height: 133px;
+            animation-name: ani;
+            animation-duration: 700ms;
+            animation-iteration-count: infinite;
+        }
+        #point::after {
+            content: '';
+            position: absolute;
+            border: 9px solid transparent;
+            border-top: 9px solid lightskyblue;
+            bottom: -19px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        @keyframes ani {
+            0% {
+                transform: translateY(0px);
+                animation-timing-function: ease-out;
+            }
+            50% {
+                transform: translateY(-20px);
+                animation-timing-function: ease-in;
+            }
+            100% {
+                transform: translateY(0px);
+                animation-timing-function: ease-out;
+            }
+        }
+    </style>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- javascript -->
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f089c498d8dc1facc52105879617d271"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            var toSeoul = document.getElementById('toSeoul');
+            var container = document.getElementById('map'); 
+            var options = {
+                center: new kakao.maps.LatLng(35.154186, 129.059399),
+                level: 3
+            };
+
+            var map = new kakao.maps.Map(container, options);
+
+            toSeoul.onclick = function () {
+                map.panTo(new kakao.maps.LatLng(33.450580, 126.574942));
+            }
+
+            // 마커가 표시될 위치입니다 
+            var markerPosition  = new kakao.maps.LatLng(35.154186, 129.059399); 
+
+            // 마커를 생성합니다
+            var marker = new kakao.maps.Marker({
+                position: markerPosition
+            });
+
+            var markerImage = new kakao.maps.MarkerImage('https://www.greenart.co.kr/assets/_img/main/metalogo3.jpg', new kakao.maps.Size(256, 133), new kakao.maps.Point(100, 139));
+            marker.setImage(markerImage);
+            marker.a.id = "point";
+
+            // 마커가 지도 위에 표시되도록 설정합니다
+            marker.setMap(map);
+
+
+            kakao.maps.event.addListener(map, 'click', function(mouseEvent) {        
+
+                // 클릭한 위도, 경도 정보를 가져옵니다 
+                var latlng = mouseEvent.latLng; 
+                
+                // 마커 위치를 클릭한 위치로 옮깁니다
+                marker.setPosition(latlng);
+                
+                var message = '클릭한 위치의 위도는 ' + latlng.getLat() + ' 이고, ';
+                message += '경도는 ' + latlng.getLng() + ' 입니다';
+                
+                var resultDiv = document.getElementById('clickLatlng'); 
+                resultDiv.innerHTML = message;
+                
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <h3 id="clickLatlng">카카오맵</h3>
+        <hr>
+        <div id="map"></div>
+        <button id="toSeoul">서울가기</button>
+    </div>
+</body>
+</html>

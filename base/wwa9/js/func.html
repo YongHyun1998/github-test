@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>함수</title>
+		<link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+		<script type="text/javascript">
+			//선언적 함수
+			nanugi();
+
+			function nanugi() {
+				var x = 10;
+				var y = 100;
+				var result = x / y;
+				console.log(result);
+			}
+			nanugi();
+
+			//duhagi(); //에러
+			//익명(무명) 함수
+			var duhagi = function() {
+				var x = 7;
+				var y = 10;
+				var result = x + y;
+				console.log(result);
+			};
+			duhagi();
+
+			//즉시 실행함수
+			(function() {
+				console.log('익명');
+			})();
+
+			//화살표 함수
+			(() => {
+				console.log('화살표1');
+				console.log('화살표2');
+			})();
+		</script>
+	</head>
+	<body>
+		<div class="wrap">
+			<h3>함수</h3>
+			<hr>
+			<p>반복적으로 실행되는 구문들의 집합</p>
+			<h4>종류</h4>
+			<ul>
+				<li>선언적 함수</li>
+				<li>익명 함수</li>
+				<li>즉시 실행 함수</li>
+				<li>화살표 함수</li>
+			</ul>
+		</div>
+	</body>
+</html>

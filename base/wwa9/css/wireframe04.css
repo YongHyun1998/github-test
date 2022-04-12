@@ -1,0 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul {
+	list-style: none;
+}
+.container {
+	width: 1024px;
+	margin: 0 auto;
+}
+.left-float {
+	float: left;
+}
+.clearfix::after {
+	content: '';
+	clear: both;
+	display: table;
+}
+.logo {
+	width: 200px;
+	font-size: 41px;
+	height: 100px;
+	line-height: 100px;
+}
+.nav {
+	width: calc(100% - 200px);
+	height: 100px;
+	line-height: 100px;
+}
+.nav > ul {
+	float: right;
+}
+.nav > ul > li {
+	float: left;
+	text-transform: uppercase;
+	margin-right: 23px;
+	font-weight: bold;
+}
+.nav > ul > li:last-child {
+	margin-right: 0;
+}
+.main-title > div {
+	text-align: center;
+    text-transform: uppercase;
+    font-size: 120px;
+    line-height: 205px;
+}
+.mid-gnb {
+	padding-top: 25px;
+}
+.mid-gnb div {
+	text-align: center;
+}
+.mid-gnb ul {
+	display: inline-block;
+	border-radius: 20px;
+	background-color: #f0f0f0;
+}
+.mid-gnb ul > li {
+	float: left;
+	padding: 10px 55px;
+}
+.mid-gnb ul > li:first-child {
+	border-radius: 20px;
+	background-color: #9d9d9d;
+}
+.mid-gnb ul > li:last-child {
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+}
+.mid-gnb ul > li:hover {
+	border-radius: 20px;
+	background-color: #9d9d9d;
+	cursor: pointer;
+}
+#contents {
+	padding-top: 35px;
+	padding-bottom: 105px;
+}
+.main, .sidemenu {
+	float: left;
+}
+.main {
+	width: 645px;
+	margin-right: 20px;
+
+}
+.main-image {
+	position: relative;
+	width: 100%;
+	height: 335px;
+	background-color: #f2f2f2;
+}
+.fa-mountain {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 75px;
+	color: #9d9d9d;
+}
+.main h1 {
+	margin-top: 40px;
+}
+.sidemenu {
+	width: calc(100% - 665px);
+}
+.side-area {
+	background: #f2f2f2;
+	padding: 40px 40px 100px;
+}
+.side-header {
+	margin-bottom: 15px;
+}
+.side-header > h1 {
+	font-size: 33px;
+}
+.side-contents {}
+.side-contents > div {
+	margin-bottom: 20px;
+}
+.side-contents > div > h3 {
+	margin-bottom: 5px;
+}
+.side-contents > div > p {
+	font-size:  12px;
+}
+#footer > div:first-child {
+	background: #9d9d9d;
+}
+#footer > div:first-child div.left-float:first-child {
+	width: calc(100% - 200px);
+	padding: 31px 67px 31px 0;
+}
+#footer > div:first-child div.left-float:last-child {
+	width: 200px;
+	height: 104px;
+	position: relative;
+}
+#footer > div:first-child div.left-float:last-child > div {
+	position: absolute;
+	background: white;
+	padding: 12px 24px;
+	border-radius: 20px;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 0;
+	cursor: pointer;
+}
+#footer > div:last-child {
+	padding: 200px 0;
+	background: #3a3a3a;
+	color: white;
+}
+#footer > div:last-child div.left-float {
+	width: 340.6667px;
+	height: 253px;
+	position: relative;
+}
+#footer > div:last-child div.left-float:first-child {
+
+}
+#footer > div:last-child div.left-float:nth-child(3) {
+
+}
+#footer > div:last-child div.left-float:nth-child(3) > ul {
+	float: left;
+	width: 50%;
+	padding-left: 60px;
+}
+#footer > div:last-child div.left-float:nth-child(3) > ul > li {
+	margin-bottom: 10px;
+}
+#footer > div:last-child div.left-float:nth-child(3) > ul > li:first-child {
+	font-weight: 800;
+}
+#footer > div:last-child div.left-float:last-child {
+	position: relative;
+}
+#footer > div:last-child div.left-float:last-child > div {
+	position: absolute;
+    right: 0;
+    border: 1px solid white;
+    color: white;
+    padding: 6px 30px;
+    border-radius: 15.1px;
+    top: 15px;
+}
+#footer > div:last-child div.left-float:last-child > p {
+	position: absolute;
+    bottom: 10px;
+    right: 0;
+}
+#footer .left-float > div h3 {
+	margin-bottom: 20px;
+}
+.line {
+	height: 253px;
+    width: 1px;
+    background: white;
+    float: left;
+}
+.sns {
+	position: absolute;
+	bottom: 10px;
+	right: 0;
+}
+.sns ul {}
+.sns ul li {
+	float: left;
+	margin-right: 10px;
+}

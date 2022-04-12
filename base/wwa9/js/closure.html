@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>클로져</title>
+		<link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+		<script type="text/javascript">
+			function counting() {
+				var count = 0;
+				return function(target) {
+					var cnt = document.getElementById(target);	
+					count++;
+					cnt.innerText = count;
+				}
+			}
+
+			var counter = counting();
+			var counter2 = counting();
+
+			function some() {
+				count = 1000;
+			}
+			some();
+		</script>
+	</head>
+	<body>
+		<div class="wrap">
+			<h3>클로져</h3>
+			<hr>
+			<p>지역변수를 전역변수 처럼 사용할 수 있게 함.</p>
+			<div id="cnt">0</div>
+			<div id="cnt2">0</div>
+			<button onclick="counter('cnt')">카운터</button>
+			<button onclick="counter2('cnt2')">카운터</button>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,456 @@
+@charset "UTF-8";
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+/*
+	w: 982px
+
+	top-ad
+	h: 81px;
+*/
+#wrap {
+	
+}
+.container {
+	width: 982px;
+	margin: 0 auto;
+}
+.clearfix::after {
+	clear: both;
+	display: table;
+	content: '';
+}
+.rel {
+	position: relative;
+}
+ul {
+	list-style: none;
+}
+
+.top-ad {
+	height: 80px;
+	background-color: #14100f;
+}
+.top-ad .container {
+	height: 80px;
+	position: relative;
+}
+.top-ad .ad-title {
+	position: absolute;
+	top: 16px;
+	left: 64px;
+}
+.top-ad .ad-title img {
+	display: none;
+	transform: translateX(10px);
+	opacity: 0;
+	animation-name: ad-title-move-left;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+
+/*.top-ad:hover .ad-title img {
+	animation-name: ad-title-move-left;
+	animation-duration: 2s;
+	animation-iteration-count: 2;
+	animation-fill-mode: forwards;
+}*/
+
+.top-ad .ad-title img:nth-child(1) {
+	animation-delay: 0s;
+}
+.top-ad .ad-title img:nth-child(2) {
+	animation-delay: 0.5s;
+}
+.top-ad .ad-title img:nth-child(3) {
+	animation-delay: 1s;
+}
+.top-ad .ad-title img:nth-child(4) {
+	animation-delay: 1.5s;
+}
+#top-ad-closer {
+	position: absolute;
+    top: 5px;
+    color: white;
+    right: 5px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+}
+#header {
+	height: 165px;
+	/*border-bottom: 2px solid red;*/
+}
+#header > div {
+
+}
+#header > div:first-child {
+	height: 112px;
+	border-bottom: 1px solid #eeeeee;
+}
+#header > div > div.container > div {
+	float: left;
+	width: 50%;
+	height: 100%;
+}
+#header > div.header-top > div.container > div:first-child {
+
+}
+#header > div.header-bottom > div.header-line > div.container > div {
+	float: left;
+	width: 50%;
+	height: 100%;
+}
+div.header-line {
+	border-bottom: 2px solid red;
+}
+.user-face {
+
+}
+.user-face > li {
+	float: left;
+	width: 67px;
+	height: 115px;
+	cursor: pointer;
+}
+.user-face > li:hover > div.pro-txt  {
+	color: #000000;
+}
+.user-face > li:first-child {
+	width: 220px;
+}
+.user-face > li > div.pro-icon {
+	position: relative;
+	height: 69px;
+    /*border-bottom: 1px solid;*/
+}
+.user-face > li > div.pro-icon img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -5%);
+}
+.user-face > li > div.pro-txt {
+	text-align: center;
+	font-size: 14px;
+	color: #747774;
+}
+#header > div.header-top > div.container {
+	height: 112px;
+}
+#header > div.header-top > div.container > div:last-child {
+
+}
+
+.main-gnb {
+	height: 53px;
+}
+.main-gnb > li {
+	float: left;
+	line-height: 53px;
+	padding-right: 30px;
+	padding-left: 10px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: .7s;
+}
+.main-gnb > li:hover {
+	background: aliceblue;
+}
+.main-gnb > li > span.point {
+	color: red;
+}
+.search-area {
+	float: right;
+    height: 30px;
+    padding: 0 10px 0 10px;
+    margin-top: 10px;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+}
+.search-area > form > input {}
+.search-area > form > input[type=text] {
+	transform: translate(0px, -11px);
+	height: 30px;
+	border: none;
+	outline: none;
+}
+.search-area > form > input[type=text]:focus {
+	background-color: #eee;
+}
+.search-area > form > input[type=image] {}
+
+#header > div:last-child {
+	/*height: 53px;*/
+}
+div.header-bottom {
+	z-index: 1;
+	position: relative;
+	background-color: white;
+}
+
+/*.header-bottom:hover  	 {
+	height: 293px !important;
+}*/
+
+#header > div > div.container > div.submenu {
+	width: 100%;
+	float: none;
+	height: 0;
+	overflow: hidden;
+	transition: .7s;
+}
+div.submenu > ul {
+	padding-bottom: 20px;
+}
+.submenu > ul > li {
+	float: left;
+	width: 16.66666666666%;
+	padding: 25px 10px 10px;
+}
+.submenu > ul > li > ul {
+
+}
+.submenu > ul > li > ul > li.title {
+	font-weight: bold;
+	padding-top: 0;
+}
+/*.submenu > ul > li > ul > li:not(title) {
+	margin-top: 20px;
+}*/
+.submenu > ul > li > ul > li {
+	padding-top: 20px;
+	cursor: pointer;
+	transition: .4s;
+}
+.submenu > ul > li > ul > li:hover {
+	background: aliceblue;
+	padding: 5px 0 5px 15px;
+}
+
+#movie {
+	height: 500px;
+	background-color: black;
+	overflow: hidden;
+}
+#movie > .container {
+	position: relative;
+}
+#movie > .container::before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-image: linear-gradient(to right, #000 0%, rgba(0, 0, 0, 0.25) 25%, rgba(0, 0, 0, 0) 50%,rgba(0, 0, 0, 0.25) 75%, #000 100%);
+}
+
+#movie video {
+	margin-top: -20px;
+	max-width: 100%;
+}
+
+.movie-contents {
+	position: absolute;
+	color: white;
+	top: 225px;
+	left: 75px;
+}
+.mtitle {
+	font-size: 33px;
+	margin-bottom: 12px;
+	font-weight: bold;
+	letter-spacing: -3px;
+	word-spacing: 7px;
+}
+.stitle {
+	font-size: 15px;
+	margin-bottom: 3px;
+	letter-spacing: -2px;
+	word-spacing: 8px;
+}
+.mdetail {
+	margin-top: 15px;
+}
+.mdetail > div {
+	float: left;
+}
+.mdetail > div:first-child {
+	position: relative;
+	background: #ccc;
+	color: black;
+	padding: 3px 23px;
+	margin-right: 9px;
+	border-radius: 12px;
+	font-size: 12px;
+	cursor: pointer;
+}
+.mdetail > div:first-child > span {
+	position: absolute;
+    top: 2px;
+    right: 8px;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+.mdetail > div:first-child:hover {
+	background-color: #e9e9e9;
+	animation-name: show-detail;
+}
+.mdetail > div:first-child:hover > span {
+	animation-name: show-detail;
+}
+
+.mdetail > div:nth-child(2), .mdetail > div:nth-child(3) {
+	border: 1px solid white;
+	font-size: 10px;
+	width: 20px;
+	height: 20px;
+	line-height: 17px;
+	border-radius: 50%;
+	padding-left: 7px;
+	cursor: pointer;
+}
+
+.mdetail > div:nth-child(2) {
+	margin-right: 7px;
+}
+
+.mdetail > div:nth-child(3) {
+	padding-left: 4px;
+}
+
+#movie-chart {
+	height: 460px;
+	background-color: #fbfbfb;
+}
+
+#movie-chart > div.container > div {}
+#movie-chart > div.container > div:first-child {}
+#movie-chart > div.container > div:first-child > div {
+	float: left;
+    margin-top: 63px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #ddd;
+}
+#movie-chart > div.container > div:first-child > div:first-child {
+	padding-right: 10px;
+}
+.mov1 #movie-chart > div.container > div:first-child > div:first-child {
+	color: black;
+}
+#movie-chart > div.container > div:first-child > div:nth-child(2) {
+	height: 12px;
+	width: 1px;
+	background: #ddd;
+	transform: translateY(7px);
+}
+#movie-chart > div.container > div:first-child > div:last-child {
+	padding-left: 10px;
+}
+.mov2 #movie-chart > div.container > div:first-child > div:last-child {
+	color: black;
+}
+#movie-chart > div.container > div:last-child {
+	position: relative;
+}
+#movie-chart > div.container > div:last-child > div {
+	height: 345px;
+	width: 100%;
+	margin-top: 25px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#movie-chart > div.container > div:last-child > div .swiper {
+	width: 100%;
+	height: 100%;
+}
+#movie-chart > div.container > div:last-child > div:first-child {
+	display: none;
+	z-index: 1;
+}
+body.mov1 #movie-chart > div.container > div:last-child > div:first-child {
+	display: block;
+}
+#movie-chart > div.container > div:last-child > div:last-child {
+	display: none;
+	background-color: blue;
+}
+body.mov2 #movie-chart > div.container > div:last-child > div:last-child {
+	display: block;
+}
+
+#mc .swiper-slide img.thumb {
+	width: 100%;
+	border-radius: 15px;
+}
+.age {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	background: green;
+	border-radius: 50%;
+	font-size: 15px;
+	color: white;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+}
+.day {
+	font-size: 10px;
+	position: absolute;
+	top: 50px;
+	right: 10px;
+	background: red;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 30px;
+	color: white;
+}
+.mov-title {
+	text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+.mov-desc > span > img {
+	width: 20px;
+}
+.mov-desc > span:nth-child(2) {
+	position: relative;
+	top: -2px;
+	margin-right: 15px;
+}
+.mov-desc > span:nth-child(3) {
+	position: relative;
+	top: -2px;
+}
+
+@keyframes ad-title-move-left {
+	0% {
+		transform: translateX(10px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@keyframes show-detail {
+	0% {
+		transform: translateX(0px);
+	}
+	100% {
+		transform: translateX(5px);
+	}
+}

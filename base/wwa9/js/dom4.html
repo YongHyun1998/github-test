@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM ClassList</title>
+    <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+    <style type="text/css">
+        body {
+            background-color: lightgreen;
+            transition: 1s;
+        }
+        body .wrap {
+            position: static;
+            top: 0;
+            left: 0;
+            background-color: transparent;
+            transition: 1s;
+        }
+        body.show {
+            background-color: green;
+        }
+        body.show .wrap {
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            background-color: red;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            console.log(document.body.classList.item(0));//body class ['my[0]' 'your[1]' 'our[2]']
+            var addShow = document.getElementById("addShow");
+            var removeShow = document.getElementById("removeShow");
+            addShow.onclick = function () {//클릭이벤트
+                if (!document.body.classList.contains("show")) {
+                    document.body.classList.add("show");//show 클래스 추가 (add:추가)
+                } else {
+                    document.body.classList.remove("show");
+                }
+                
+            }
+            removeShow.onclick = function () {// 클릭 show 삭제
+                document.body.classList.remove("show");//show 클래스 제거 (remove:제거)
+            }
+        };
+    </script>
+</head>
+<body class="my your our">
+    <div class="wrap">
+        <h3>DOM ClassList</h3>
+        <hr>
+        <p>클래스 이름을 관리</p>
+        <button id="addShow">바디에 show 클래스 추가</button>
+        <button id="removeShow">바디에 show 클래스 삭제</button>
+    </div>
+</body>
+</html>

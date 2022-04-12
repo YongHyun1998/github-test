@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>setInterval() / setTimeout()</title>
+		<link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+		<style type="text/css">
+			.wrap-progress {
+				position: relative;
+				width: 250px;
+				height: 25px;
+			}
+			.my-progress {
+				width: 100%;
+				height: 100%;
+				border: 2px solid red;
+			}
+			.my-progress > div {
+				width: 0%;
+				height: 100%;
+				background-color: lightgreen;
+			}
+			.my-progress-per {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				font-weight: bold;
+			}
+		</style>
+		<script type="text/javascript">
+			var i = 0;
+			var timer = setInterval(function() {
+				i++;
+				// console.log(`2초 마다 실행 ${i}`);
+				// console.log("2초 마다 실행 " + i);
+				console.log("2초 마다 실행 ", i);
+			}, 2000);
+
+			var timer2 = setTimeout(function() {
+				console.log("10초 후 한 번 실행");
+			}, 10000);
+
+			var images = [
+				"/wwa9/images/a_01.png",
+				"/wwa9/images/a_02.png",
+				"/wwa9/images/a_03.png",
+				"/wwa9/images/a_04.png",
+			];
+
+			window.onload = function() {
+				var bt = document.getElementById("bt");
+				bt.onclick = function() {
+					clearInterval(timer);
+				}
+
+				var bt2 = document.getElementById("bt2");
+				bt2.onclick = function() {
+					clearTimeout(timer2);
+				}
+
+				var pg = document.getElementById("pg");
+				var pgState = document.getElementById("pgState");
+				var pgValue = 0;
+				var pgTimer = setInterval(function() {
+					pgValue++;
+					pg.value = pgValue;
+					pgState.innerText = pgValue + '%';
+					if(pgValue >= 75) {
+						clearInterval(pgTimer);
+					}
+				}, 50);
+				
+				var divMyProgress = document.querySelector(".my-progress > div");
+				var divMyProgressPer = document.querySelector(".my-progress-per");
+				var cntMyProgress = 0;
+				
+				var myTimer = setInterval(function() {
+					cntMyProgress++;
+					divMyProgress.style.width = cntMyProgress + "%";
+					divMyProgressPer.innerText = cntMyProgress + "%";
+					if(cntMyProgress == 55) {
+						clearInterval(myTimer);
+					}
+
+					if(cntMyProgress > 50) {
+						divMyProgressPer.style.color = '#fff';
+					}
+				}, 50);
+
+				var ci = document.querySelector(".ci > img");
+				//ci.setAttribute("src", images[0]);
+				var imgIndex = 0;
+				var btnCiStop = document.querySelector(".ci > button");
+
+				var ciChanger = setInterval(function() {
+					imgIndex++;
+					if (imgIndex >= images.length) {
+						imgIndex = 0;
+					}
+					ci.setAttribute("src", images[imgIndex]);
+				}, 1000);
+
+				btnCiStop.onclick = function() {
+					if (btnCiStop.innerText === "stop") {
+						clearInterval(ciChanger);
+						btnCiStop.innerText = "play";	
+					} else {
+						ciChanger = setInterval(function() {
+							imgIndex++;
+							if (imgIndex >= images.length) {
+								imgIndex = 0;
+							}
+							ci.setAttribute("src", images[imgIndex]);
+						}, 1000);
+						btnCiStop.innerText = "stop";
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div class="wrap">
+			<h3>setInterval() / setTimeout()</h3>
+			<hr>
+			<p>setInterval() : 설정된 시간 간격으로 지정된 함수를 반복 실행</p>
+			<p>clearInterval() : setInterval()을 중지</p>
+			<p>setTimeout() : 설정된 시간 동안 대기 후 지정된 함수 한번 실행</p>
+			<p>clearTimeout() : setTimeout()을 중지</p>
+			<button id="bt">Interval 중지</button>
+			<button id="bt2">Timeout 중지</button>
+
+			<progress value="0" max="100" id="pg"></progress>
+			<span id="pgState">0%</span>
+
+			<div class="wrap-progress">
+				<div class="my-progress">
+					<div></div>
+				</div>
+				<div class="my-progress-per">0%</div>
+			</div>
+			<hr>
+			<div class="ci">
+				<button>stop</button>
+				<br>
+				<img src="/wwa9/images/a_01.png" alt="changeImage">
+			</div>
+		</div>
+	</body>
+</html>

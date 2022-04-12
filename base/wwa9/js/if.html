@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>조건문</title>
+		<link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+		<style type="text/css">
+			#fee {
+				border: 1px solid black;
+				height: 50px;
+				line-height: 50px;
+				padding-left: 25px;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function() {
+				let age = Number(window.prompt('나이를 입력하세요.'));
+				let admissionFee = 0;
+				let fee = document.getElementById("fee");
+
+				//0이하이거나 120살 이상인 사람은 알려줌
+				console.log(Number.isNaN(age)); //true - 문자입력, false - 숫자입력
+				console.log(age);
+
+				if(Number.isNaN(age)) {
+					fee.innerText = '숫자만 입력하세요!';
+				} else if (age < 0 || age > 120) {
+					fee.innerText = '나이를 정확하게 입력하세요!';
+				} else {
+					if (age < 13) {
+						admissionFee = '2,000원';
+					} else if (age >= 13 && age < 20) {
+						admissionFee = '4,000원';
+					} else {
+						admissionFee = '6,000원';
+					}
+
+					fee.innerText = '당신의 나이는 ' + age + '살이며 입장료는 ' + admissionFee + '입니다.';
+				}
+
+				console.log(admissionFee);
+			};
+		</script>
+	</head>
+	<body>
+		<div class="wrap">
+			<h3>조건문</h3>
+			<hr>
+			<h4>if</h4>
+			<h5>if 기본구문</h5>
+			<pre>
+if (조건문) {
+	실행문(구문);
+}
+			</pre>
+			<hr>
+			<h5>if 참/거짓</h5>
+			<pre>
+if (조건문) {
+	실행문(조건이 참일 경우);
+} else {
+	실행문(조건이 거짓일 경우);
+}
+			</pre>
+			<hr>
+			<h5>다중 if문</h5>
+			<pre>
+if (조건문1) {
+	실행문1(조건문1이 참일 경우);
+} else if (조건문2) {
+	실행문2(조건문2가 참일 경우);
+} ... {
+	...
+} else {
+	위의 조건 모두 거짓일 경우 실행
+}
+			</pre>
+			<div id="fee"></div>
+		</div>
+	</body>
+</html>

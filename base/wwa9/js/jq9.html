@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>속성 메서드</title>
+		<link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+		<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+		<script type="text/javascript">
+			$(function() {
+				$.noConflict();
+
+				console.log($("#site > a:eq(0)").attr("href"));
+				$("#site > a:eq(1)").attr("href", "http://m.naver.com").attr("target", "").text("네이버 모바일");
+				$("#site > a").attr("title", function(index) {
+					return "새창";
+				});
+
+
+				$("#site > a").each(function(index, item) {
+					$(item).mouseover(function(e) {
+						$("img").attr("width", "100");
+						//$("img").css("width", "100px");
+						switch ($(this).text()) {
+							case "다음":
+								$("img").attr("src", "/wwa9/images/a_01.jpg").attr("alt", "다음");
+								break;
+							case "네이버 모바일":
+								$("img").attr("src", "/wwa9/images/a_02.jpg").attr("alt", "네이버 모바일");
+								break;
+							case "네이트":
+								$("img").attr("src", "/wwa9/images/a_03.jpg").attr("alt", "네이트");
+								break;
+						}
+					});
+				});
+
+				chkStatus();
+				
+				$("input:checkbox").change(function() {
+					chkStatus();
+				});
+			});
+
+			function chkStatus() {
+				var str = "html의 attr(checked): " + $("#html").attr("checked") + "<br>";
+				str += "html의 prop(checked): " + $("#html").prop("checked") + "<br>";
+				str += "css의 attr(checked): " + $("#css").attr("checked") + "<br>";
+				str += "css의 prop(checked): " + $("#css").prop("checked");
+
+				$("#status").html(str);
+			}
+		</script>
+	</head>
+	<body>
+		<div class="wrap">
+			<h3>속성 메서드</h3>
+			<hr>
+			<p>attr(attribute): html 요소의 속성(정적)</p>
+			<p>prop(property): javascrpt 요소의 속성(동적)</p>
+			<div id="site">
+				<input type="checkbox" id="html" checked><label for="html">HTML</label>
+				<input type="checkbox" id="css"><label for="css">CSS</label>
+				<div id="status"></div>
+				<hr>
+				<a href="http://www.daum.net" target="_blank">다음</a>
+				<a href="http://www.naver.com" target="_blank">네이버</a>
+				<a href="http://www.nate.com" target="_blank">네이트</a>
+				<img>
+			</div>
+		</div>
+	</body>
+</html>

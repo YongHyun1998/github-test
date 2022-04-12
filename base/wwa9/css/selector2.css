@@ -1,0 +1,96 @@
+#cb {
+	display: none;
+}
+#cb + label {
+	cursor: pointer;
+}
+#cb + label::after {
+	content: 'Show';
+}
+#cb ~ div {
+	display: none;
+}
+#cb:checked {}
+#cb:checked + label::after {
+	content: 'Hide';
+}
+#cb:checked ~ div {
+	display: block;
+}
+.container {
+	position: relative;
+	border: 1px solid black;
+	height: 100px;
+	overflow: hidden;
+}
+.bugger {
+	display: block;
+	cursor: pointer;
+	width: 50px;
+	height: 25px;
+	position: absolute;
+	right: 0;
+}
+.bugger > div {
+	height: 2px;
+	background-color: black;
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+#cb2 {
+	display: none;
+	position: absolute;
+	right: 0;
+}
+.container > div {
+	position: absolute;
+	top: 0;
+	left: -77px;
+	height: 100%;
+	transition: .4s;
+}
+#cb2:checked + div {
+	left: 0px;
+}
+.rel {
+	position: absolute;
+}
+input[type=text]:disabled {
+	background-color: darkgray;
+}
+input[type=text]:disabled + span::after {
+	content: '';
+	background-image: url(/wwa9/images/redcross.png);
+	background-size: 100%;
+	position: absolute;
+	top: 5px;
+	right: 2px;
+	width: 15px;
+	height: 15px;
+}
+
+.type p:first-of-type {
+	background-color: lightgreen;
+}
+
+.box input:focus {
+	background-color: lightgreen;
+	border-color: lightblue;
+}
+
+:fullscreen {
+	background-color: lightpink;	
+}
+
+input:not(input[autofocus], input:last-of-type) {
+	background-color: lightsalmon;
+}
+
+.nth p:nth-last-of-type(2) {
+	color: red;
+}
+
+.sel > *::selection {
+	color: gold;
+	background: chocolate;
+}

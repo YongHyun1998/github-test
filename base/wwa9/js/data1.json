@@ -1,0 +1,9 @@
+[
+    {"name": "홍길동", "score1": 95, "score2": 80, "score3": 85, "score4": 100},
+    {"name": "김길동", "score1": 25, "score2": 70, "score3": 95, "score4": 40},
+    {"name": "고길동", "score1": 100, "score2": 60, "score3": 75, "score4": 60},
+    {"name": "곽길동", "score1": 65, "score2": 50, "score3": 65, "score4": 70},
+    {"name": "최길동", "score1": 75, "score2": 90, "score3": 15, "score4": 60},
+    {"name": "마길동", "score1": 15, "score2": 10, "score3": 45, "score4": 90},
+    {"name": "우길동", "score1": 65, "score2": 30, "score3": 35, "score4": 20}
+]

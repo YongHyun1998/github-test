@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>AJAX</title>
+		<link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+		<style type="text/css">
+			.overwrap {
+				overflow: auto;
+				height: 250px;
+			}
+		</style>
+		<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+		<script type="text/javascript">
+			var json = '{"subject" : "jQuery", "score" : "90"}'; //json 데이터
+			console.log(typeof json); //string
+			console.log(JSON.parse(json)); //json => 객체로 변환
+
+			var obj = {subject: "HTML", score: 100}; //객체
+			console.log(typeof obj); //object
+			console.log(JSON.stringify(obj)); //객체 => json로 변환
+
+			$(function() {
+				// $("button").click(function() {
+				// 	$.ajax({
+				// 		type: "GET",
+				// 		url: "data1.json",
+				// 		dataType: "json",
+				// 		success: function(data, textStatus, jqXHR) {
+				// 			var elem = "";
+				// 			$.each(data, function(i, obj) {
+				// 				elem += "<tr>";
+				// 				elem += "<th scope='row'>" + obj.name + "</th>";
+				// 				elem += "<td>" + obj.score1 + "</td>";
+				// 				elem += "<td>" + obj.score2 + "</td>";
+				// 				elem += "<td>" + obj.score3 + "</td>";
+				// 				elem += "<td>" + obj.score4 + "</td>";
+				// 				elem += "</tr>";
+				// 			});
+
+				// 			$("table tbody").append(elem);
+				// 		},
+				// 		error: function(jqXHR, textStatus, errorThrown) {
+				// 			console.log(textStatus);
+				// 		}
+				// 	});
+				// });
+
+				setTimeout(function() {
+					//$("table tbody").empty();
+					$.ajax({
+						type: "GET",
+						url: "data1.json",
+						dataType: "json",
+						success: function(data, textStatus, jqXHR) {
+							console.log(data);
+							var elem = "";
+							$.each(data, function(i, obj) {
+								elem += "<tr>";
+								elem += "<th scope='row'>" + obj.name + "</th>";
+								elem += "<td>" + obj.score1 + "</td>";
+								elem += "<td>" + obj.score2 + "</td>";
+								elem += "<td>" + obj.score3 + "</td>";
+								elem += "<td>" + obj.score4 + "</td>";
+								elem += "</tr>";
+							});
+
+							$("table tbody").append(elem);
+						},
+						error: function(jqXHR, textStatus, errorThrown) {
+							console.log(textStatus);
+						}
+					});
+				}, 5000);
+			});
+
+		</script>
+	</head>
+	<body>
+		<div class="wrap">
+			<h3>AJAX</h3>
+			<hr>
+			<p>JSON: 자바스크립트로 되어있는 데이터형식</p>
+		</div>
+		<button>가져오기</button>
+		<div class="overwrap">
+			<table>
+				<caption>학생별 시험 점수</caption>
+				<thead>
+					<tr>
+						<th scope="col">이름</th>
+						<th scope="col">html</th>
+						<th scope="col">css</th>
+						<th scope="col">javascript</th>
+						<th scope="col">jQuery</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
+		</div>
+	</body>
+</html>

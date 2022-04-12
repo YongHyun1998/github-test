@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex4-43</title>
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+    <style type="text/css">
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        #gnb {
+            border: 1px solid;
+        }
+        #gnb::after {
+            content: '';
+            clear: both;
+            display: table;
+        }
+        #gnb > li {
+            float: left;
+            width: 120px;
+            position: relative;
+        }
+        #gnb > li.on {
+            background-color: red;
+        }
+        #gnb > li > ul {
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 0;
+        }
+        #gnb + div {
+            height: 250px;
+            background-color: lightgreen;
+        }
+    </style>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- javascript -->
+    <script type="text/javascript">
+        $(function() {
+            $.noConflict(); //최신버전으로 변경
+            $("#gnb .m").on("mouseenter focusin", function() {
+                $("ul", this).show();
+                // $(this).siblings("li").find("ul").hide();
+                // $(this).addClass("on").siblings("li").removeClass("on");
+
+                $(this).addClass("on").find("ul").show().end().siblings("li").removeClass("on").find("ul").hide();
+            }).on("mouseleave", function() {
+                $("#gnb ul").hide().add("#gnb .m").removeClass("on");
+            });
+            $("*:not(#gnb a)").on("focus", function() {
+                $("#gnb ul").hide().add("#gnb .m").removeClass("on");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <h3><a href="#" tabindex="1">ex4-43</a></h3>
+        <hr>
+        <ul id="gnb">
+            <li class="m on">
+                <a href="#" tabindex="2">메뉴1</a>
+                <ul>
+                    <li><a href="#">메뉴1-1</a></li>
+                    <li><a href="#">메뉴1-2</a></li>
+                    <li><a href="#">메뉴1-3</a></li>
+                    <li><a href="#">메뉴1-4</a></li>
+                </ul>
+            </li>
+            <li class="m on">
+                <a href="#" tabindex="3">메뉴2</a>
+                <ul>
+                    <li><a href="#">메뉴2-1</a></li>
+                    <li><a href="#">메뉴2-2</a></li>
+                    <li><a href="#">메뉴2-3</a></li>
+                    <li><a href="#">메뉴2-4</a></li>
+                </ul>
+            </li>
+            <li class="m on">
+                <a href="#" tabindex="4">메뉴3</a>
+                <ul>
+                    <li><a href="#">메뉴3-1</a></li>
+                    <li><a href="#">메뉴3-2</a></li>
+                    <li><a href="#">메뉴3-3</a></li>
+                    <li><a href="#">메뉴3-4</a></li>
+                </ul>
+            </li>
+            <li class="m on">
+                <a href="#" tabindex="5">메뉴4</a>
+                <ul>
+                    <li><a href="#">메뉴4-1</a></li>
+                    <li><a href="#">메뉴4-2</a></li>
+                    <li><a href="#">메뉴4-3</a></li>
+                    <li><a href="#">메뉴4-4</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div>하위 디자인</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>ex4-42</title>
+		<link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+		<style type="text/css">
+			.slide {
+				width: 500px;
+				position: relative;
+			}
+			#pic {
+				width: 500px;
+				height: 350px;
+				border: 1px solid black;
+				position: relative;
+			}
+			#pic > div {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				display: none;
+			}
+			#pic > div:nth-child(1) {
+				background-color: red;
+			}
+			#pic > div:nth-child(2) {
+				background-color: green;
+			}
+			#pic > div:nth-child(3) {
+				background-color: blue;
+			}
+			#pic > div:nth-child(4) {
+				background-color: orange;
+			}
+			#control {
+				position: absolute;
+				width: 100%;
+				bottom: 15px;
+				text-align: center;
+			}
+			#control a {
+				/*display: block;*/
+				background-color: black;
+				padding: 10px 20px;
+				color: white;
+				border-radius: 50%;
+				text-align: center;
+				line-height: 25px;
+				cursor: pointer;
+			}
+			#control a.on {
+				background-color: red;
+				cursor: default;
+			}
+		</style>
+		<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+		<script type="text/javascript">
+            $(function() {
+                $("#control a:first").addClass("on").add("pic > div:first").show();
+
+                $("#control a").click(function() {
+                    var num = Number($(this).data("count")) - 1;
+                    $(this).addClass("on").siblings().removeClass("on");
+                    $("#pic > div").filter(":visible").fadeOut();
+                    $("#pic > div").eq(num).fadeIn();
+                });
+            });
+            // $(function() {
+			// 	$("#control a:first").addClass("on").add("#pic > div:first").show();
+
+			// 	$("#control a").click(function() {
+			// 		//console.log($(this).text());
+			// 		//console.log($(this).data("count"));
+
+			// 		//사용자가 누른 a의 순번
+			// 		var num = Number($(this).data("count")) - 1;
+			// 		//console.log(num);
+			// 		$(this).addClass("on").siblings().removeClass("on");
+			// 		//$("#pic > div").filter(":visible").fadeOut(350).end().eq(num).fadeIn(350);
+
+			// 		//console.log($("#pic > div").filter(":visible").fadeOut().end().eq(num).fadeIn());
+			// 		$("#pic > div").filter(":visible").fadeOut();
+			// 		$("#pic > div").eq(num).fadeIn();
+			// 	});
+			// });
+
+		</script>
+	</head>
+	<body>
+		<div class="wrap">
+			<h3>ex4-42</h3>
+			<hr>
+			<div class="slide">
+				<div id="pic">
+					<div>이미지1</div>
+					<div>이미지2</div>
+					<div>이미지3</div>
+					<div>이미지4</div>
+				</div>
+				<div id="control">
+					<a data-count="1"></a>
+					<a data-count="2"></a>
+					<a data-count="3"></a>
+					<a data-count="4"></a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

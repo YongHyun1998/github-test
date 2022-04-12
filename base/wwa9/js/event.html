@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Event(이벤트)</title>
+		<link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+		<script type="text/javascript">
+			function sum(n) {
+				alert(n);
+			}
+
+			window.onload = function() {
+				var btnClick = document.getElementById("btnClick");
+				function view() {
+					console.log('view');
+				}
+				btnClick.onclick = function() {
+					console.log('ok2');
+				};
+
+				btnClick.onclick = view;
+
+				console.dir(btnClick);
+
+				btnClick.addEventListener('click', function() {
+					console.log('addEvent1');
+				});
+
+				btnClick.addEventListener('click', function() {
+					console.log('addEvent2');
+				});
+				console.log('윈도우 로드0');
+			}
+
+			window.addEventListener('load', function() {
+				console.log('윈도우 로드1');
+			});
+			window.addEventListener('load', function() {
+				console.log('윈도우 로드2');
+			});
+		</script>
+	</head>
+	<body onkeydown="console.log('down1');">
+		<div class="wrap">
+			<h3>이벤트</h3>
+			<hr>
+			<h4>이벤트 연결</h4>
+			<ul>
+				<li onclick="console.log('ok');" ondblclick="console.log('double');" onmouseover="console.log('over');" onmouseout="console.log('out');" onmousemove="console.log('move')" onkeydown="console.log('down2')">인라인 이벤트</li>
+				<li>기본 이벤트 모델 : onclick = function</li>
+				<li>표준 이벤트 모델 : addEventListener(이벤트종류, 콜백함수)</li>
+			</ul>
+			<button id="btnClick" onclick="sum(10)">클릭</button>
+		</div>
+		<script type="text/javascript">
+			var btnClick = document.getElementById("btnClick");
+			btnClick.onclick = function() {
+				console.log('ok1');
+			}
+		</script>
+	</body>
+</html>

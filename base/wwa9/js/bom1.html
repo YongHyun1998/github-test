@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>BOM - window 객체</title>
+        <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+        <script type="text/javascript">
+			console.log(this); //window
+			var green = window.open("date.html", "green", "width=200, height=200, top=0, left=0, location=yes, scrollbars=no");
+			// console.log(green);
+			window.onload = function(e) {
+				var close = document.getElementById("close");
+				close.onclick = function(e) {
+					// console.log(green);
+					if (green) {
+						// console.log("존재");
+						green.close();
+						green = null;
+						close.innerText = "열기";
+					} else {
+						// console.log("없음");
+						green = window.open("date.html", "green", "width=200, height=200, top=0, left=0, location=yes, scrollbars=no");
+						close.innerText = "닫기";
+					}
+				}
+
+				var up = document.getElementById("up");
+				up.onclick = function(e) {
+					//green.moveTo(-1000, 500); //해당 위치로 이동
+					green.moveBy(0, -10); //윈도우가 있는 상대 위치에서 이동
+				}
+				var down = document.getElementById("down");
+				down.onclick = function(e) {
+					green.moveBy(0, 10);
+				}
+				var right = document.getElementById("right");
+				right.onclick = function(e) {
+					green.moveBy(10, 0);
+				}
+				var left = document.getElementById("left");
+				left.onclick = function(e) {
+					green.moveBy(-10, 0);
+				}
+				window.onkeydown = function(e) {
+					console.log(e.keyCode);
+					if (e.keyCode === 38) { //위
+						green.moveBy(0, -10);
+					} else if (e.keyCode === 40) { //아래
+						green.moveBy(0, 10);
+					} else if (e.keyCode === 39) { //오른쪽
+						green.moveBy(10, 0);
+					} else if (e.keyCode === 37) { //왼쪽
+						green.moveBy(-10, 0);
+					}
+				}
+			}
+		</script>
+    </head>
+    <body>
+        <div class="wrap">
+            <h3>BOM - window 객체</h3>
+            <hr>
+            <p>window 객체 - 브라우저</p>
+            <button id="up">위</button>
+            <button id="down">아래</button>
+            <button id="right">오른쪽</button>
+            <button id="left">왼쪽</button>
+            <button id="close">닫기</button>
+        </div>
+    </body>
+</html>

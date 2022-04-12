@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <!-- 주석 -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 상대 선택</title>
+    <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+    <style type="text/css">
+
+    </style>
+    <script type="text/javascript">
+        // console.dir(document.childNodes[1].childNodes[0].childNodes[5].nodeType); //선택된 요소의 자식 노드들 선택 1, 0, 5
+
+        window.onload = function () {
+				// var children = document.childNodes;
+				// console.dir(document);
+
+				// for (var i = 0; i < children.length; i++) {
+				// 	console.log(children[i].nodeName + " : " + children[i].nodeType);
+				// 	// console.dir(children[i].childNodes);
+				// 	// console.log(children[i].childNodes);
+				// 	if (children[i].childNodes.length) {
+				// 		for (var j = 0; j < children[i].childNodes.length; j++) {
+				// 			console.log(children[i].childNodes[j].nodeName + " : " + children[i].childNodes[j].nodeType);
+				// 			if (children[i].childNodes[j].childNodes.length) {
+				// 				for (var k = 0; k < children[i].childNodes[j].childNodes.length; k++) {
+				// 					console.log(children[i].childNodes[j].childNodes[k].nodeName + " : " + children[i].childNodes[j].childNodes[k].nodeType);
+				// 				}
+				// 			}
+				// 		}
+				// 	}
+				// }
+
+				getChild(document);
+			}
+
+            function getChild(el) { // 재귀함수
+				console.log(el.nodeName + " : " + el.nodeType);
+				if (!el.childNodes.length) { //childNodes : 선택된 요소의 자식 노드들(요소 노드, 텍스트 노드)을 선택
+					return; //자식이 없을 경우 읽기 종료
+				}
+				for (var i = 0, max = el.childNodes.length; i < max; i++) {
+					getChild(el.childNodes[i]); //자식이 있으면 계속 읽음
+				}
+			}
+
+        window.onload = function() {
+            var gnb = document.getElementById('gnb');
+            console.log(gnb.parentNode);
+            console.log(gnb.children[0]);
+            console.log(gnb.children[0].children[0]);
+            console.log(gnb.children[0].children[0].nextElementSibling);
+            console.log(gnb.children[0].children[2].previousElementSibling);
+            console.log(gnb.children[0].firstChild);
+            console.log(gnb.children[0].lastChild);
+            console.log(gnb.children[0].tagName);
+            console.log(gnb.children[0].children[0].firstChild.nodeValue);
+            console.log(gnb.children[0].children[0].nodeType);
+            console.log(gnb.id);
+            console.log(gnb.children[0].children[0].className);
+        }
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <h3>DOM 상대 선택</h3>
+        <hr>
+        <p>선택된 요소 기준으로 다른 요소(노드)를 선택하는 방법</p>
+        <div>
+            <nav id="gnb">
+                <ul>
+                    <li class="first">내용1</li>
+                    <li>내용2</li>
+                    <li>내용3</li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</body>
+</html>

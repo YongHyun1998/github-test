@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>POSITION</title>
+        <style type="text/css">
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                margin: 20px;
+                background-image: url("../images/bg_grid.gif");
+            }
+            .box {
+                width: 650px;
+                background-color: rgba(0, 0, 0, 0.3);
+                position: relative;
+                z-index: 1;
+            }
+            p {
+                width: 250px;
+                height: 100px;
+                box-sizing: border-box;
+                padding: 10px;
+                font-weight: bold;
+            }
+            .red {
+                background-color: crimson;
+            }
+            .green {
+                background-color: lime;
+                position: absolute;
+                top: 50px;
+                left: 70px;
+                /* 부모인 box의 z-index값이 outside보다 적으므로 green의 z-index를올려도 outside보다 위에 갈 수 없음. */
+                z-index: 7;
+            }
+            .blue {
+                background-color: dodgerblue;
+                position: relative;
+            }
+            .outside {
+                position: relative;
+                width: 100px;
+                height: 100px;
+                background-color: lightgreen;
+                z-index: 2;
+                top: -110px;
+                left: 80px;
+            }
+        </style>
+    </head>
+    <body>
+        <p>z-index: 형제끼리 우선 비교 후 자식 비교</p>
+        <div class="box">
+            <p class="red">용기가 두기 인간이 뿐이다. 원질이 불러 싶이 방황하여도, 교향악이다.</p>
+            <p class="green">때에, 생명을 품으며, 설레는 길을 봄바람이다.</p>
+            <p class="blue">꽃이 피어나는 그림자는 그러므로 보는 사막이다.</p>
+        </div>
+        <div class="outside">outside</div>
+    </body>
+</html>

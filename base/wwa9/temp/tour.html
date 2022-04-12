@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>flex box</title>
+<!------구글 폰트-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+<!------폰트 어썸-->
+        <script src="https://kit.fontawesome.com/16e06adab7.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="/wwa9/temp/tour.css">
+        <link rel="stylesheet" type="text/javascript" href="/wwa9/temp/tour.js">
+    </head>
+    <body>
+        <div id="header">
+            <div class="container pc clearfix">
+                <div class="bar left-float">
+                    <ul class="clearfix">
+                        <li>HOME</li>
+                        <li>BAND</li>
+                        <li>TOUR</li>
+                        <li>CONTACT</li>
+                        <li class="more">
+                            <div>
+                                MORE&nbsp;&nbsp;<i class="fa-solid fa-caret-down"></i>
+                            </div>
+                            <div class="sub-menu">
+                                <div>Menu1</div>
+                                <div>Menu2</div>
+                                <div>Menu3</div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="bar right-float"><i class="fa-solid fa-magnifying-glass"></i></div>
+                </div>
+            </div>
+            <div class="container mobile clearfix">
+                <div class="bar left-float logo">LOGO</div>
+                <label for="show-mob">
+                    <div class="bar right-float bugger">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </label>
+            </div>
+            <input type="checkbox" id="show-mob"><div class="mob-sub-list mobile">
+                <div>HOME</div>
+                <div>BAND</div>
+                <div>TOUR</div>
+                <div>CONTACT</div>
+                <div>MORE</div>
+            </div>
+        </div>
+        <div id="contens">
+            <div class="img-title"><img src="https://www.w3schools.com/w3images/ny.jpg" alt="ny"></div>
+        </div>
+        <div class="contens-1">
+            <h3 class="ct-1-a">New York</h3>
+            <b class="ct-1-b">The atmosphere in New York is lorem ipsum.</b>
+        </div>
+        <div class="content1">
+            <h2>THE BAND</h2>
+            <p class="sidecontent1"><em>We love music</em></p>
+            <p>We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        <div class="content2 clearfix">
+            <div class="content2-name">
+                <ul>
+                    <li>Name</li>
+                        <img src="bandmember.jpg">
+                </ul>
+            </div>
+            <div class="content2-name">
+                <ul>
+                    <li>Name</li>
+                        <img src="bandmember.jpg">
+                </ul>
+            </div>
+            <div class="content2-name">
+                <ul>
+                    <li>Name</li>
+                        <img src="bandmember.jpg">
+                </ul>
+            </div>
+        </div>
+        <div class="content3">
+            <div class="content3-padding">
+                <div>
+                    <h2 class="content3-title">TOUR DATES</h2>
+                    <p class="sidecontent2"><em>Remember to book your tickets!</em></p>
+                </div>
+                <br>
+                <ul class="content3-box">
+                    <li class="ctb1">
+                        Setember
+                        <span>Sold out</span>
+                    </li>
+                    <li class="ctb1">
+                        October 
+                        <span>Sold out</span>
+                    </li>
+                    <li class="ctb1">
+                        November
+                        <span class="b">3</span>
+                    </li>
+                </ul>
+                <div class="content3-a">
+                    <div class="ct3-b">
+                        <img src="/wwa9/images/newyork.jpg">
+                        <div class="ct3-b-text">
+                            <b>New York</b>
+                            <p class="gray">Fri 27 Nov 2016</p>
+                            <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                            <span>Buy Ticket</span>
+                        </div>
+                    </div>
+                    <div class="ct3-b">
+                        <img src="/wwa9/images/paris.jpg">
+                        <div class="ct3-b-text">
+                            <b>Paris</b>
+                            <p class="gray">Sat 28 Nov 2016</p>
+                            <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                            <span>Buy Ticket</span>
+                        </div>
+                    </div>
+                    <div class="ct3-b">
+                        <img src="/wwa9/images/sanfran.jpg">
+                        <div class="ct3-b-text">
+                            <b>San Francisco</b>
+                            <p class="gray">Sun 29 Nov 2016</p>
+                            <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                            <span>Buy Ticket</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content4">
+            <div class="ct4-a">
+                <h2>CONTACT</h2>
+                <em class="gray">Fan? Drop a note!</em>
+            </div>
+            <div class="ct4-b clearfix">
+                <div class="ct4-b-1">
+                    <div class="ct4-b-2 clearfix">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <p>Chicago, US</p>
+                    </div>
+                    <br>
+                    <div class="ct4-b-2 clearfix">
+                        <i class="fa-solid fa-phone"></i>
+                        <p>Phone: +00 151515</p>
+                    </div>
+                    <br>
+                    <div class="ct4-b-2 clearfix">
+                        <i class="fa-solid fa-envelope"></i>
+                        <p>Email: mail@mail.com</p>
+                    </div>
+                </div>
+                <div class="ct4-c-1">
+                    <div class="ct4-c-2">
+                        <input class="ct4-c-2-1" type="text" placeholder="Name"></input>
+                        <input class="ct4-c-2-2" type="text" placeholder="Email"></input>
+                    </div>
+                    <input class="ct4-c-2-3" type="text" placeholder="Message"></input>
+                    <span class="ct4-c-3">SEND</span>
+                </div>
+            </div>
+        </div>
+        <div class="content5"><img src="/wwa9/images/map.jpg"></div>
+        <div id="footer">
+            <div class="ft-a">
+                <i class="fa fa-facebook-official w3-hover-opacity"></i>
+                <i class="fa fa-instagram w3-hover-opacity"></i>
+                <i class="fa fa-snapchat w3-hover-opacity"></i>
+                <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+                <i class="fa fa-twitter w3-hover-opacity"></i>
+                <i class="fa fa-linkedin w3-hover-opacity"></i>
+            </div>
+            <div class="ft-b">
+                <p>Powered by <u>w3.css</u></p>
+            </div>
+        </div>
+    </body>
+</html>

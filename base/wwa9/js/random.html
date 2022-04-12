@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>랜덤</title>
+		<link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+		<style type="text/css">
+			img {
+				width: 300px;
+			}
+		</style>
+		<script type="text/javascript">
+			console.log(Math.random()); //0~1사이의 값중 하나
+			// for(var i = 0; i < 100; i++) {
+			// 	console.log(Math.floor(Math.random() * 10) + 1); // 1 - 10
+			// }
+
+			//5 ~ 10 사이의 숫자중 하나
+			var ran = Math.floor(Math.random() * (10 - 5 + 1)) + 5;
+			console.log(ran);
+
+
+
+			//랜덤 이미지
+			function getRandom(max, min) {
+				return Math.floor(Math.random() * (max - min + 1)) + min;
+			}
+
+			var imgs = [
+				"https://newsimg.hankookilbo.com/2018/02/05/201802051120876500_1.jpg",
+				"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv1foVgnFxfG06zZJoMxTkMVrJ812RlAC4YQ&usqp=CAU",
+				"https://item.kakaocdn.net/do/7c7a5f2d7e721b5c37a16d3b1afd35b9f604e7b0e6900f9ac53a43965300eb9a",
+				"https://file2.instiz.net/data/cached_img/upload/2017/05/08/8/5f08fa9f933ea88edc838fb253f8cda5.jpg"
+			];
+			
+			window.onload = function() {
+				var img = document.getElementById("target");
+				var btnShow = document.getElementById("btnShow");
+				var index = 0;
+
+				function setImage() {
+					index = getRandom(imgs.length - 1, 0);
+					console.log(index);
+					img.setAttribute("src", imgs[index]);
+				}
+
+				setImage();
+
+				btnShow.onclick = function() {
+					setImage();
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div class="wrap">
+			<h3>랜덤</h3>
+			<hr>
+			<p>특정 범위의 값 중 하나를 뽑음.</p>
+			<button id="btnShow">랜덤 이미지</button>
+			<hr>
+			<img src="" alt="랜덤" id="target">
+		</div>
+	</body>
+</html>

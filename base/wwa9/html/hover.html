@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>마우스 호버</title>
+    <style type="text/css">
+        div {
+            position: absolute; /*요소의 위치를 절대 좌표로 지정*/
+            text-indent: -9999999px; /*들여쓰기, 내어쓰기*/
+            background-image: url(../images/invert1.jpg);
+            width: 100px;
+            height: 100px;
+            /*변경되는 속성의 중간값 지정*/
+            transition: 1s;
+        }
+        div:hover { /*마우스 올림*/
+            background-image: url(../images/invert2.jpg);
+            width: 600px;
+            height: 750px;
+        }
+        div:active { /*클릭*/
+            border: 5px solid red;
+        }
+    </style>
+</head>
+<body>
+    <!-- <img src="../images/invert.jpg" alt="반전"> -->
+    <div>그린</div>
+</body>
+</html>

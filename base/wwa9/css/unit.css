@@ -1,0 +1,47 @@
+:root {
+	/*상속*/
+	font-size: 16px;
+}
+.box:nth-of-type(1) {
+	background-color: lightgreen;
+	font-size: 12px;
+}
+.box:nth-of-type(1) p {
+	font-size: 100%;
+}
+
+.box:nth-of-type(2) {
+	background-color: lightpink;
+	font-size: 16px;
+}
+.box:nth-of-type(2) p {
+	font-size: 1.5em;
+}
+
+.box:nth-of-type(3) {
+	background-color: lightcoral;
+	font-size: 12px;
+}
+.box:nth-of-type(3) p {
+	font-size: 1rem;
+}
+
+.book:nth-of-type(4) {
+	font-size: 24px;
+}
+.book:nth-of-type(4) ul {
+	font-size: 12px;
+}
+.book:nth-of-type(4) li {
+
+	font-size: 1.5em;
+}
+.book:nth-of-type(4) li:nth-child(4) {
+	font-size: 1.5rem;
+}
+.box:nth-of-type(5) p:first-child {
+	font-size: 1vw;
+}
+.box:nth-of-type(5) p:last-child {
+	font-size: 1vh;
+}

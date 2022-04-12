@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제목</title>
+    <!-- swiper css -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+    <style type="text/css">
+        .swiper { 
+            /* 슬라이더 크기 */
+            width: 600px;
+            height: 300px;
+        }
+        .swiper-pagination-bullet {
+            /* bullet 디자인 변경 */
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            background-color: red; 
+        }
+      </style>
+    <!-- swiper js -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <!-- javascript -->
+    <script type="text/javascript">
+        window.onload = function() { //자바스크립트 실행
+            const s1 = new Swiper('.swiper', { //s1로 이름설정
+                // Optional parameters
+                // direction: 'vertical', //수직 수평
+                loop: true,
+        
+                // If we need pagination
+                pagination: {
+                    el: '.swiper-pagination', //pagination ''값 페이지 표시줄
+                    clickable: true, //클릭시 그페이지로 이동
+                    renderBullet: function(index, className) {
+                        return '<div class="' + className + '">' + index + '</div>'; //bullet에 글씨 넣기
+                    }
+                },
+
+                // 슬라이더 자동 이동
+                autoplay: {
+                    delay: 1000,  //시간이 지나면(delay: '') 이동
+                    disableOnInteraction: 'ture', //이동버튼을 누르면 자동이동 멈춤
+                    pauseOnMouseEnter: 'ture', //슬라이더안에 마우스를 올리면 멈춤
+                },
+                
+                mousewheel: true, //마우스 휠로 슬라이더 이동
+
+                // Navigation arrows
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+        
+                // And if we need scrollbar
+                scrollbar: {
+                    el: '.swiper-scrollbar',
+                },
+            });
+
+            s1.autoplay.stop();
+
+            var btn = document.getElementsByTagName("button"); //button 읽음 실행
+            console.log(btn[1]); //멈춤
+            btn[0].onclick = function () { //자동
+                s1.autoplay.start(); //s1시작
+            };
+            btn[1].onclick = function () { //멈춤
+                s1.autoplay.stop(); //s1멈춤
+            };
+        };
+
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <h3>스와이퍼(swiper)</h3>
+        <hr>
+        <!-- Slider main container -->
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+        
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+    
+        <button>자동</button>
+        <button>멈춤</button>
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>for문</title>
+        <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+        <script type="text/javascript">
+            for(var i = 0; i < 10; i++) {
+                console.log(i);
+            }
+            console.log("------------");
+            console.log(i); //10
+
+            function showGugudan() {
+                var table = '';
+                var gugudan = document.getElementById("gugudan");
+
+                table += "<table border='1'>";
+                for(var i = 1; i < 10; i++) { //행(tr)
+                    table += "<tr>";
+                    for(var j = 1; j < 10; j++) { //열(td)
+                        // table += "<td>" + i + " x " + j + " = " + (i * j) + "</td>";
+                        table += `<td>${i} x ${j} = ${i * j}</td>`;
+                    }
+                    table += "</tr>";
+                }
+                table += "</table>";
+
+                gugudan.innerHTML = table;
+            }
+        </script>
+    </head>
+    <body>
+        <div class="wrap">
+            <h3>반복문</h3>
+            <hr>
+            <h4>for</h4>
+            <pre>
+for (초기값; 조건식; 증감식) {
+    실행문;
+}
+            </pre>
+            <button onclick="showGugudan();">구구단 표시</button>
+            <div id="gugudan"></div>
+        </div>
+    </body>
+</html>

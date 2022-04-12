@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>키보드 이벤트</title>
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+    <style type="text/css">
+        body {
+            font-size: 12px;
+        }
+        textarea {
+            width: 300px;
+            height: 200px;
+            border: 1px solid #000;
+        }
+        textarea.on {
+            background-color: #ff6600;
+            color: #fff;
+        }
+        #display {
+            width: 300px;
+            height: 100px;
+            word-break: break-all;
+            border: 1px solid #000;
+            overflow: auto;
+        }
+    </style>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- javascript -->
+    <script type="text/javascript">
+        $(function() {
+            $("textarea").focus(function() { //keydown 키보드를 누를때, focus 포커스가 들어오면 이벤트 발생
+                $(this).addClass("on");
+            }).keydown(function() { //keyup 키보드를 떼었을때
+                $("#display").text($(this).val());
+            }).blur(function() { //blur 선택된 요소에서 포커스가 떠나면 이벤트 발생
+                $(this).removeClass("on");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <h3>키보드 이벤트</h3>
+        <hr>
+        <div>
+            <textarea></textarea>
+            <div id="display"></div>
+        </div>
+    </div>
+</body>
+</html>

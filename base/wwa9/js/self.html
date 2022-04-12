@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>재귀 함수</title>
+        <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+        <script type="text/javascript">
+			function factorial(n) {
+				console.log(n);
+				n--;
+				if (n == 0) {
+					return;
+				}
+				factorial(n); //재귀
+			}
+
+			// factorial(10);
+
+			function fibonacci(n) {
+				if (n === 0) return 0;
+				if (n <= 1) return 1;
+				return fibonacci(n - 1) + fibonacci(n - 2);
+			}
+
+			console.log(fibonacci(13));
+		</script>
+    </head>
+    <body>
+        <div class="wrap">
+            <h3>재귀 함수</h3>
+            <hr>
+            <p>함수 자신을 다시 실행시킴</p>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>대입 연산자</title>
+		<link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+		<script type="text/javascript">
+			var num = 0;
+			var str = '';
+
+			num += 5; //num = num + 5;
+			console.log(num); //5
+			num += 5;
+			console.log(num); //10
+			num += 7;
+			console.log(num); //17
+			num += 5;
+			console.log(num); //22
+			num += 5;
+			console.log(num); //27
+
+
+			num -= 5; //num = num - 5;
+			console.log(num); //22
+			num -= 5;
+			console.log(num); //17
+			num -= 7;
+			console.log(num); //10
+			num -= 5;
+			console.log(num); //5
+			num -= 5;
+			console.log(num); //0
+			num -= 5;
+			console.log(num); //-5
+
+			str += '우'; //str = str + '우';
+			str += '리';
+			str += '나';
+			str += '라';
+			str += ' ';
+			str += '대';
+			str += '한';
+			str += '민';
+			str += '국';
+
+			console.log(str);
+
+
+			var jumsu1 = 73;
+			var jumsu2 = 43;
+			var jumsu3 = 90;
+			var jumsu4 = 99;
+			var sum = 0;
+			var counter = 4;
+			var avg = 0;
+
+			sum += jumsu1;
+			sum += jumsu2;
+			sum += jumsu3;
+			sum += jumsu4;
+
+			avg = sum / counter;
+			console.log(`총점 : ${sum}, 평균 : ${avg}`);
+
+		</script>
+	</head>
+	<body>
+		<div class="wrap">
+			<h3>대입 연산자</h3>
+			<hr>
+			<table>
+				<tr>
+					<td>대입 연산자</td>
+					<td>설명</td>
+				</tr>
+				<tr>
+					<td>=</td>
+					<td>할당/대입</td>
+				</tr>
+				<tr>
+					<td>+=</td>
+					<td>num += 값 : num = num + 값</td>
+				</tr>
+				<tr>
+					<td>-=</td>
+					<td>num -= 값 : num = num - 값</td>
+				</tr>
+				<tr>
+					<td>*=</td>
+					<td>num *= 값 : num = num * 값</td>
+				</tr>
+				<tr>
+					<td>/=</td>
+					<td>num /= 값 : num = num / 값</td>
+				</tr>
+				<tr>
+					<td>%=</td>
+					<td>num %= 값 : num = num % 값</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

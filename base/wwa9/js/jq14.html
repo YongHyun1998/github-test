@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤 메서드</title>
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #outer {
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+            border: 1px solid #333;
+            overflow: auto;
+        }
+        .inner {
+            width: 1000px;
+            height: 1000px;
+            background-color: #ff6600;
+            text-align: center;
+            line-height: 1000px;
+            font-size: 50px;
+        }
+        #info {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            width: 300px;
+            margin-left: -550px;
+            text-align: right;
+        }
+    </style>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- javascript -->
+    <script type="text/javascript">
+        $(function() {
+            var top = $("#outer").scrollTop();
+            var left = $("#outer").scrollLeft();
+            $("#info span").text("scrollTop " + top + " / scrollLeft: " + left);
+            $("#outer").scroll(function() {
+                top = $("#outer").scrollTop();
+                left = $("#outer").scrollLeft();
+                $("#info span").text("scrollTop " + top + " / scrollLeft: " + left);
+            });
+
+            $("button").click(function() {
+                //$("#outer").scrollTop(250).scrollLeft(250);
+                $("#outer").animate({
+                    scrollTop: 250,
+                    scrollLeft: 250
+                }, 1000);
+            });
+        })
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <h3>스크롤 메서드</h3>
+        <hr>
+        <div id="outer">
+            <div class="inner">1</div>
+        </div>
+        <div id="info">
+            <span></span>
+            <button>클릭</button>
+        </div>
+    </div>
+</body>
+</html>

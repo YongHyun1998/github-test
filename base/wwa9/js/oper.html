@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>연산자</title>
+		<link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+		<script type="text/javascript">
+			var subject = 'css';
+			var score = 100;
+			var showScore = subject + '과목 성적 ' + score + '점';
+			var backScore = `${subject} 과목 성적 ${score} 점`;
+			console.log(showScore);
+
+			var divided = 0;
+			divided = 1;
+			divided = 2;
+			// divided = 3;
+			// divided = 4;
+			var showDivid = ''; // 문자 초기화
+			var remainder = divided % 3;
+			
+			// showDivid = showDivid + '수식 : ' + divided + ' % ' + 3;
+			showDivid += '수식 : ' + divided + ' % ' + 3;
+
+			console.log(remainder === 0);
+
+			showDivid += '<br>조건 : ' + remainder + ' === ' + 0 
+				+ ' 결과 : ' + (remainder === 0);
+
+			if (remainder === 0) {
+				console.log('3의 배수');
+				showDivid += "<br>3의 배수";
+			} else {
+				console.log('3의 배수가 아님');
+				showDivid += "<br>3의 배수가 아님";
+			}
+			console.log(remainder);
+
+			score = 10;
+			console.log(++score); // 11
+			console.log(score++); //11
+			console.log(score); //12
+
+			score = 10;
+			var result = ++score;
+			console.log(`result : ${result}, score : ${score}`);
+
+			score = 10;
+			var result = score++;
+			console.log(`result : ${result}, score : ${score}`);
+
+			// windonw로드 이벤트(로딩 후 실행) -한번만 설정
+			window.onload = function() {
+				document.getElementById("score").innerText = backScore;
+				document.getElementById("divid").innerHTML = showDivid;
+			}
+		</script>
+	</head>
+	<body>
+		<div class="wrap">
+			<h3>연산자</h3>
+			<hr>
+			<table>
+				<tr>
+					<th>산술 연산자</th>
+					<th>속성 설명</th>
+				</tr>
+				<tr>
+					<td rowspan="2">+</td>
+					<td>더하기 연산</td>
+				</tr>
+				<tr>
+					<td>문자와 문자, 문자와 변수를 연결</td>
+				</tr>
+				<tr>
+					<td>-</td>
+					<td>빼기</td>
+				</tr>
+				<tr>
+					<td>*</td>
+					<td>곱하기</td>
+				</tr>
+				<tr>
+					<td>/</td>
+					<td>나누기</td>
+				</tr>
+				<tr>
+					<td>%</td>
+					<td>나머지</td>
+				</tr>
+				<tr>
+					<td>++</td>
+					<td>1 증가</td>
+				</tr>
+				<tr>
+					<td>--</td>
+					<td>1감소</td>
+				</tr>
+			</table>
+			<hr>
+			<div class="box" id="score"></div>
+			<div class="box" id="divid"></div>
+		</div>
+	</body>
+</html>

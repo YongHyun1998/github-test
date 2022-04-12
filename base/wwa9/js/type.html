@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>데이터 타입</title>
+		<link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+		<script type="text/javascript">
+			//함수
+			var dt = function(target) {
+				console.log('-----------------');
+				console.log(target + " : " + typeof target);
+				console.log('-----------------');
+			}
+
+			dt(dt);
+
+			var num = 5e2;
+			dt(num);
+
+			var str = '우리나라 \n대\t한민국';
+			dt(str);
+
+			var bln = true;
+			dt(bln);
+			var bln2 = 5 < 2;
+			dt(bln2)
+			//0, null, undefined, 공백문자 '', false => 거짓
+			//나머지값들은 참
+			console.log(Boolean(0));
+			console.log(Boolean(null));
+			console.log(Boolean(undefined));
+			console.log(Boolean(''));
+			console.log(Boolean(false));
+			console.log(Boolean(' '));
+			console.log(Boolean(-1));
+			console.log(Boolean(bln));
+
+			//선언만 되고 할당되지 않은 변수는 undefined
+			var un;
+			dt(un);
+
+			var nu = null; //object
+			dt(nu);
+			
+		</script>
+	</head>
+	<body>
+		<div class="wrap">
+			<h3>데이터 타입</h3>
+			<hr>
+			<ul>
+				<li>기본(원시)타입
+					<ul>
+						<li>number(수)</li>
+						<li>string(문자)</li>
+						<li>boolean(부우린)</li>
+						<li>undefined(언디파인드)</li>
+						<li>null(널)</li>
+					</ul>
+				</li>
+				<li>
+					참조(객체)타입
+					<ul>
+						<li>function(함수)</li>
+						<li>object(객체)</li>
+						<li>array(배열)</li>
+						<li>RegExp(표현식)</li>
+						<li>...</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

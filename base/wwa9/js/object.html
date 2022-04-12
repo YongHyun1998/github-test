@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>객체</title>
+		<link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+		<script type="text/javascript">
+			var hong = {
+				name: "홍길동", //속성
+				age: 20,
+				inConuty: true,
+				printOut: function() { //메서드
+					var inOut = "내국인";
+					if (!this.inConuty) {
+						inOut = "외국인";
+					}
+
+					return (`안녕하세요~\n저의 이름은 ${this.name}이고 나이는 ${this.age}이며 ${inOut} 입니다~\n잘부탁드립니다!`);
+				}
+			};
+
+			hong.age = 21;
+			console.log(hong.printOut());
+
+			window.onload = function() {
+				var intro = document.getElementById("intro");
+				intro.innerHTML = hong.printOut();
+			}
+
+
+			var info = {
+				subject: 'css',
+				credit: 1,
+				printOut: function() {
+					return this.subject + ', ' + this.credit + '학점';
+				}
+			}
+
+			console.dir(info);
+			console.log(info.subject);
+			console.log(info.credit);
+			console.log(info.printOut());
+
+			//속성 추가
+			info.day = 20;
+			console.dir(info);
+			console.log(info.day);
+
+			//속성 삭제
+			delete info.credit;
+			console.log(info.credit);
+			console.log(info.printOut());
+
+			//속성 변경
+			info.printOut = function() {
+				return this.subject + ', ' + this.day + '일';
+			}
+			console.log(info.printOut());
+		</script>
+	</head>
+	<body>
+		<div class="wrap">
+			<h3>객체</h3>
+			<hr>
+			<p>객체는 이름:값의 쌍으로 이루어진 데이터, 데이터를 저장한 것은 속성(property), 함수를 저장한 것은 메소드(method)</p>
+			<div id="intro">안녕하세요~ 저의 이름은 홍길동이고 나이는 21이며 내국인 입니다~ 잘부탁드립니다!</div>
+		</div>
+	</body>
+</html>

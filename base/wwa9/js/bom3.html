@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>scroll()</title>
+		<link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+		<style type="text/css">
+			body {
+				height: 10000px;
+			}
+			.wrap {
+				height: 100%;
+			}
+			#top-gnb {
+				width: 100%;
+				height: 50px;
+				background-color: green;
+				position: fixed;
+				left: 0;
+				top: -50px;
+				transition: 0.7s;
+			}
+			#mid-gnb {
+				/*position: sticky;
+				top: 0;*/
+				width: 100%;
+				margin-top: 250px;
+				height: 50px;
+				background-color: red;
+				transition: background-color 1s;
+			}
+			#mid-gnb > div {
+				display: none;
+			}
+			.show-area {
+				height: 500px;
+				background-color: blue;
+				margin-top: 450px;
+				position: relative;
+			}
+			.show-area > div {
+				width: 500px;
+				height: 200px;
+				background-color: red;
+				position: absolute;
+				/*top: 50%;*/
+				top: 70%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				opacity: 0;
+				transition: 1s;
+			}
+		</style>
+		<script type="text/javascript">
+			var originTop, midGnb, topGnb, showArea, targetArea;
+
+			window.onload = function() {
+				midGnb = document.querySelector("#mid-gnb");
+				topGnb = document.querySelector("#top-gnb");
+				showArea = document.querySelector(".show-area");
+				targetArea = document.querySelector(".show-area > div");
+				originTop = midGnb.offsetTop;
+			}
+
+			window.onscroll = function() {
+				var logo = document.querySelector("#mid-gnb > div");
+				// console.log(midGnb.offsetTop);
+				// console.log(window.scrollY);
+				//console.log(midGnb.offsetTop + " : " + window.scrollY + " - " + (midGnb.offsetTop <= window.scrollY));
+
+				if (10 > window.scrollY) {
+					topGnb.style.top = "-50px";
+				} else {
+					topGnb.style.top = "0px";
+				}
+
+				if (originTop > window.scrollY) {
+					console.log('test');
+					midGnb.style.marginTop = '250px';
+					midGnb.style.width = '100%';
+					midGnb.style.position = 'relative';
+					midGnb.style.backgroundColor = 'red';
+					midGnb.style.color = 'yellow';
+					logo.style.display = "none";
+				} else {
+					midGnb.style.top = '50px';
+					midGnb.style.width = '85%';
+					midGnb.style.marginTop = 0;
+					midGnb.style.position = 'fixed';
+					midGnb.style.backgroundColor = 'yellow';
+					midGnb.style.color = 'red';
+					logo.style.display = "block";
+				}
+
+				if ((showArea.offsetTop - 200) > window.scrollY) {
+					targetArea.style.top = '70%';
+					targetArea.style.opacity = '0';
+				} else {
+					targetArea.style.top = '50%';
+					targetArea.style.opacity = '1';
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div class="wrap">
+			<div id="top-gnb"></div>
+			<h3>scroll()</h3>
+			<hr>
+			<p>스크롤 이동시 발생하는 이벤트</p>
+			<div id="mid-gnb"><div>LOGO</div></div>
+			<div class="show-area">
+				<div></div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>break문</title>
+        <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+        <script type="text/javascript">
+            var limitNum = 5;
+			var sum = 0;
+
+			for (var i = 0; i <= 20; i++) {
+				sum += i;
+				if (i === limitNum) {
+					//break;
+				}
+			}
+
+			console.log('0부터 5까지의 합 ' + sum);
+
+			var sum = 0;
+			var num = '3의 배수 ';
+			for (var i = 1; i < 10; i++) {
+				if (i % 3 === 0) {
+					num += i + ' ';
+					continue;
+				}
+
+				sum += i;
+			}
+
+			console.log(num + '제외 총합 : ' + sum);
+
+
+			//소수 : 1과 자기자신으로만 나누어 떨어지는 수
+			//2 3 5 7 11 ...
+			var num = 11;
+			var isPoint = true;
+
+			for (var i = 2; i < num; i++) {
+				if (num % i === 0) {
+					isPoint = false;
+					break;
+				}
+			}
+
+			if (isPoint) {
+				console.log(num + '는(은) 소수');
+			} else {
+				console.log(num + '는(은) 소수가 아님');
+			}
+
+			num = 100;
+			isPoint = true;
+			
+			for (var i = 2; i <= 100; i++) {
+				// console.log(i);
+				for(var j = 2; j < i; j++) {
+					if(i % j === 0) {
+						isPoint = false;
+						break;
+					}
+				}
+
+				if (isPoint) {
+					console.log( i + '는(은) 소수');
+				}
+				isPoint = true;
+			}
+        </script>
+    </head>
+    <body>
+        <div class="wrap">
+            <h3>break문 / continue문</h3>
+            <hr>
+            <h4>break</h4>
+            <p>switch, for, while문에서 문장을 중지시킴</p>
+            <hr>
+            <h4>continue</h4>
+            <p>반복문을 건너뜀</p>
+        </div>
+    </body>
+</html>

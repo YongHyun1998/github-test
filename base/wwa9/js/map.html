@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>내장객체 - Set</title>
+		<link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+		<script type="text/javascript">
+			var map = new Map();
+			var set = new Set();
+			console.dir(map);
+			console.dir(set);
+
+			set.add('a');
+			set.add('b');
+			set.add('c');
+			set.add('a'); //중복 취소
+			console.log(set);
+
+			var set2 = new Set(
+				[
+					{weight: 77},
+					{weight: 45},
+					{weight: 25},
+					{weight: 77}
+				]
+			);
+			console.log(set2);
+
+
+			//=======================================
+			//객체 비교
+			console.log({weight: 77} == {weight: 77});
+			var w1 = {weight: 77};
+			var w2 = {weight: 77};
+			console.log(w1.weight == w2.weight);
+			var w3 = w1;
+			console.log(w3 == w1);
+		</script>
+	</head>
+	<body>
+		<div class="wrap">
+			<h3>내장객체 - Set</h3>
+			<hr>
+			<p>키가 없고 중복값을 허용하지 않음</p>
+		</div>
+	</body>
+</html>

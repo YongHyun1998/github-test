@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>입ㆍ출력</title>
+        <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+        <script type="text/javascript">
+            var age = prompt('나이를 입력하세요.');
+            document.write("당신의 나이는 " + age + "살이군요<br>");
+            document.write(`당신의 나이는 ${age}살이군요`);
+            alert(`당신의 나이는 ${age}살이군요`);
+            console.log(2); // 숫자 2
+            console.log('2'); // 문자 2
+
+            var yesNo = confirm("그린으로 이동하시겠습니까?");
+            if (yesNo) {
+                location.href = "https://greenart.co.kr";
+            }
+        </script>
+    </head>
+    <body>
+        <div class="wrap">
+            <h3>입ㆍ출력</h3>
+            <hr>
+            <div id="output"></div>
+            <div id="img"></div>
+            <ul>
+                <li>prompt("제목", ["내용"]); - 많이 사용 안함</li>
+                <li>document.write("내용"); - 거의 사용 안함</li>
+                <li>alert("내용"); - 필요할 때 사용</li>
+                <li><b>console.log("내용") - 개발, 디비깅용으로 많이 사용</b></li>
+                <li><b>object.innerText, objec.innerHTML를 사용 - 사용</b></li>
+                <li>confirm("내용") - 많이 사용 안함</li>
+            </ul>
+            <button onclick="document.write('눌러줘1')">눌러줘1</button>
+            <input type="button" value="눌러줘2" onclick="document.write('눌러줘2')">
+            <div onclick="document.write('눌러줘3')">눌러줘3</div>
+        </div>
+        <script type="text/javascript">
+            document.getElementById("output").innerText = "innerText 사용";
+            document.getElementById("img").innerHTML = "<img src='/wwa9/images/ani.gif' alt='inner'>";
+        </script>
+    </body>
+</html>

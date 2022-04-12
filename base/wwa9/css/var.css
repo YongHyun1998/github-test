@@ -1,0 +1,22 @@
+:root {
+	--goo-first-font: 'Mochiy Pop P One', sans-serif;
+	--goo-second-font: 'Merriweather', serif;
+	--goo-first-weight: 400;
+	--goo-second-weight: 300;
+	--goo-first-color: #CC1919;
+	--goo-second-color: #4E47CB;
+}
+.merr {
+	font-family: var(--goo-second-font);
+	font-weight: var(--goo-second-weight);
+	color: var(--goo-second-color);
+}
+.mppo {
+	font-family: var(--goo-first-font);
+	font-weight: var(--goo-first-weight);
+	color: var(--goo-first-color);
+}
+
+h3 {
+	background-color: var(--goo-first-color);
+}

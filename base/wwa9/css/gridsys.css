@@ -1,0 +1,82 @@
+/*
+전체넓이	커터넓이	컬럼넓이
+960		24		58
+-----------------------------
+1				58
+2				140
+3				222
+4				304
+5				386
+6				468
+7				550
+8				632
+9				714
+10				796
+11				878
+12				960
+
+*/
+.container {
+	width: 960px;
+	margin: 0 auto;
+}
+.row {}
+.row::after {
+	content: '';
+	clear: both;
+	display: table;
+}
+.col-1 {
+	width: 58px;
+}
+.col-2 {
+	width: 140px;
+}
+.col-3 {
+	width: 222px;
+}
+.col-4 {
+	width: 304px;
+}
+.col-5 {
+	width: 386px;
+}
+.col-6 {
+	width: 468px;
+}
+.col-7 {
+	width: 550px;
+}
+.col-8 {
+	width: 632px;
+}
+.col-9 {
+	width: 714px;
+}
+.col-10 {
+	width: 796px;
+}
+.col-11 {
+	width: 878px;
+}
+.col-12 {
+	width: 960px;
+}
+[class^=col-] {
+	float: left;
+	margin-right: 24px;
+}
+[class^=col-]:last-child {
+	margin-right: 0;
+}
+/*------------------------------*/
+
+
+.marBtm {
+	margin-bottom: 15px;
+}
+
+.marBtm .row [class^=col] {
+	height: 100px;
+	background-color: red;
+}

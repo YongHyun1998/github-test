@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex4-39</title>
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+    <style type="text/css">
+        .subject {
+            width: 45%;
+            height: 45%;
+            background-color: green;
+            border-radius: 50%;
+            border: 3px solid;
+        }
+        .subject span {
+            font-size: 4vw;
+            color: white;
+        }
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .tip {
+            position: absolute;
+            display: none;
+            background-color: rgba(0, 0, 0, .5);
+            color: white;
+            border-radius: 25px;
+            padding: 15px 25px;
+        }
+        .tip.on {
+            display: block;
+        }
+    </style>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- javascript -->
+    <script type="text/javascript">
+        $(function() {
+            $(".subject").mousemove(function(e) {
+                var x = e.pageX;
+                var y = e.pageY;
+                $(".tip").css({
+                    left: x + 10,
+                    top: y - 40
+                }).addClass("on");
+            }).mouseleave(function(e) {
+                $(".tip").removeClass("on");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <h3>ex4-39</h3>
+        <hr>
+        <div class="subject center"><span class="center">학습할 과목</span></div>
+        <div class="tip">html, css, javascript, jQuery</div>
+    </div>
+</body>
+</html>

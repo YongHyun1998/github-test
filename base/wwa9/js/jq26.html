@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제목</title>
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+    <style type="text/css">
+        button {
+            width: 100px;
+            height: 50px;
+            transition: 1s;
+        }
+        button.on {
+            width: 75px;
+            height: 45px;
+        }
+    </style>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- javascript -->
+    <script type="text/javascript">
+        $(function() {
+            $.noConflict();
+
+            $("button").on("click", function(e) {
+                //e : 이벤트 객체
+
+                //객체
+                // {
+                //	이름: 값(원시 데이터/ 객체 데이터 - 속성),
+                //	이름: 값(함수 - 메서드)
+                //}
+
+                console.dir(e);
+                console.log(e.currentTarget);
+                console.log(e.isDefaultPrevented());
+
+                $.each(e, function(key, value) {
+                    $(".display").append(`<p>${key}: ${value}</p>`);
+                    // $(".display").append('<p>' + key + ': ' + value + '</p>');
+                });
+
+                if (e.ctrlKey) { //ctrl + 버튼 클릭
+                    $(this).addClass("on");
+                } else { //단순 버튼 클릭
+                    $(this).removeClass("on");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <h3>이벤트 객체</h3>
+        <hr>
+        <button>ctrl + click</button>
+        <div class="display"></div>
+    </div>
+</body>
+</html>

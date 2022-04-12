@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>로딩중...</title>
+		<link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+		<style type="text/css">
+			body {
+				overflow: hidden;
+			}
+			.wrap {
+				overflow: hidden;
+				height: 0;
+				transition: 10s;
+				/*border: 1px solid black;*/
+				box-shadow: 1px 1px 1px black;
+			}
+			#loader {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: white;
+			}
+			#loader > img {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+		</style>
+		<script type="text/javascript">
+			window.addEventListener("DOMContentLoaded", function() {
+				console.log("DOM load");
+			});
+			window.addEventListener("load", function() {
+				console.log("load");
+				var loader = document.getElementById("loader");
+				var wrap = document.getElementsByClassName("wrap");
+				// loader.style.display = "none";
+				loader.style.transition = "1s";
+				loader.style.opacity = 0;
+				loader.style.visibility = "visible";
+				document.body.style.overflow = "auto";
+				wrap[0].style.height = '17495px';
+			});
+		</script>
+	</head>
+	<body>
+		<div class="wrap">
+			<h3>로딩중...</h3>
+			<hr>
+			<img src="https://www.sjpost.co.kr/news/photo/202007/53199_48342_4214.jpg" alt="풍경">
+			<img src="https://www.sjpost.co.kr/news/photo/202007/53199_48342_4214.jpg" alt="풍경">
+			<img src="https://www.sjpost.co.kr/news/photo/202007/53199_48342_4214.jpg" alt="풍경">
+			<img src="https://post-phinf.pstatic.net/MjAyMDAyMjNfMjUg/MDAxNTgyNDQ2NjY4Njcw.e4Nyqa_l7zj9lUtk5XI7pFWZ3W-0eA2fb7nAPFrWQk0g.7kphg-aiLtGEyDMb_QpwCsqF1qohXZnrXbIwrvH1wFQg.PNG/1.png?type=w1200" alt="풍경">
+			<img src="https://post-phinf.pstatic.net/MjAyMDAyMjNfMjUg/MDAxNTgyNDQ2NjY4Njcw.e4Nyqa_l7zj9lUtk5XI7pFWZ3W-0eA2fb7nAPFrWQk0g.7kphg-aiLtGEyDMb_QpwCsqF1qohXZnrXbIwrvH1wFQg.PNG/1.png?type=w1200" alt="풍경">
+			<img src="https://post-phinf.pstatic.net/MjAyMDAyMjNfMjUg/MDAxNTgyNDQ2NjY4Njcw.e4Nyqa_l7zj9lUtk5XI7pFWZ3W-0eA2fb7nAPFrWQk0g.7kphg-aiLtGEyDMb_QpwCsqF1qohXZnrXbIwrvH1wFQg.PNG/1.png?type=w1200" alt="풍경">
+			<img src="https://images.chosun.com/resizer/MDVnaCy0FWd63y8e_oQ1WsSEYrU=/1280x0/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosun/DZYTYIIKABBMTANFQ4GZIOSO2Y.jpg" alt="풍경">
+			<img src="https://images.chosun.com/resizer/MDVnaCy0FWd63y8e_oQ1WsSEYrU=/1280x0/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosun/DZYTYIIKABBMTANFQ4GZIOSO2Y.jpg" alt="풍경">
+			<img src="https://images.chosun.com/resizer/MDVnaCy0FWd63y8e_oQ1WsSEYrU=/1280x0/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosun/DZYTYIIKABBMTANFQ4GZIOSO2Y.jpg" alt="풍경">
+			<img src="https://images.chosun.com/resizer/MDVnaCy0FWd63y8e_oQ1WsSEYrU=/1280x0/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosun/DZYTYIIKABBMTANFQ4GZIOSO2Y.jpg" alt="풍경">
+			<img src="https://blog.kakaocdn.net/dn/EuKLQ/btqJ9186ndQ/qCWszO1jtexgmSyFLkAoLk/img.jpg" alt="풍경">
+			<img src="https://blog.kakaocdn.net/dn/EuKLQ/btqJ9186ndQ/qCWszO1jtexgmSyFLkAoLk/img.jpg" alt="풍경">
+			<img src="https://blog.kakaocdn.net/dn/EuKLQ/btqJ9186ndQ/qCWszO1jtexgmSyFLkAoLk/img.jpg" alt="풍경">
+			<img src="https://blog.kakaocdn.net/dn/EuKLQ/btqJ9186ndQ/qCWszO1jtexgmSyFLkAoLk/img.jpg" alt="풍경">
+			<img src="https://i.ytimg.com/vi/YFtI2BNdiFI/maxresdefault.jpg" alt="풍경">
+			<img src="https://i.ytimg.com/vi/YFtI2BNdiFI/maxresdefault.jpg" alt="풍경">
+			<img src="https://i.ytimg.com/vi/YFtI2BNdiFI/maxresdefault.jpg" alt="풍경">
+			<img src="https://i.ytimg.com/vi/YFtI2BNdiFI/maxresdefault.jpg" alt="풍경">
+			<img src="https://i.ytimg.com/vi/YFtI2BNdiFI/maxresdefault.jpg" alt="풍경">
+		</div>
+		<div id="loader"><img src="https://miro.medium.com/max/1400/1*CsJ05WEGfunYMLGfsT2sXA.gif" alt="loader"></div>
+	</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>if2</title>
+		<link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+		<style type="text/css">
+			label {
+				display: inline-block;
+				width: 100px;
+			}
+		</style>
+		<script type="text/javascript">
+			function okPass() {
+				var display = document.getElementById("display");
+				var userName = document.getElementById("userName").value;
+				var html = Number(document.getElementById("html").value);
+				var css = Number(document.getElementById("css").value);
+				var js = Number(document.getElementById("js").value);
+				var avg = (html + css + js) / 3;
+				var comment = '';
+
+				if (avg >= 60) { //평균 60이상
+					if (html < 40) {
+						comment = `html 40점 미만 불합격`;	
+					} else if (css < 40) {
+						comment = `css 40점 미만 불합격`;	
+					} else if (js < 40) {
+						comment = `javascript 40점 미만 불합격`;	
+					} else {
+						comment = `평균 ${avg}점 합격`;
+					}
+				} else { //평균 60미만
+					comment = `평균 ${avg}점 불합격`;
+				}
+
+				display.innerHTML = userName + '님 ' + comment + '입니다';
+			}
+		</script>
+	</head>
+	<body>
+		<div class="wrap">
+			<h3>if2</h3>
+			<hr>
+			<div id="display"></div>
+			<div>
+				<label for="userName">이름 : </label>
+				<input type="text" id="userName">
+			</div>
+			<div>
+				<label for="html">HTML : </label>
+				<input type="number" id="html">
+			</div>
+			<div>
+				<label for="css">CSS : </label>
+				<input type="number" id="css">
+			</div>
+			<div>
+				<label for="js">Javascript : </label>
+				<input type="number" id="js">
+			</div>
+			<div>
+				<button onclick="okPass();">합격여부</button>
+			</div>
+		</div>
+	</body>
+</html>

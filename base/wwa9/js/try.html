@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>try문</title>
+		<link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+		<script type="text/javascript">
+			var subject = "javascript";
+			
+			try {
+				console.log("교과목 : " + subject + " / " + score);
+			} catch(error) {
+				console.log(error);
+			} finally {
+				console.log("여기까지");
+			}
+
+			function makeErr() {
+				var num = 5;
+				
+				try {
+					if (num > 10) {
+						console.log("정상");
+					} else {
+						throw new Error('비정상값입력오류');
+						// throw '비정상값입력오류';
+					}	
+				} catch(err) {
+					console.log(err);					
+					document.getElementById("showErr").innerHTML = err;
+				}
+			}
+			
+		</script>
+	</head>
+	<body>
+		<div class="wrap">
+			<h3>try문</h3>
+			<hr>
+			<p>에러를 처리함(에러 핸들링)</p>
+			<pre>
+try {
+	에러가 발생할 것 같은 구문
+} catch(error) {
+	에러 처리 구문
+} finally {
+	에러에 상관없이 무조건 실행
+}
+			</pre>
+			<h4>throw 에러발생구문</h4>
+			<div id="showErr"></div>
+			<button onclick="makeErr();">에러발생</button>
+		</div>
+	</body>
+</html>

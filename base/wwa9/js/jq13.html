@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex4-26</title>
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+    <style type="text/css">
+        .vis {
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+        }
+        .vis div {
+            width: 200px;
+            height: 200px;
+            color: white;
+            text-align: center;
+            line-height: 200px;
+            font-size: 52px;
+        }
+        .vis div.r {background-color: red;}
+        .vis div.g {background-color: green;}
+        .vis div.b {background-color: blue;}
+        .vis div.o {background-color: orange;}
+    </style>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- javascript -->
+    <script type="text/javascript">
+        $(function() {
+            var totalNum = $(".vis > div").length;
+            var currentNum = 1;
+            $(".page_n > span:first").text(currentNum);
+            $(".page_n > span:last").text(totalNum);
+            $(".next_b").click(function() {
+                currentNum++;
+                if (currentNum > totalNum) {
+                    currentNum = 1;
+                }
+                $(".vis div:first").insertAfter(".vis div:last");
+                $(".page_n > span:first").text(currentNum); //1씩 값이 증가
+            });
+
+            $(".prew_b").click(function() {
+                currentNum--;
+                if (currentNum < 1) {
+                    currentNum = totalNum;
+                }
+                $(".vis div:last").insertAfter(".vis div:first");
+                $(".page_n > span:first").text(currentNum);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <h3>ex4-26</h3>
+        <hr>
+        <div>
+            <div class="page_n">
+                <span></span> / <span></span>
+            </div>
+            <button class="prew_b"><</button>
+            <button class="next_b">></button>
+            <div class="vis">
+                <div class="r">1</div>
+                <div class="g">2</div>
+                <div class="b">3</div>
+                <div class="o">4</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

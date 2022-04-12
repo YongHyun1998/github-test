@@ -1,0 +1,9 @@
+body {
+	background-color: blue;
+}
+h3 {
+	font-size: 105px;
+}
+.row > div {
+	width: calc(33.333333333% - 2px) !important;
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>배열 메서드</title>
+		<link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+		<style type="text/css">
+			ul {
+				list-style: none;
+			}
+			.main {
+
+			}
+			li {
+				border: 1px solid black;
+				padding-left: 15px;
+				padding-top: 15px;
+				padding-bottom: 15px;
+				cursor: pointer;
+			}
+			.sub {
+				overflow: hidden;
+				/*display: none;*/
+				height: 0;
+				transition: .4s;
+			}
+			.sub > li {
+				background-color: yellow;
+			}
+			.sub > li:hover {
+				background-color: darkviolet;
+			}
+		</style>
+		<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+		<script type="text/javascript">
+			var city = ["서울", "대구", "대전", "부산"];
+			console.log(city[0]);
+			for(var i = 0; i < city.length; i++) {
+				console.log(city[i]);
+			}
+			$.each(city, function(index, value) {
+				console.log(value);
+				console.log(city[index]);
+				console.log(value + "로");
+			});
+
+			var newCity = $.map(city, function(value, index) {
+				console.log(value);
+				console.log(city[index]);
+				if (index > 1) {
+					return value + "로";
+				}
+			});
+
+			console.log(newCity);
+
+			var subjectInfo = {
+				subject: "html",
+				grade: 1,
+				days: 20
+			};
+			console.log(subjectInfo.subject);
+			//console.log(subjectInfo[subject]);
+			for(var key in subjectInfo) {
+				console.log(key);
+				console.log(subjectInfo[key]);
+			}
+			console.log("------------------------");
+			$.each(subjectInfo, function(key, value) {
+				console.log(key);
+				console.log(subjectInfo[key]);
+			});
+
+			$(function() {
+				$("ul.main > li").each(function(index, value) {
+					$(this).mouseover(function() {
+						// $(this).css("background", "red");
+						// $(this).children(".sub").css("height", "159px");
+						//setAttribute
+						$(this).attr("class", "active");
+					});
+					$(this).mouseout(function() {
+						// $(this).css("background", "transparent");
+						// $(this).children(".sub").css("height", "0");
+						$(this).attr("class", "");
+					});
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div class="wrap">
+			<h3>배열 메서드</h3>
+			<hr>
+			<p>$.each(obj, function(key, value)) : 순수 배열이나 객체의 값만큼 반복 실행</p>
+			<p>$.map(obj, function(key, value)) : 순수 배열이나 객체의 값만큼 반복 실행하며 새로운 배열을 생성</p>
+			<ul class="main">
+				<li>1
+					<ul class="sub">
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+					</ul>
+				</li>
+				<li>2
+					<ul class="sub">
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+					</ul>
+				</li>
+				<li>3
+					<ul class="sub">
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+					</ul>
+				</li>
+				<li>4</li>
+				<li>5</li>
+				<li>6</li>
+				<li>7</li>
+				<li>8</li>
+				<li>9</li>
+			</ul>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation 메서드</title>
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+    <style type="text/css">
+        * {
+            margin: 5px;
+        }
+        div:not(.wrap) {
+            width: 100px;
+            height: 100px;
+            background-color: #ff6600;
+            position: relative;
+        }
+        .m1 {
+            overflow: hidden;
+        }
+        .m1 span {
+				position: relative;
+				top:  -50px;
+		}
+        </style>
+</head>
+<body>
+    <div class="wrap">
+        <h3>제목</h3>
+        <hr>
+    </div>
+</body>
+</html>
+        }
+    </style>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- jquery ui cdn -->
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js" integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous"></script>
+    <!-- javascript -->
+    <script type="text/javascript">
+        $(function() {
+            $("button:eq(0)").click(function() {
+                $(".m0").animate({
+                                    left: "+=50",
+                                    top: -50,
+                                    width: "toggle",
+                                    height: "toggle",
+                                    backgroundColor: "#ff0000"
+                                }, "fast", "swing", function() {
+                                    
+                                })
+                        .animate({
+                                    left: "+=50",
+                                    top: 0,
+                                    width: "toggle",
+                                    height: "toggle",
+                                    backgroundColor: "#ff6600"
+                                }, "slow", "swing", function() {});
+            });
+
+            $("button:eq(1)").click(function() {
+                $(".m1 span").css("top", -50)
+                            .parent()
+                            .animate({left: 500}, "fast", "swing")
+                            .animate({left: 0}, "slow", "swing", function() {
+                                $(this).find("span").animate({top: 30}, "fast", "swing");
+                            }
+                        );
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <h3>animation 메서드</h3>
+        <hr>
+        <button>animate1</button>
+        <div class="m0"></div>
+        <button>animate2</button>
+        <div class="m1"><span>애니메이션</span></div>
+    </div>
+</body>
+</html>

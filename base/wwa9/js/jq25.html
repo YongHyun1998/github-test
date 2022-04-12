@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제목</title>
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+    <style type="text/css">
+        img {
+            width: 100%;
+        }
+        .back {
+            background-image: url(../images/a_01.png);
+            /*height: 500px;*/
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+    </style>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- javascript -->
+    <script type="text/javascript">
+        $(function() {
+            setImgHeight();
+
+            $(window).resize(function() {
+                setImgHeight()
+            });
+
+            function setImgHeight() {
+                //1 : 0.566
+                const BACKHEIGHT = 0.566;
+                var backHeight = $(".back").width() * BACKHEIGHT;
+                $(".back").css("height", backHeight + "px");
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <h3>resize시 이미지 비율</h3>
+        <hr>
+        <div><img src="../images/a_01.png" alt="사진"></div>
+        <div class="back"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제목</title>
+    <!-- swiper css -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+    <style type="text/css">
+
+    </style>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- jquery ui cdn -->
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js" integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous"></script>
+    <!-- swiper js -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <!-- javascript -->
+    <script type="text/javascript" src="https://unpkg.com/axios@0.12.0/dist/axios.min.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+            var question = document.querySelector("#question");
+            var answer = document.querySelector("#answer");
+            var img = document.querySelector("img");
+
+            //key-(키값), input, change
+
+            question.onkeyup = function (e) {
+                //console.log(e);
+                //console.log(e.key + " : " + e.code + " : " + e.keyCode);
+                if (e.key === 'Enter' || e.keyCode === 13) { //사용자가 엔터키를 누름
+                    //console.log('엔터');
+                    //console.log(this.value.indexOf('?'));
+                    answer.innerText = '생각중....';
+                    this.disabled = true;
+
+                    if (this.value.indexOf('?') === -1) {
+                        answer.innerText = '?를 넣어주세요.';	
+                        this.disabled = false;
+                        this.focus();
+                    }
+                    
+                } else { //엔터키 제외 입력
+                    //console.log('일반');
+                    answer.innerText = '입력중....';
+                }
+            };
+        }
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <h3>제목</h3>
+        <hr>
+    </div>
+</body>
+</html>

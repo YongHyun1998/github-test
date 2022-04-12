@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>resize, scroll 이벤트</title>
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+    <style type="text/css">
+        body {
+            height: 10000px;
+        }
+        header {
+            height: 100px;
+            border-bottom: 1px solid black;
+        }
+        header.bg {
+            background-color: red;
+        }
+        header.on {
+            background-color: orange;
+        }
+        .logo {
+            display: none;
+            text-align: center;
+            line-height: 100px;
+        }
+        header.on .pc {
+            font-size: 52px;
+            display: block;
+        }
+        header.bg .mobile {
+            font-size: 3vw;
+            display: block;
+        }
+        #quick {
+            width: 100px;
+            height: 500px;
+            position: absolute;
+            right: 0;
+            background-color: orange;
+        }
+        #quick.on {
+            top: 0;
+            position: fixed;
+        }
+        .parent {
+            overflow-y: auto;
+            overflow-x: hidden;
+            width: 250px;
+            height: 100px;
+            resize: horizontal;
+        }
+        .parent div {
+            background-color: red;
+            width: 100%;
+            height: 1000px;
+        }
+    </style>
+   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/css-element-queries/1.2.3/ResizeSensor.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            if ($(this).width() < 960) {
+                $("header").addClass("bg");
+            } else if ($(this).width() < 1024) {
+                $("header").removeClass("bg");
+                $("header").addClass("on");
+            } else {
+                $("header").removeClass("bg");
+            }
+
+            $(window).scroll(function() {
+                //window.scrollY
+                var fixeChecker = $("header").offset().top + $("header").height();
+                if ($(this).scrollTop() > fixeChecker) {
+                    $("#quick").addClass("on");
+                } else {
+                    $("#quick").removeClass("on");
+                }
+            }).resize(function() {
+                //console.log($(this).width() < 960);
+                if ($(this).width() < 960) {
+                    $("header").removeClass("on");
+                    $("header").addClass("bg");
+                } else if ($(this).width() < 1024) {
+                    $("header").removeClass("bg");
+                    $("header").addClass("on");
+                } else {
+                    $("header").removeClass("on");
+                }
+            });
+
+            $(".parent").scroll(function() {
+                // console.log($(this).scrollTop());
+                if ($(this).scrollTop() < 100) {
+                    $(this).children("div").css("background-color", "orange");
+                } else {
+                    $(this).children("div").css("background-color", "red");
+                }
+            })
+            // .resize(function(e) {
+            // 	console.log("실행");
+            // 	if ($(this).width() > 250) {
+            // 		$(this).children("div").css("background-color", "blue");
+            // 	} else {
+            // 		$(this).children("div").css("background-color", "green");
+            // 	}
+            // });
+
+            new ResizeSensor($(".parent"), function(size) {
+                if (size.width > 250) {
+                    $(".parent > div").css("background-color", "blue");
+                } else {
+                    $(".parent > div").css("background-color", "green");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <h3>resize, scroll 이벤트</h3>
+        <hr>
+        <header>
+            <div class="pc logo">PC-LOGO</div>
+            <div class="mobile logo">M-LOGO</div>
+        </header>
+        <div id="quick">QUICK</div>
+        <div class="parent">
+            <div></div>
+        </div>
+    </div>
+</body>
+</html>

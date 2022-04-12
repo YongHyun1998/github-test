@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제목</title>
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+            /* IE and Edge */
+            /*-ms-overflow-style: none; */
+            /* Firefox */
+            /*scrollbar-width: none; */
+        }
+        html::-webkit-scrollbar, body::-webkit-scrollbar {
+            /* Chrome, Safari, Opera*/
+            /*display: none; */
+        }
+        body {
+            background-color: #ccc;
+            height: 10000px;
+        }
+        ul {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        .mid-fixed .mid {
+            position: fixed;
+            width: 100%;
+            top: 0;
+        }
+        .top {
+            height: 70px;
+            background-color: blue;
+        }
+        .mid::after {
+            content: '';
+            height: 0px;
+            background: white;
+            width: 100%;
+            position: absolute;
+            border-bottom: none;
+            transition: .2s;
+        }
+        .mid:hover::after {
+            height: 150px;
+            border-bottom: 3px solid;
+        }
+        .mid > ul {
+            background-color: white;
+        }
+        .mid > ul::after {
+            content: '';
+            clear: both;
+            display: table;
+        }
+        .mid > ul > li {
+            float: left;
+            margin-right: 50px;
+            line-height: 50px;
+        }
+        .mid > ul > li > a {
+            position: relative;
+        }
+        .mid > ul > li > a::after {
+            position: absolute;
+            content: '';
+            height: 3px;
+            width: 0;
+            background-color: black;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: .2s;
+            transition-timing-function: ease-in-out;
+        }
+        .mid > ul > li > a:hover::after {
+            width: 100%;
+        }
+        .sub-menu {
+            position: absolute;
+            margin-top: -28px;
+            opacity: 0;
+            transition: .3s;
+            z-index: 1;
+        }
+        .mid:hover .sub-menu {
+            margin-top: 0px;
+            opacity: 1;
+        }
+        .sub-menu > li {
+            line-height: 25px;
+        }
+        .sub-menu > li > a {
+            color: #aaa;
+        }
+        .sub-menu > li > a:hover {
+            color: #000;
+        }
+    </style>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- javascript -->
+    <script type="text/javascript">
+        window.onload = function () {
+            window.onscroll = function() {
+                if (window.scrollY != 0) {
+                    document.body.classList.add('mid-fixed');
+                } else {
+                    document.body.classList.remove('mid-fixed');
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="top">상위메뉴</div>
+    <div class="mid">
+        <ul>
+            <li>
+                <a href="#">이디야 블렌드</a>
+                <ul class="sub-menu">
+                    <li><a href="#">원두</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">메뉴</a>
+                <ul class="sub-menu">
+                    <li><a href="#">원두</a></li>
+                    <li><a href="#">원두</a></li>
+                    <li><a href="#">원두</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">유통제품</a>
+                <ul class="sub-menu">
+                    <li><a href="#">원두</a></li>
+                    <li><a href="#">원두</a></li>
+                    <li><a href="#">원두</a></li>
+                    <li><a href="#">원두</a></li>
+                    <li><a href="#">원두</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">이디야멤버스</a>
+                <ul class="sub-menu">
+                    <li><a href="#">원두</a></li>
+                    <li><a href="#">원두</a></li>
+                    <li><a href="#">원두</a></li>
+                    <li><a href="#">원두</a></li>
+                    <li><a href="#">원두</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <!-- 아래는 임시 -->
+    <ol style="margin-left: 100px;">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ol>
+</body>
+</html>

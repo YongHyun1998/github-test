@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 연결방법</title>
+    <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+    <style type="text/css">
+    </style>
+    <!-- jquery -->
+    <!-- <script type="text/javascript" src="jquery-3.6.0.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        console.dir($);
+        // jquery 버전확인
+        console.log($.fn.jquery);
+        console.log("jQuery 시작0");
+        //window.onload = function() {};
+        //window.addEventListener('load', function() {}); 로드할때 새로운 함수들을 추가
+        $(document).ready(function() { //document자체를 jquery로 변경 
+            console.log($.fn.jquery);
+            console.log("jQuery 시작1");
+            $(".wrap").css("width", "100%"); //$(""): jquery객체로 변경
+
+            //jQuery 옛날버전
+            // $(".wrap").click(function() {
+            //     alert("click");
+            // });
+            
+            //jQuery 최신버전에서만 지원
+            //해결 1. on => bind
+            // $(".wrap").on("click", function() { 
+            //     alert("click");
+            // });
+            // $(".wrap").bind("click", function() { 
+            //     alert("click");
+            // });
+            //해결 2. $.noConflict(); // 등록된 jquery 삭제나 이전(버전 관리)
+            $.noConflict(); //최신버전변경 cafe24는 버전이 옛날
+            console.log($.fn.jquery);
+            $(".wrap").on("click", function() { 
+                alert("click");
+            });
+        });
+        $(function() {
+            console.log("jQuery 시작2");
+        });
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <h3>jQuery 연결방법</h3>
+        <hr>
+        <ol>
+            <li>Download 방식: 소스(파일)을 직접 서버에 다운받아 실행</li>
+            <li>CDN 방식: 소스가 있는 서버의 주소를 공유</li>
+            <li>Cafe24 쇼핑몰 방식: jQuery 1.4.4.를 장착하고 있음 : $.noConflict();</li>
+        </ol>
+    </div>
+</body>
+</html>

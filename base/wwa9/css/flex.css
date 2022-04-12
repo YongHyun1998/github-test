@@ -1,0 +1,60 @@
+.wrap2 {
+	/*display: flex;*/
+}
+.container {
+	display: flex;
+	/*
+		flex : 자식을 flex로 지정(자신은 block)
+		inlie-flex: 자식을 flex로 지정(자신은 inline);
+	*/
+	
+	flex-flow: row nowrap;
+	/*flex-direction: row;
+	flex-wrap: nowrap;*/
+	
+	/*주축 정렬*/
+	justify-content: flex-start;
+
+	/*교차축 정렬*/
+	align-content: flex-start;
+	align-items: flex-start; /*2줄 이상일 경우*/
+
+	height: 500px;
+}
+.item {
+	width: 100px;
+	height: 100px;
+	border: 1px solid black;
+}
+
+.item:nth-child(1) {
+	flex-grow: 1;
+	flex-shrink: 2;
+	flex-basis: 200px;
+	flex: 1 2 200px;
+}
+.item:nth-child(2) {
+	flex-grow: 0;
+	flex-shrink: 0;
+	flex-basis: 100px;
+	flex: 0 0 100px;
+	
+	/*자신에 대한 교차축 정렬*/
+	align-self: center;
+}
+.item:nth-child(3) {
+	flex-grow: 2;
+	flex-shrink: 1;
+	flex-basis: 300px;
+	flex: 2 1 300px;
+}
+
+/*.container:hover .item:nth-child(1) {
+	order: 3;
+}
+.container:hover .item:nth-child(2) {
+	order: 1;
+}
+.container:hover .item:nth-child(3) {
+	order: 2;
+}*/

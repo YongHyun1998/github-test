@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hover 이벤트</title>
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .pic {
+            background-color: #ccc;
+            overflow: hidden;
+        }
+        .pic img {
+            position: relative;
+            transform: translateX(-200px);
+            transition: all 0.5s ease;
+            vertical-align: top;
+            width: 200px;
+            height: 113px;
+        }
+        .pic img.on {
+            transform: translateX(0px);
+        }
+        button {
+            width: 200px;
+            height: 50px;
+            border: none;
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- javascript -->
+    <script type="text/javascript">
+        $(function() {
+            $("button").hover(function() {
+                $(".pic img").addClass("on");
+            }, function() {
+                $(".pic img").removeClass("on");
+            });
+            $("button").mousedown(function(e) {
+                console.log(e.which);
+
+                if (e.which === 1) {
+                    $(".pic img").attr("src", "/wwa9/images/a_02.png");
+                }
+                e.preventDefault();
+            });
+            $("button").mouseup(function(e) {
+                $(".pic img").attr("src", "/wwa9/images/a_01.png");
+            });
+            $(".pic").mousemove(function(e) {
+                console.log(e.offsetX + " : " + e.offsetY);
+                $(".pic img").css({
+                    top: e.offsetY + "px",
+                    left: e.offsetX + "px"
+                });
+            });
+            $(".pic").mouseleave(function() {
+                $(".pic img").css({
+                    top: 0 + "px",
+                    left: 0 + "px"
+                });	
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <h3>hover 이벤트</h3>
+        <hr>
+        <div class="pic"><img src="/wwa9/images/a_01.png" alt="1"></div>
+        <button>hover 이벤트</button>
+    </div>
+</body>
+</html>

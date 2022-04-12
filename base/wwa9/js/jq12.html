@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>삽입 메서드</title>
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- javascript -->
+    <script type="text/javascript">
+        $(function() {
+            var counter = 0;
+
+           $("button").click(function() {
+                console.log($(this).text()); //버튼에 따라서 안에 내용이 달라짐
+                counter++;
+                switch ($(this).text()) {
+                    case "prepend()":
+                        $(".target").prepend("<li>" + counter + "</li>");
+                        break;
+                    case "append()":
+                        $(".target").append("<li>" + counter + "</li>");
+                        break;
+                    case "before()":
+                        $(".target").before("<div>" + counter + "</div>");
+                        break;
+                    case "after()":
+                        $(".target").after("<div>" + counter + "</div>");
+                        break;
+                }
+           });
+        });
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <h3>삽입 메서드</h3>
+        <hr>
+        <button>prepend()</button>
+        <button>append()</button>
+        <button>before()</button>
+        <button>after()</button>
+        <ol class="target"></ol>
+    </div>
+</body>
+</html>

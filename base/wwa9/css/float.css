@@ -1,0 +1,40 @@
+.over {
+	overflow: hidden;
+}
+.over ul {
+	overflow: hidden;
+}
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+ul.left > li  {
+	float: left;
+}
+ul.right > li {
+	float: right;
+}
+ul.right2 {
+	float: right;
+}
+ul.right2 > li {
+	float: left;
+}
+div.under {
+	height: 50px;
+	background-color: lightgreen;
+}
+.addchild ul > li:last-child {
+	float: none;
+	clear: both;
+}
+div.both {
+	clear: both;
+}
+
+.clearfix::after {
+	content: '';
+	clear: both;
+	display: table;
+}

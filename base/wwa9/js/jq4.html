@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>상대 선택메서드</title>
+		<link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+		<style type="text/css">
+			.nav > * {
+				display: inline-block;
+				height: 50px;
+				width: 100px;
+				background-color: lightgreen;
+				color: white;
+				text-align: center;
+				line-height: 50px;
+				margin-bottom: 5px;
+			}
+			.nav > div > span {
+				display: inline-block;
+				width: 25px;
+				height: 25px;
+				background-color: green;
+				text-indent: -999999999px;
+			}
+			button {
+				padding: 5px 15px;
+			}
+			.btn-area {
+				margin-top: 50px;
+			}
+		</style>
+		<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+		<script type="text/javascript">
+			$(function() {
+				$.noConflict();
+				var nowElement;
+
+				function delBorder() {
+					$("*:not(button, hr, input)").css("border", "none");
+				}
+
+				function lineBorder(target) {
+					target.css("border", "2px solid red");
+				}
+
+				$("button").click(function() {
+					delBorder();
+
+					if ($(this).text() === ".nav의 자식요소[children()]") {
+						var child = $(".nav").children();
+						lineBorder(child);
+					} else if ($(this).text() === ".nav의 부모요소[parent()]") {
+						var parent = $(".nav").parent();
+						lineBorder(parent);
+					} else if ($(this).text() === ".nav의 모든부모요소[parents()]") {
+						var parentAll = $(".nav").parents();
+						lineBorder(parentAll);
+					} else if ($(this).text() === ".nav의 자식의 자식요소[children().children()]") {
+						var child = $(".nav").children();
+						var subChild = child.children();
+						lineBorder(subChild);
+					} else if ($(this).text() === ".nav의 직계 부모요소[closest()]") {
+						var parent = $(".nav").closest(); //체크
+						lineBorder(parent);
+					} else if ($(this).text() === ".nav의 자식 다음[next()]") {
+						console.log(nowElement);
+						if (!nowElement) {
+							nowElement = $(".nav > *").eq(0);
+						} else {
+							if (nowElement.next().length) {
+								nowElement = nowElement.next();
+							}
+						}
+						lineBorder(nowElement);
+					} else if ($(this).text() === ".nav의 자식 모든다음[nextAll()]") {
+						if (!nowElement) {
+							nowElement = $(".nav > *").eq(0);
+						}
+
+						var nextAll = nowElement.nextAll();
+						lineBorder(nextAll);
+					} else if ($(this).text() === ".nav의 자식 다음 부터 ~ 까지[nextUntil()]") {
+						var until = document.querySelector("#until");
+						//console.log(until);
+						if (until.value == "") {
+							alert("태그 이름을 작성해 주세요");
+							until.focus();
+							return false;
+						}
+						if (!nowElement) {
+							nowElement = $(".nav > *").eq(0);
+						}
+						var elements = nowElement.nextUntil(until.value);
+						lineBorder(elements);
+					} else if ($(this).text() === ".nav의 자식 이전[prev()]") {
+						if (!nowElement) {
+							nowElenent = $("nav > *").last();
+						}
+						if (nowElement.prev().length) {
+							nowElement = nowElement.prev();
+						}
+						
+						lineBorder(nowElement);
+					} else if ($(this).text() === ".nav의 자식 이전 ~ 까지[prevUntil()]") {
+						var prev = document.querySelector("#prev");
+						if (prev.value == "") {
+							alert("태그 이름을 작성해 주세요");
+							prev.focus();
+							return false;
+						}
+						if (!nowElement) {
+							nowElement = $(".nav > *").last();
+						}
+						var elements = nowElement.prevUntil(prev.value);
+						lineBorder(elements);
+					} else if ($(this).text() === ".nav의 자식 형제들") {
+						if (!nowElement) {
+							nowElement = $(".nav > *").eq(5);
+						}
+						var sibling = document.querySelector("#sibling");
+						var eleSibling;
+						if (sibling.value !== "") {
+							eleSibling = nowElement.siblings(sibling.value);
+						} else {
+							eleSibling = nowElement.siblings();
+
+						}
+						lineBorder(eleSibling);
+					} else if ($(this).text() === ".nav의 자식 검색") {
+						var find = document.querySelector("#find");
+						if (find.value === "") {
+							alert("검색어를 입력하세요.");
+							find.focus();
+							return false;
+						}
+
+						var findList = $(".nav").find(find.value);
+						lineBorder(findList);
+					} else if ($(this).text() === "해당요소 필터") {
+						// console.log($("input").filter("#filter").val());
+						var filter = $("input").filter("#filter");
+						if (filter.val() === "") {
+							alert("검색어를 입력하세요.");
+							filter.focus();
+							return false;
+						}
+						var filterList = $(filter.val()).filter(filter.val());
+						// console.log(filterList);
+						lineBorder(filterList);
+					} else if ($(this).text() === "not") {
+						var value = $("input").filter("#not").val();
+						if(value === "") {
+							alert("부정요소를 입력하세요.");
+							$("input").filter("#not").focus();
+							return false;
+						}
+						var notAll = $(".nav > *").not(value);
+						lineBorder(notAll);
+					} else if ($(this).text() === 	"has(요소) - 요소를 가지고 있는 부모요소선택") {
+						var element = $("input").filter("#has");
+						if(element.val() === "") {
+							alert("부정요소를 입력하세요.");
+							element.focus();
+							return false;
+						}
+						var has = $("*").has(element.val());
+						lineBorder(has);
+					} else if ($(this).text() === "eq(index)") {
+						var element = $("input").filter("#eq");
+						if(element.val() === "") {
+							alert("index를 입력하세요.");
+							element.focus();
+							return false;
+						}
+						var eq = $(".nav > *").eq(Number(element.val()));
+						// console.log(eq);
+						lineBorder(eq);
+					} else if ($(this).text() === "gt(index)") {
+						var element = $("input").filter("#gt");
+						if(element.val() === "") {
+							alert("index를 입력하세요.");
+							element.focus();
+							return false;
+						}
+						var gt = $(".nav > *").slice(Number(element.val()));
+						// console.log(eq);
+						console.log(gt);
+						lineBorder(gt);
+					} else if ($(this).text() === "lt(index)") {
+						var element = $("input").filter("#lt");
+						if(element.val() === "") {
+							alert("index를 입력하세요.");
+							element.focus();
+							return false;
+						}
+						var lt = $(".nav > *").slice(0, Number(element.val()));
+						// console.log(eq);
+						console.log(lt);
+						lineBorder(lt);
+					}
+				});
+
+			});
+		</script>
+	</head>
+	<body>
+		<div class="wrap">
+			<h3>상대 선택메서드</h3>
+			<hr>
+			<div class="nav">
+				<div>div<span>span</span></div>
+				<a>a</a>
+				<span>span</span>
+				<div>div<span>span</span></div>
+				<a>a</a>
+				<span>span</span>
+				<div>div<span>span</span></div>
+				<a>a</a>
+				<span>span</span>
+				<div>div<span>span</span></div>
+				<a>a</a>
+				<span>span</span>
+				<div>div<span>span</span></div>
+				<a>a</a>
+				<span>span</span>
+			</div>
+			<div class="btn-area">
+				<button>.nav의 자식요소[children()]</button>
+				<button>.nav의 자식의 자식요소[children().children()]</button>
+				<hr>
+				<button>.nav의 부모요소[parent()]</button>
+				<button>.nav의 모든부모요소[parents()]</button>
+				<button>.nav의 직계 부모요소[closest()]</button>
+				<hr>
+				<button>.nav의 자식 다음[next()]</button>
+				<button>.nav의 자식 모든다음[nextAll()]</button>
+				<input type="text" placeholder="태그이름을 적어주세요." id="until">
+				<button>.nav의 자식 다음 부터 ~ 까지[nextUntil()]</button>
+				<hr>
+				<button>.nav의 자식 이전[prev()]</button>
+				<input type="text" placeholder="태그이름을 적어주세요." id="prev">
+				<button>.nav의 자식 이전 ~ 까지[prevUntil()]</button>
+				<hr>
+				<input type="text" placeholder="태그이름을 적어주세요." id="sibling">
+				<button>.nav의 자식 형제들</button>
+				<hr>
+				<input type="text" placeholder="태그이름을 적어주세요." id="find">
+				<button>.nav의 자식 검색</button>
+				<hr>
+				<input type="text" placeholder="태그이름을 적어주세요." id="filter">
+				<button>해당요소 필터</button>
+				<hr>
+				<input type="text" placeholder="태그이름을 적어주세요." id="not">
+				<button>not</button>
+				<hr>
+				<input type="text" placeholder="태그이름을 적어주세요." id="has">
+				<button>has(요소) - 요소를 가지고 있는 부모요소선택</button>
+				<hr>
+				<input type="number" placeholder="index를 입력하세요" id="eq">
+				<button>eq(index)</button>
+				<hr>
+				<input type="number" placeholder="index를 입력하세요" id="gt">
+				<button>gt(index)</button>
+				<hr>
+				<input type="number" placeholder="index를 입력하세요" id="lt">
+				<button>lt(index)</button>
+			</div>
+		</div>
+	</body>
+</html>

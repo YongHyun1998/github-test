@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요소 메서드</title>
+        <!-- css -->
+    <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+    <style type="text/css">
+        
+    </style>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- javascript -->
+    <script type="text/javascript">
+        $(function() {
+            $(".wrap > h3").text($(".wrap > h3").text() + "(Element Method)"); //set
+            $("title").text($(".wrap > h3").text()); //get
+            $(".wrap > div").text(function(i, t) {
+                return "div 요소의 텍스트는 " + t + " 인덱스는 <b>" + i + "</b>입니다.";
+            });
+            $(".wrap > div").html(function(i, t) {
+                return t + "<strong>★</strong>";
+            });
+            $(".wrap > div").each(function(index, element) {
+                console.log(element); //DOM
+                $(element).css({ //jquery 요소
+                    "height": "25px",
+                    "background-color": "pink",
+                    "border-bottom": "1px solid hotpink",
+                    "transition": ".4s",
+                    "cursor": "pointer" //로드할때 작동
+                }).mouseover(function() {
+                    $(this).css({
+                        "height": "50px",
+                        "background-color": "yellow"
+                    });
+                }).mouseout(function() {
+                    $(this).css({
+                        "height": "25px",
+                        "background-color": "pink"
+                    });
+                })
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <h3>요소 메서드</h3>
+        <hr>
+        <div>html</div>
+        <div>css</div>
+        <div>javascript</div>
+    </div>
+</body>
+</html>

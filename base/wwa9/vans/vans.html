@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VANS</title>
+    <!-- 구글 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- 폰트 어썸 -->
+    <script src="https://kit.fontawesome.com/16e06adab7.js" crossorigin="anonymous"></script>
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="../vans/vans.css">
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- javascript -->
+    <script type="text/javascript" src="../vans/vans.js"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="top clearfix">
+            <div class="logo"><img src="2021-vans-logo.svg" alt="logo"></div>
+            <div class="menu">
+                <div class="side clearfix">
+                    <ul>
+                        <li>VANS NEWS</li>
+                        <li>
+                            <i class="fa-solid fa-cart-arrow-down"></i>
+                            장바구니 (0)
+                        </li>
+                        <li>
+                            <i class="fa-regular fa-heart"></i>
+                            위시리스트 (0)
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-user"></i>
+                            로그인
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            매장찾기
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-circle-question"></i>
+                            고객센터
+                        </li>
+                    </ul>
+                </div>
+                <div class="main clearfix">
+                    <div class="main-menu">
+                        <ul id="gnb">
+                            <li data-order="0">
+                                NEW
+                                <i class="fa-solid fa-angle-down"></i>
+                                <span></span>
+                            </li>
+                            <li>/</li>
+                            <li data-order="1">
+                                MEN
+                                <i class="fa-solid fa-angle-down"></i>
+                                <span></span>
+                            </li>
+                            <li>/</li>
+                            <li data-order="2">
+                                WOMEN
+                                <i class="fa-solid fa-angle-down"></i>
+                                <span></span>
+                            </li>
+                            <li>/</li>
+                            <li data-order="3">
+                                KIDS
+                                <i class="fa-solid fa-angle-down"></i>
+                                <span></span>
+                            </li>
+                            <li>/</li>
+                            <li data-order="4">
+                                CUSTOMS
+                                <i class="fa-solid fa-angle-down"></i>
+                                <span></span>
+                            </li>
+                            <li>/</li>
+                            <li>SKATEBOARDING</li>
+                            <li>/</li>
+                            <li>SURF</li>
+                            <li>/</li>
+                            <li data-order="5">
+                                MORE
+                                <i class="fa-solid fa-angle-down"></i>
+                                <span></span>
+                            </li>
+                        </ul>
+                        <div class="search">
+                            <input type="text" placeholder="Search..."><i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="top-after">
+            <div class="af1 clearfix">
+                <div class="af1wid">
+                    <div class="new">
+                        <h4>NEW</h4>
+                        <p>전체보기</p>
+                        <p>신발 신상품</p>
+                        <p>의류 신상품</p>
+                        <p>엑세서리 신상품</p>
+                    </div>
+                    <div class="collection">
+                        <h4>COLLECTION</h4>
+                        <p>VANS X MOONEYES</p>
+                        <p>VANS X SANDY LIANG</p>
+                        <p>에너하임 팩토리</p>
+                        <p>EVDNT ULTIMATEWAFFLE</p>
+                        <p>뮬 패밀리</p>
+                        <p>KIDS 샤크 컬렉션</p>
+                        <p>더 리지</p>
+                        <p>커리지 아담스</p>
+                    </div>
+                    <div class="customs">
+                        <h4>CUSTOMS</h4>
+                        <p>YEAR OF TIGER</p>
+                        <p>VANS X LIBERAIDERS</p>
+                    </div>
+                    <div class="shoes-img">
+                        <div class="img123">
+                            <img src="../vans/images/mobile_nav1.png" alt="nav1">
+                            <img src="../vans/images/mobile_nav2.png" alt="nav2">
+                            <img src="../vans/images/mobile_nav3.png" alt="nav3"></div>
+                        <div class="img456">
+                            <img src="../vans/images/mobile_nav4.png" alt="nav4">
+                            <img src="../vans/images/mobile_nav5.png" alt="nav5">
+                            <img src="../vans/images/mobile_nav6.png" alt="nav6"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="af2 clearfix">
+                <div class="af2wid">
+                    <div class="shoes">
+                        <h4>신발</h4>
+                        <p>전체보기</p>
+                        <p>코어클래식</p>
+                        <p>클래식</p>
+                        <p>스케이트 슈즈</p>
+                        <p>클래식플러스</p>
+                        <p>서프</p>
+                    </div>
+                    <div class="clothing">
+                        <h4>의류</h4>
+                        <p>전체보기</p>
+                        <p>탑 & 티셔츠</p>
+                        <p>폴리스</p>
+                        <p>아우터</p>
+                        <p>하의</p>
+                    </div>
+                    <div class="accessory">
+                        <h4>엑세서리</h4>
+                        <p>전체보기</p>
+                        <p>모자</p>
+                        <p>가방</p>
+                        <p>양말</p>
+                        <p>기타</p>
+                    </div>
+                    <div class="hot">
+                        <h4>WHAT'S HOT</h4>
+                        <p>기본 실루엣</p>
+                        <p>온라인 단독</p>
+                        <p>COMFYCUSH</p>
+                        <p>애너하임 팩토리</p>
+                    </div>
+                    <div class="shoes-img">
+                        <div class="img123">
+                            <img src="../vans/images/mobile_nav1.png" alt="nav1">
+                            <img src="../vans/images/mobile_nav2.png" alt="nav2">
+                            <img src="../vans/images/mobile_nav3.png" alt="nav3"></div>
+                        <div class="img456">
+                            <img src="../vans/images/mobile_nav4.png" alt="nav4">
+                            <img src="../vans/images/mobile_nav5.png" alt="nav5">
+                            <img src="../vans/images/mobile_nav6.png" alt="nav6"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="af3 clearfix">
+                <div class="af3wid">
+                    <div class="shoes">
+                        <h4>신발</h4>
+                        <p>전체보기</p>
+                        <p>코어클래식</p>
+                        <p>클래식</p>
+                        <p>스케이트 슈즈</p>
+                        <p>클래식플러스</p>
+                        <p>서프</p>
+                    </div>
+                    <div class="clothing">
+                        <h4>의류</h4>
+                        <p>전체보기</p>
+                        <p>탑 & 티셔츠</p>
+                        <p>폴리스</p>
+                        <p>아우터</p>
+                        <p>원피스 & 하의</p>
+                    </div>
+                    <div class="accessory">
+                        <h4>엑세서리</h4>
+                        <p>전체보기</p>
+                        <p>모자</p>
+                        <p>가방</p>
+                        <p>양말</p>
+                        <p>기타</p>
+                    </div>
+                    <div class="hot">
+                        <h4>WHAT'S HOT</h4>
+                        <p>기본 실루엣</p>
+                        <p>온라인 단독</p>
+                        <p>COMFYCUSH</p>
+                        <p>애너하임 팩토리</p>
+                    </div>
+                    <div class="shoes-img">
+                        <div class="img123">
+                            <img src="../vans/images/mobile_nav1.png" alt="nav1">
+                            <img src="../vans/images/mobile_nav2.png" alt="nav2">
+                            <img src="../vans/images/mobile_nav3.png" alt="nav3"></div>
+                        <div class="img456">
+                            <img src="../vans/images/mobile_nav4.png" alt="nav4">
+                            <img src="../vans/images/mobile_nav5.png" alt="nav5">
+                            <img src="../vans/images/mobile_nav6.png" alt="nav6"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="af4 clearfix">
+                <div class="af4wid">
+                    <div class="shoes">
+                        <h4>신발</h4>
+                        <p>전체보기</p>
+                        <p>토들러</p>
+                        <p>키즈</p>
+                        <p>베스트 셀러</p>
+                    </div>
+                    <div class="clothing">
+                        <h4>의류</h4>
+                        <p>전체보기</p>
+                        <p>보이즈</p>
+                        <p>키즈</p>
+                    </div>
+                    <div class="accessory">
+                        <h4>엑세서리</h4>
+                        <p>전체보기</p>
+                        <p>양말</p>
+                        <p>모자</p>
+                    </div>
+                    <div class="hot">
+                        <h4>CUSTOMS</h4>
+                        <p>커스텀 하기</p>
+                        <p>강아지&고양이 패턴</p>
+                    </div>
+                    <div class="shoes-img">
+                        <div class="img123">
+                            <img src="../vans/images/mobile_nav1.png" alt="nav1">
+                            <img src="../vans/images/mobile_nav2.png" alt="nav2">
+                            <img src="../vans/images/mobile_nav3.png" alt="nav3"></div>
+                        <div class="img456">
+                            <img src="../vans/images/mobile_nav4.png" alt="nav4">
+                            <img src="../vans/images/mobile_nav5.png" alt="nav5">
+                            <img src="../vans/images/mobile_nav6.png" alt="nav6"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="af5 clearfix">
+                <div class="af5wid">
+                    <div class="customs">
+                        <h4>CUSTOMS</h4>
+                        <p>나만의 신발 만들기</p>
+                        <p>어센틱 커스텀</p>
+                        <p>슬립온 커스텀</p>
+                        <p>올드스쿨 커스텀</p>
+                        <p>에라 커스텀</p>
+                        <p>스케이트-하이 커스텀</p>
+                        <p>울트라레인지 EXO 커스텀</p>
+                        <p>웨이비 커스텀</p>
+                    </div>
+                    <div class="featured">
+                        <h4>FEATURED</h4>
+                        <p>YEAR OF TIGER</p>
+                        <p>VANS X LIVERAIDERS</p>
+                    </div>
+                    <div class="shoes-img">
+                        <div class="img123">
+                            <img src="../vans/images/mobile_nav1.png" alt="nav1">
+                            <img src="../vans/images/mobile_nav2.png" alt="nav2">
+                            <img src="../vans/images/mobile_nav3.png" alt="nav3"></div>
+                        <div class="img456">
+                            <img src="../vans/images/mobile_nav4.png" alt="nav4">
+                            <img src="../vans/images/mobile_nav5.png" alt="nav5">
+                            <img src="../vans/images/mobile_nav6.png" alt="nav6"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="af6 clearfix">
+                <div class="af6wid">
+                    <div class="fun">
+                        <h4>MORE FUN</h4>
+                        <p>VANS 뮤지션 원티드</p>
+                        <p>ABOUT VANS</p>
+                        <p>VANS NEWS</p>
+                        <p>THIS IS OFF THE WALL</p>
+                    </div>
+                    <div class="shoes-img">
+                        <div class="img123">
+                            <img src="../vans/images/mobile_nav1.png" alt="nav1">
+                            <img src="../vans/images/mobile_nav2.png" alt="nav2">
+                            <img src="../vans/images/mobile_nav3.png" alt="nav3"></div>
+                        <div class="img456">
+                            <img src="../vans/images/mobile_nav4.png" alt="nav4">
+                            <img src="../vans/images/mobile_nav5.png" alt="nav5">
+                            <img src="../vans/images/mobile_nav6.png" alt="nav6"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom clearfix">
+            <div class="left"><i class="fa-solid fa-angle-left"></i></div>
+            <div class="text"></div>
+            <div class="right"><i class="fa-solid fa-angle-right"></i></div>
+        </div>
+    </div>
+    <div id="content">
+        <div class="con1">
+            <div class="swiper swiper1">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide"><img src="../vans/images/main-1.jpg" alt="main1"></div>
+                    <div class="swiper-slide"><img src="../vans/images/main-2.jpg" alt="main2"></div>
+                    <div class="swiper-slide"><img src="../vans/images/main-3.jpg" alt="main3"></div>
+                    <div class="swiper-slide"><img src="../vans/images/main-4.jpg" alt="main4"></div>
+                    <div class="swiper-slide"><img src="../vans/images/main-5.jpg" alt="main5"></div>
+                    <div class="swiper-slide"><img src="../vans/images/main-6.jpg" alt="main6"></div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <!-- If we need scrollbar -->
+                <!-- <div class="swiper-scrollbar"></div> -->
+            </div>
+        </div>
+        <div class="con2 clearfix">
+            <div class="left">
+                <div class="img1"><img class="con2-1" src="https://www.vans.co.kr/cmsstatic/structured-content/19181/CIRCLE%20VEE_main_sub_640x540.gif" alt="con2-1"></div>
+                <div>
+                    <h3>서클 비</h3>
+                    <p>반스의 지속 가능성 실루엣 '서클 비' 만나보세요</p>
+                    <span>구매하기</span>
+                </div>
+            </div>
+            <div class="center">
+                <div class="img2"><img class="con2-2"src="https://www.vans.co.kr/cmsstatic/structured-content/19226/sub_640x540.jpg" alt="con2-2"></div>
+                <div>
+                    <h3>ANAHEIM FACTORY</h3>
+                    <p>어센틱 트렌드 팩 타일 체커보드 컬렉션</p>
+                    <span>구매하기</span>
+                </div>
+            </div>
+            <div class="right">
+                <div class="img3"><img class="con2-3" src="https://www.vans.co.kr/cmsstatic/structured-content/19128/640x540.jpg" alt="con2-3"></div>
+                <div>
+                    <h3>반스 X 크레욜라</h3>
+                    <p>밝은 기운이 넘치는 크레욜라 컬렉션 만나보세요!</p>
+                    <span>구매하기</span>
+                </div>
+            </div>
+        </div>
+        <div class="con3">
+            <h2>NEW ARRIVAL</h2>
+            <div class="swiper swiper2">
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                        <img src="../vans/images/con2-1.jpg" alt="con2-1"><p class="red bold">NEW ARRIVAL HOT</p>
+                        <p>캔버스 STYLE 36 스타일 36 뮬</p>
+                        <p class="red">79,000 원</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../vans/images/con2-3.jpg" alt="con2-3"><p class="red bold">NEW ARRIVAL HOT</p>
+                        <p>캔버스 Authenti 어센틱 뮬</p>
+                        <p class="red">69,000 원</p></div>
+                    <div class="swiper-slide">
+                        <img src="../vans/images/con2-5.jpg" alt="con2-5"><p class="red bold">NEW ARRIVAL HOT</p>
+                        <p>애너하임 타일 체커보드 클래식 Slip-on 슬립온 98 DX</p>
+                        <p class="red">99,000 원</p></div>
+                    <div class="swiper-slide">
+                        <img src="../vans/images/con2-7.jpg" alt="con2-7"><p class="red bold">NEW ARRIVAL HOT</p>
+                        <p>애너하임 타일 체커보드 Old Skool 올드스쿨 36 DX</p>
+                        <p class="red">109,000 원</p></div>
+                    <div class="swiper-slide">
+                        <img src="../vans/images/con2-9.jpg" alt="con2-9"><p class="red bold">NEW ARRIVAL HOT</p>
+                        <p>더 리지</p>
+                        <p class="red">99,000 원</p></div>
+                    <div class="swiper-slide">
+                        <img src="../vans/images/con2-11.jpg" alt="con2-11"><p class="red bold">NEW ARRIVAL</p>
+                        <p>더 리지</p>
+                        <p class="red">99,000 원</p></div>
+                    <div class="swiper-slide">
+                        <img src="../vans/images/con2-13.jpg" alt="con2-13"><p class="red bold">NEW ARRIVAL</p>
+                        <p>스케이트 클래식 플리스 풀 오버 후디</p>
+                        <p class="red">95,000 원</p></div>
+                    <div class="swiper-slide">
+                        <img src="../vans/images/con2-15.jpg" alt="con2-15"><p class="red bold">NEW ARRIVAL</p>
+                        <p>피스 오브 마인드 쟈키 햇</p>
+                        <p class="red">35,000 원</p></div>
+                    <div class="swiper-slide">
+                        <img src="../vans/images/con2-17.jpg" alt="con2-17"><p class="red bold">NEW ARRIVAL</p>
+                        <p>파스텔 타이 다이 컴피쿠시 올드스쿨 ComfyCush Old Skool</p>
+                        <p class="red">89,000 원</p></div>
+                    <div class="swiper-slide">
+                        <img src="../vans/images/con2-19.jpg" alt="con2-19"><p class="red bold">NEW ARRIVAL</p>
+                        <p>파스텔 타이 다이 컴피쿠시 스케이트-하이 ComfyCush SK8-Hi</p>
+                        <p class="red">95,000 원</p></div>
+                    <div class="swiper-slide">
+                        <img src="../vans/images/con2-21.jpg" alt="con2-21"><p class="red bold">NEW ARRIVAL</p>
+                        <p>VANS X CRAYOLA 메일 두들 긴팔 티셔츠</p>
+                        <p class="red">49,000 원</p></div>
+                    <div class="swiper-slide">
+                        <img src="../vans/images/con2-23.jpg" alt="con2-23"><p class="red bold">NEW ARRIVAL</p>
+                        <p>올드스쿨 H2O 백팩</p>
+                        <p class="red">55,000 원</p></div>
+                    <div class="swiper-slide">
+                        <img src="../vans/images/con2-25.jpg" alt="con2-25"><p class="red bold">NEW ARRIVAL</p>
+                        <p>VANS X COURAGE ADAMS BMX Old Skool 올드스쿨</p>
+                        <p class="red">89,000 원</p></div>
+                    <div class="swiper-slide">
+                        <img src="../vans/images/con2-27.jpg" alt="con2-27"><p class="red bold">NEW ARRIVAL</p>
+                        <p>VANS X COURAGE ADAMS 어센틱 치노 글라이드 릴렉스테이퍼 팬츠</p>
+                        <p class="red">89,000 원</p></div>
+                    <div class="swiper-slide">
+                        <img src="../vans/images/con2-29.jpg" alt="con2-29"><p class="red bold">NEW ARRIVAL</p>
+                        <p>디바인 에너지 패치워크 클래식 Slip-on 슬립온</p>
+                        <p class="red">79,000 원</p></div>
+                    <div class="swiper-slide">
+                        <img src="../vans/images/con2-31.jpg" alt="con2-31"><p class="red bold">NEW ARRIVAL</p>
+                        <p>디바인 에너지 패치워크 Old Skool 올드스쿨</p>
+                        <p class="red">89,000 원</p></div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <div class="swiper-button-prev outpre1"></div>
+            <div class="swiper-button-next outnext1"></div>
+        </div>
+        <div class="con4 clearfix">
+            <div class="men">
+                <img src="../vans/images/men.jpg" alt="men"><div>
+                    <h2>MEN</h2>
+                    <p>신발</p>
+                    <p>의류</p>
+                    <p>엑세서리</p>
+                    <p>커스텀</p>
+                </div>
+            </div>
+            <div class="women">
+                <img src="../vans/images/women.jpg" alt="women"><div>
+                    <h2>MEN</h2>
+                    <p>신발</p>
+                    <p>의류</p>
+                    <p>엑세서리</p>
+                    <p>커스텀</p>
+                </div>
+            </div>
+            <div class="kids">
+                <img src="../vans/images/kids.jpg" alt="kids"><div>
+                    <h2>MEN</h2>
+                    <p>신발</p>
+                    <p>의류</p>
+                    <p>엑세서리</p>
+                    <p>커스텀</p>
+                </div>
+            </div>
+        </div>
+        <div class="con5">
+            <h2>BEST SELLER</h2>
+            <div class="swiper swiper3">
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                        <img src="../vans/images/con5-1.jpg" alt="con5-1"><p class="red bold">HOT</p>
+                        <p>코어클래식 OLD SKOOL 올드스쿨</p>
+                        <p class="red">79,000 원</p></div>
+                    <div class="swiper-slide">
+                        <img src="../vans/images/con5-3.jpg" alt="con5-3"><p class="red bold">HOT</p>
+                        <p>코어클래식 Slip-On 체커보드 슬립온</p>
+                        <p class="red">69,000 원</p></div>
+                    <div class="swiper-slide">
+                        <img src="../vans/images/con5-5.jpg" alt="con5-5"><p class="red bold">HOT</p>
+                        <p>코어클래식 체커보드 AUTHENTIC 어센틱</p>
+                        <p class="red">69,000 원</p></div>
+                    <div class="swiper-slide">
+                        <img src="../vans/images/con5-7.jpg" alt="con5-7"><p class="red bold">HOT</p>
+                        <p>코어클래식 SK8-Hi 스케이트-하이</p>
+                        <p class="red">89,000 원</p></div>
+                    <div class="swiper-slide">
+                        <img src="../vans/images/con5-9.jpg" alt="con5-9"><p class="red bold">NEW ARRIVAL HOT</p>
+                        <p>코어클래식 Slip-On 슬립온</p>
+                        <p class="red">69,000 원</p></div>
+                    <div class="swiper-slide">
+                        <img src="../vans/images/con5-11.jpg" alt="con5-11"><p class="red bold">HOT</p>
+                        <p>키즈 Old Skool 올드스쿨 V</p>
+                        <p class="red">49,000 원</p></div>
+                    <div class="swiper-slide">
+                        <img src="../vans/images/con5-13.jpg" alt="con5-13"><p class="red bold">HOT</p>
+                        <p>토들러 체커보드 Slip-on 슬립온</p>
+                        <p class="red">39,000 원</p></div>
+                    <div class="swiper-slide">
+                        <img src="../vans/images/con5-15.jpg" alt="con5-15"><p class="red bold">HOT</p>
+                        <p>키즈 체커보드 Slip-on 슬립온</p>
+                        <p class="red">45,000 원</p></div>
+                    <div class="swiper-slide">
+                        <img src="../vans/images/con5-17.jpg" alt="con5-17"><p class="red bold">HOT</p>
+                        <p>키즈 Slip-on 슬립온</p>
+                        <p class="red">45,000 원</p></div>
+                    <div class="swiper-slide">
+                        <img src="../vans/images/con5-19.jpg" alt="con5-19"><p class="red bold">HOT</p>
+                        <p>코어클래식 AUTHENTIC 어센틱</p>
+                        <p class="red">69,000 원</p></div>
+                    <div class="swiper-slide">
+                        <img src="../vans/images/con5-21.jpg" alt="con5-51"><p class="red bold">HOT</p>
+                        <p>코어클래식 ERA 에라</p>
+                        <p class="red">69,000 원</p></div>
+                    <div class="swiper-slide">
+                        <img src="../vans/images/con5-23.jpg" alt="con5-23"><p class="red bold">HOT</p>
+                        <p>코어클래식 ERA 에라</p>
+                        <p class="red">69,000 원</p></div>
+                    <div class="swiper-slide">
+                        <img src="../vans/images/con5-25.jpg" alt="con5-25"><p class="red bold">HOT</p>
+                        <p>코어클래식 Slip-On 솔리드 슬립온</p>
+                        <p class="red">69,000 원</p></div>
+                    <div class="swiper-slide">
+                        <img src="../vans/images/con5-27.jpg" alt="con5-27"><p class="red bold">SOLD OUT</p>
+                        <p>코어클래식 Slip-On 솔리드 슬립온</p>
+                        <p class="red">69,000 원</p></div>
+                    <div class="swiper-slide">
+                        <img src="../vans/images/con5-29.jpg" alt="con5-29"><p class="red bold">HOT</p>
+                        <p>키즈 Authentic 어센틱</p>
+                        <p class="red">45,000 원</p></div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <div class="swiper-button-prev outpre2"></div>
+            <div class="swiper-button-next outnext2"></div>
+        </div>
+        <div class="con6">
+            <p class="red">ㅡ 업데이트 ㅡ</p>
+            <h2>VANS NEWS</h2>
+            <div class="news_img clearfix">
+                <div class="img_1">
+                    <img src="./images/con6-1.jpg" alt="con6-1"><p>반스 x 문아이즈, 모터사이클 문화를 기념하는 새로운 협업 컬렉션 출시</p>
+                    <p class="gray">CLASSICS</p>
+                </div>
+                <div class="img_2">
+                    <img src="./images/con6-2.jpg" alt="con6-2"><p>반스, <리지 원더랜드> 스케이트 파크 오픈 이벤트 성료</p>
+                    <p class="gray">SKATE</p>
+                </div>
+                <div class="img_3">
+                    <img src="./images/con6-3.jpg" alt="con6-3"><p>반스, 혁신적인 실루엣 에비던트 얼티밋 와플 새로운 컬러웨이 출시</p>
+                    <p class="gray">CLASSICS</p>
+                </div>
+                <div class="img_4">
+                    <img src="./images/con6-4.jpg" alt="con6-4"><p>볼트 바이 반스 x 크링크 NYC, 풋웨어 & 어패럴 캡슐 컬렉션 출시</p>
+                    <p class="gray">VAULT</p>
+                </div>
+            </div>
+            <span>더 알아보기</span>
+        </div>
+        <div class="con7">
+            <h2>EVENT</h2>
+            <div class="event-top">
+                <div class="top1">
+                    <img src="../vans/images/con7-1.jpg" alt="con7-1"><h4>업리프팅 우먼</h4>
+                    <p>여성의 목소리를 높이기 위한 새로운 브랜드 캠페인 공개</p>
+                </div>
+                <div class="top2">
+                    <img src="../vans/images/con7-2.jpg" alt="con7-2"><h4>리지 원더랜드</h4>
+                    <p>더 리지 컬렉션 출시 기념으로 선보이는 실내 스케이트 파크</p>
+                </div>
+            </div>
+            <div class="event-bottom">
+                <div class="bot1">
+                    <img src="../vans/images/con7-3.jpg" alt="con7-3"><h4>Cocona & Mami Road Trip USA</h4>
+                    <p>코코나와 마미의 미국 로드 트립을 담은 스케이트 필름</p>
+                </div>
+                <div class="bot2">
+                    <img src="../vans/images/con7-4.jpg" alt="con7-4"><h4>Where the Land Meets the Sea</h4>
+                    <p>반스 유럽 팀의 새로운 스케이트 필름 공개</p>
+                </div>
+            </div>
+        </div>
+        <div class="con8">
+            <div class="bg">
+                <span>VIEW GALLERY</span>
+                <div>
+                    <img src="../vans/images/con8-1.jpg" alt="con8-1"><img src="../vans/images/con8-2.jpg" alt="con8-2"><img src="../vans/images/con8-3.jpg" alt="con8-3"><img src="../vans/images/con8-4.jpg" alt="con8-4"><img src="../vans/images/con8-5.jpg" alt="con8-5"></div><div>
+                    <img src="../vans/images/con8-6.jpg" alt="con8-6"><img src="../vans/images/con8-7.jpg" alt="con8-7"><img src="../vans/images/con8-8.jpg" alt="con8-8"><img src="../vans/images/con8-9.jpg" alt="con8-9"><img src="../vans/images/con8-10.jpg" alt="con8-10"></div>
+                <div>
+                    <img src="../vans/images/con8-11.jpg" alt="con8-11"><img src="../vans/images/con8-12.jpg" alt="con8-12"><img src="../vans/images/con8-13.jpg" alt="con8-13"><img src="../vans/images/con8-14.jpg" alt="con8-14"><img src="../vans/images/con8-15.jpg" alt="con8-15"></div>
+                <button>더보기</button>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="top clearfix">
+            <div class="about">
+                <h4>ABOUT</h4>
+                <p class="blue">반스에 대하여</p>
+                <p class="blue">고객센터</p>
+            </div>
+            <div class="shopping">
+                <h4>SHOPPING</h4>
+                <p class="blue">회원가입</p>
+                <p class="blue">주문/배송 조회</p>
+            </div>
+            <div class="legal">
+                <h4>LEGAL</h4>
+                <p class="blue">이용약관</p>
+                <p class="blue">개인정보처리방침</p>
+                <p class="blue">청소년 보호정책</p>
+            </div>
+            <div class="follow">
+                <h4>FOLLOW US</h4>
+                <div class="fol-img clearfix">
+                    <div><img src="../vans/images/facebook.jpg" alt="facebook"></div>
+                    <div><img src="../vans/images/instagram.jpg" alt="instagram"></div>
+                    <div><img src="../vans/images/kakaoplus.jpg" alt="kakaoplus"></div>
+                    <div><img src="../vans/images/naver.jpg" alt="naver"></div>
+                </div>
+            </div>
+            <div class="news">
+                <h4>NEWS LETTER</h4>
+                <div class="email">
+                    <input type="text" placeholder="Enter Email Address"><i class="fa-solid fa-angle-right"></i>
+                </div>
+                <div class="my clearfix">
+                    <button></button><p>본인은 이용약관, 개인정보수집동의에 관한</p>
+                    <p class="sec">내용을 읽고 이해했습니다.</p><p class="blue"> (개인정보 처리방침 확인)</p>
+                </div>
+            </div>
+        </div>
+        <div class="bottom clearfix">
+            <div class="fot-ico"><img src="../vans/images/vansfooter.JPG" alt="vansfooter"></div>
+            <div class="comp">
+                <p>회사명: 유한책임회사 브이에프코리아 / 대표이사: TZE CHOI THEODORE PANG / 사업자 등록번호: 220-88-43561</p>
+                <p class="left">통신판매업 신고번호: 2013-서울강남-02918호 / <p class="blue left">사업자정보확인</p><p> / 개인정보 책임자: 장성철</p>
+                <p class="left">주소: 서울특별시 강남구 테헤란로 317 동훈타워 18층 / E-mail 문의: </p><p class="blue italic">Joy_Bang@vfc.com</p>
+                <p class="blue">고객센터(평일 09:00 ~ 18:00) 1522-1882</p>
+                <p>ⓒ유한책임회사 브이에프코리아. All Rights Reserved.</p>
+                <p class="blue">California Transparency in Supply Chain Act of 2010</p>
+            </div>
+            <div class="cons">
+                <p class="white">소비자피해 보증보험</p>
+                <p>고객님은 안전거래를 위해 현금 등으로 결제시 저희 쇼핑몰에서 가입한</p>
+                <p>구매안전서비스 소비자피해보증보험 서비스를 이용하실 수 있습니다.</p>
+                <p>보증대상: 미배송, 반품/환불거부, 쇼핑몰 부도</p>
+                <p class="line">보증보험 가입사실 확인하기</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

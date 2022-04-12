@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>논리 연산자</title>
+        <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+    </head>
+    <body>
+        <script type="text/javascript">
+			var x = 17;
+			console.log(x >= 20 && x <= 30); //false
+			console.log(x > 20 || x < 30); //true
+
+			//0, null, undefined, '', false => 거짓
+			console.log(!0); //true
+			console.log(!!0); //false 
+			console.log(Boolean(0));
+			console.log(!Boolean(0));
+			console.log(!!Boolean(0));
+		</script>
+        <div class="wrap">
+			<h3>논리 연산자</h3>
+			<hr>
+			<table>
+				<tr>
+					<th>논리 연산자</th>
+					<th>설명</th>
+				</tr>
+				<tr>
+					<td>&&(And)</td>
+					<td>조건1 && 조건2 : 조건1과 조건2가 모두 참일 경우 참</td>
+				</tr>
+				<tr>
+					<td>||(Or)</td>
+					<td>조건1 || 조건2 : 조건1과 조건2가 모두 거짓일 경우 거짓</td>
+				</tr>
+				<tr>
+					<td>!(Not)</td>
+					<td>!조건 : 조건이 참일 경우 거짓, 거짓이면 참 변경</td>
+				</tr>
+			</table>
+		</div>
+    </body>
+</html>

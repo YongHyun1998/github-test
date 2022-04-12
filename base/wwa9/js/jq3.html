@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 선택자</title>
+    <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+    <style type="text/css">
+        ul {
+            overflow: hidden;
+        }
+        li:nth-child(even) {
+
+        }
+        .hide {
+            display: none;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(function() { // jquery 시작업로드
+            var j = $.noConflict();
+
+            $("li").css("background", "lightgreen"); // li 요소 전체
+            $(":root").css("border-bottom", "1px solid red"); // html을 의미
+            // $("li:odd").css("border-bottom", "1px solid red"); // li 요소 중 홀수 행 (0부터 시작 0,2,4,6,...)
+            // $(".wrap :header").css("border-bottom", "1px solid red"); // .wrap :header  헤딩(h1~h6) 요소 선택
+            // $("li:eq(4)").css("border-bottom", "1px solid red"); // index가 4인 요소 (index는 0번이 첫번째 요소)
+            // $("li:lt(2)").css("border-bottom", "1px solid red"); // index가 2보다 작은 li요소
+            // $("li:not(.bg)").css("border-bottom", "1px solid red"); // li 요소 중에서 class명 bg가 아닌 li 요소
+            (function upDown() { // 함수에 upDown입력해야 가능
+                $("ul").slideToggle(2000, upDown); // 슬라이드 후 'upDown'실행 슬라이드 updown반복
+            }());
+            $(":animated").click(function() { // :animated: 움직이는 요소 선택 클릭하면 실행
+                console.log(this);
+                console.log($(this));
+                $(this).css("border", "4px solid darkred");
+            });
+            $("h3:contains('선택')").css("background", "hotpink"); // h3 요소 중에서 '선택' 텍스트를 포함하고있는 h3요소 선택
+            $("li:empty").css("background", "white"); // li 요소 중에서 자식 요소가 없는 li 요소를 선택
+            $("li:parent").css("border-left", "2px solid red"); // li 요소 중에서 자식 요소가 있는 li 요소를 선택
+            $("li:has(span)").css("background", "darkred"); // li 요소 중에서 span을 하위 요소로 가지고 있는 li 요소 선택
+
+            // $("input:password").css("border", "2px solid blue") // input타입에서 password인 요소
+            $("input:password").css("border", "1px solid lightpink"); // input타입에서 password인 요소
+            $("textarea").css("background", "pink");
+            $("textarea:focus").css("background", "red");
+            console.log($("input + label"));
+            $("input:checked + label").css("background", "red");
+            $("select:disabled").css("width", "100px");
+            $(":button").css("cursor", "pointer");
+            $(":button").click(function() {
+                if ($("div:hidden").length) {
+					$("div:hidden").css("display", "block");	
+                    $("button").text("Hide");
+				} else {
+					$("div:visible:not(.wrap)").css("display", "none");
+                    $(this).text("Show");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <h3>jQuery 선택자</h3>
+        <hr>
+        <button>Show</button>
+        <ul>
+            <li>1</li>
+            <li class="bg">2</li>
+            <li>3</li>
+            <li class="bg">4</li>
+            <li>5</li>
+            <li></li>
+            <li>7</li>
+            <li><span></span></li>
+        </ul>
+        <form>
+            <input type="password">
+            <input type="checkbox">
+            <label>체크</label>
+            <div class="hide">DIV</div>
+            <input type="radio">
+            <textarea></textarea>
+            <select disabled>
+                <div class="hide">DIV</div>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+            </select>
+            <div class="hide">DIV</div>
+        </form>
+    </div>
+</body>
+</html>

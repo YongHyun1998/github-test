@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Symbol</title>
+		<link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+		<script type="text/javascript">
+			var v1 = 0;
+			var v2 = 0;
+			console.log(v1 === v2); //true
+
+			var mySymbol1 = Symbol();
+			var mySymbol2 = Symbol();
+			console.log(mySymbol1 === mySymbol2); //false
+
+			var info1 = {
+				subjectName: '자바스크립트',
+				subjectName: 'css'
+			};
+			console.log(info1.subjectName + " " + info1.subjectName);
+
+			var subjectName = Symbol();
+			console.log(typeof subjectName);
+
+			var info2 = {
+				[subjectName]: '자바스크립트',
+				subjectName: 'css'
+			};
+			console.log(info2[subjectName] + " " + info2.subjectName);
+		</script>
+	</head>
+	<body>
+		<div class="wrap">
+			<h3>Symbol</h3>
+			<hr>
+			<p>유일한 식별자를 만듦(키워드나 구별자를 만들수 있다.)</p>
+		</div>
+	</body>
+</html>

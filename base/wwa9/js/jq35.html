@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>delay 메서드</title>
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+    <style type="text/css">
+
+    </style>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- javascript -->
+    <script type="text/javascript">
+        $(function() {
+            var txtMove = function () {
+                $(".txt1").css("position", "relative").delay(1000).stop()
+                .animate({
+                    opacity: "-=0.2",
+                    top: "+=80"
+                }, 800, "swing", function () {
+                    $(".txt2").css("position", "relative").delay(500).stop()
+                        .animate({
+                            opacity: "-=0.2",
+                            top: "+=150"
+                        }, 800, "swing");
+                });	
+            };
+
+            var txtReMove = function () {
+                $(".txt1").css("position", "relative").delay(1000).stop()
+                .animate({
+                    opacity: "+=0.2",
+                    top: "-=80"
+                }, 800, "swing", function () {
+                    $(".txt2").css("position", "relative").delay(500).stop()
+                        .animate({
+                            opacity: "+=0.2",
+                            top: "-=150"
+                        }, 800, "swing");
+                });	
+            };
+
+            txtMove();
+            
+            $("button").click(function() {
+                txtMove();
+            });
+            $("h3").click(function() {
+                txtReMove();
+                // txtReMove();
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <h3>delay 메서드</h3>
+        <hr>
+        <h1 class="txt1">Responsive Web</h1>
+        <h2 class="txt2">[HTML CSS Javascript jQuery]</h2>
+        <button style="position: relative; z-index: 1;">click</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>내장 함수</title>
+		<link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+		<script type="text/javascript">
+			var encodeStr = "자바스크립트";
+			var encode = encodeURIComponent(encodeStr); //암호화
+			var decode = decodeURIComponent(encode); //복고화
+
+			var num1 = '물' - '나무';
+			console.log(num1); //NaN
+			console.log(isNaN(num1)); //true
+			console.dir(Number); //Number 객체
+			console.log(100/3); //33.333333333336
+			console.log(isFinite(100/0)); //Infinity
+			console.log(typeof Infinity); //number
+			console.log(typeof NaN); //number
+
+			//명시적 형변환
+			console.log(typeof '10'); //string
+			console.log(typeof Number('10')); //number
+			console.log(typeof parseInt('10')); //number
+			console.log(typeof parseFloat('10')); //number
+			console.log(typeof String(10)); //string
+
+			//묵시적(암묵적) 형변환
+			console.log(typeof (10 + '')); //string
+			console.log(typeof ('10' - 0)); //number
+
+
+
+			var str = "10 + 10";
+			console.log(eval(str));
+
+			window.onload = function() {
+				var en = document.getElementById("en");
+				var de = document.getElementById("de");
+				en.innerText = encode;
+				de.innerText = decode;
+			}
+		</script>
+	</head>
+	<body>
+		<div class="wrap">
+			<h3>내장 함수</h3>
+			<hr>
+			<ul>
+				<li>주소 인코딩(암호화)/디코딩(복고화)<br>encodeURIComponent() : <span id="en"></span><br>decodeURIComponent() : <span id="de"></span></li>
+				<li>isNaN(숫자 여부 체크)<br>true: 숫자 아님<br>false: 숫자</li>
+				<li>isFnite(무한 여부 체크)<br>true: 유한대<br>false: 무한대</li>
+				<li>Number(), parseInt(), parseFloat(): 문자를 숫자로 변형<br>String(): 숫자를 문자로 변형</li>
+				<li>eval(): 문자형식의 구문을 스크립트로 실행</li>
+			</ul>
+		</div>
+	</body>
+</html>

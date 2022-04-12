@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>폼 요소</title>
+        <style type="text/css">
+            textarea {
+                display: block;
+                width: 100%;
+                resize: none;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>폼 요소</h3>
+        <hr>
+        <h4>select 태그</h4>
+        <select size="12" multiple>
+            <option>선택</option>
+            <optgroup label="서구">
+                <option>진구</option>
+                <option>사상구</option>
+            </optgroup>
+            <optgroup label="남구">
+                <option selected>북구</option>
+                <option>북구</option>
+                <option>북구</option>
+                <option>북구</option>
+            </optgroup>
+        </select>
+        <textarea rows="5"></textarea>
+        <button onclick="document.body.style.backgroundColor = 'red';">나는 버튼</button>
+        <input type="button" value="나도 버튼" onclick="document.body.style.backgroundColor = 'yellow';">
+        <input list="myselect" placeholder="클릭">
+        <datalist id="myselect">
+            <option>Internet Explorer</option>
+            <option>Firefox</option>
+            <option>Chrome</option>
+            <option>Opera</option>
+            <option>Safari</option>
+        </datalist>
+ 
+        <form oninput="display.value = parseInt(userAge.value) >= 18 ? '성년' : '미성년'">
+            <input type="number" id="userAge" min="1" max="120">
+            <output type="text" id="display">
+        </form>
+    </body>
+</html>

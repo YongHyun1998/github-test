@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>폼 이벤트</title>
+		<link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+		<style type="text/css">
+			#m1 input.on {
+				background-color: red;
+				color: yellow;
+			}
+			#m1 input.on::placeholder {
+				color: yellow;
+			}
+			#m2 input.on {
+				background-color: red;
+				color: yellow;
+			}
+			#m2 input.on::placeholder {
+				color: yellow;
+			}
+			.msg1, .msg2 {
+				color: red;
+				display: none;
+			}
+		</style>
+		<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+		<script type="text/javascript">
+			$(function() {
+				$("#m1 input").focus(function(e) {
+					$(this).addClass("on");
+				}).blur(function(e) {
+					$(this).removeClass("on");
+				});
+
+				$("#m2").focusin(function() {
+					console.log($(this).children());
+					$(this).children().addClass("on");
+				}).focusout(function() {
+					$(this).children().removeClass("on");
+				});
+
+				$("#m3 input").change(function() {
+					var c = confirm("값을 바꾸시겠습니까?");
+					if (!c) {
+						$(this).val(10);
+					}
+				});
+				$("#m3 input").keyup(function() {
+					console.log($(this).val());
+				});
+
+				$("#m4 input").select(function() {
+					var v = $(this).val();
+					var size = v.length;
+					alert(v + " 총 " + size + "문자를 선택하셨습니다.");
+				});
+
+				$(".frm").submit(function() {
+					console.log($("#id").val());
+					//return false; //전송 막기
+					if (!$("#id").val()) {
+						$(".msg1").css("display", "block");
+						$("#id").focus();
+						return false;
+					} else {
+						$(".msg1").css("display", "none");
+					}
+					if (!$("#pw").val()) {
+						$(".msg2").css("display", "block");
+						$("#pw").focus();
+						return false;
+					} 
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div class="wrap">
+			<h3>폼 이벤트</h3>
+			<hr>
+			<form id="m1" action="#">
+				<input type="text" placeholder="값을 입력하세요"><br>
+				<input type="text" placeholder="값을 입력하세요">
+			</form>
+			<form id="m2" action="#">
+				<input type="text" placeholder="값을 입력하세요"><br>
+				<input type="text" placeholder="값을 입력하세요">
+			</form>
+			<form id="m3" action="#">
+				<label>
+					값을 수정한 후 다음 입력 요소로 이동하세요.
+					<input type="text" placeholder="값을 입력하세요" value="10">
+				</label>
+			</form>
+			<form id="m4" action="#">
+				<label>
+					텍스트를 선택하세요.
+					<input type="text" placeholder="값을 입력하세요" value="텍스트를 선택하세요.">
+				</label>
+			</form>
+			<form class="frm" action="#">
+				<fieldset>
+					<legend>로그인</legend>
+					<label>
+						아이디
+						<input type="text" id="id">
+					</label>
+					<div class="msg1">아이디를 입력하세요.</div>
+					<br>
+					<label>
+						비밀번호
+						<input type="password" id="pw">
+					</label>
+					<div class="msg2">비밀번호를 입력하세요.</div>
+					<br>
+					<input type="submit" value="전송">
+				</fieldset>
+			</form>
+		</div>
+	</body>
+</html>

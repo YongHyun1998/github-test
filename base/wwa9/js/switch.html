@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>switch 문</title>
+		<link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+        <style type="text/css">
+            #mood {
+                background-image: url(https://cdn.newscj.com/news/photo/201510/312421_260808_4357.jpg);
+                background-position: 0 0;
+                border: 1px solid black;
+                width: 137px;
+                height: 196px;
+                margin-bottom: 5px;
+                transition: 1s;
+            }
+        </style>
+		<script type="text/javascript">
+
+//숫자 딱떨어질때 switch사용
+			var subject = "css";
+			var score = 0;
+
+			switch (subject) {
+				case "html":
+					score += 1;
+					break;
+				case "css":
+					score += 2;
+					break;
+				case 'javascript':
+					score += 3;
+					break;
+				default:
+					score += 10;
+			}
+
+			console.log(`당신의 학점은 ${score}학점입니다.`);
+
+//참 거짓같은 경우에 if사용
+			function chgSubject(obj) {
+				// var subj = document.getElementById("subj");
+				// console.log(subj.value);
+				var dis = document.getElementById("dis");
+				console.log(obj.value);
+
+				var score = 0;
+				var str = '';
+
+				switch(obj.value) {
+					case 'html':
+						score += 1;
+						break;
+					case 'css':
+						score += 2;
+						break;
+					case 'javascript':
+						score += 3;
+						break;
+				}
+
+				if (str > 0) {
+					str = `당신의 학점은 ${score}학점입니다.`;
+				} else {
+					str = "과정을 선택하세요.";
+				}
+
+				dis.innerText = str;
+			}
+
+//요일별 사진넣기
+            function showMood() {
+				var weeks = document.getElementById("weeks");
+				var mood = document.getElementById("mood");
+				console.log(typeof weeks.value);
+                
+                switch (weeks.value) {
+                    case '0':
+                        mood.style.backgroundPosition = "0px 0px";
+                        break;
+                    case '1':
+                        mood.style.backgroundPosition = "-137px -196px";
+                        break;
+                    case '2':
+                        mood.style.backgroundPosition = "-274px -196px";
+                        break;
+                    case '3':
+                        mood.style.backgroundPosition = "-411px -196px";
+                        break;
+                    case '4':
+                        mood.style.backgroundPosition = "-137px 0px";
+                        break;
+                    case '5':
+                        mood.style.backgroundPosition = "-274px 0px";
+                        break;
+                    case '6':
+                        mood.style.backgroundPosition = "-411px 0px";
+                        break;
+                    case '7':
+                        mood.style.backgroundPosition = "0px -196px";
+                        break;      
+                }
+            }
+
+//아동 청소년 성인 중 택1 검색
+            function cation() {
+                // var classification = prompt("아동, 청소년, 성인 중 선택 입력");
+                var classification = document.getElementById("classification").value;
+                var sc = document.getElementById("sc");
+
+                switch (classification) {
+                    case "아동":
+                        classification += ": 입장료 무료";
+                        break;
+                    case "청소년":
+                        classification += ": 입장료 2,000원";
+                        break;
+                    case "성인":
+                        classification += ": 입장료 5,000원";
+                        break;
+                    default:
+                        classification = "입력 값을 다시 확인하세요.";
+                }
+
+                sc.innerHTML = classification;
+            }
+		</script>
+	</head>
+	<body>
+		<div class="wrap">
+			<h3>조건문</h3>
+			<hr>
+			<h4>switch</h4>
+			<pre>
+switch (값) {
+	case 비교값1: //값과 비교값1이 같으면 실행문1을 실행
+		실행문1;
+		break; //switch문을 빠짐
+	case 비교값2: //
+		실행문2;
+		break;
+	...
+	default:
+		기본문;
+		[break;]
+}
+			</pre>
+			<hr>
+			<div id="dis"></div>
+			<select onchange="chgSubject(this);" id="subj">
+				<option>과정</option>
+				<option>html</option>
+				<option>css</option>
+				<option>javascript</option>
+			</select>
+            <hr>
+            <div id="mood"></div>
+            <select  id="weeks" onchange="showMood();">
+                <option value="0">요일 선택</option>
+                <option value="1">일요일</option>
+                <option value="2">윌요일</option>
+                <option value="3">화요일</option>
+                <option value="4">수요일</option>
+                <option value="5">목요일</option>
+                <option value="6">금요일</option>
+                <option value="7">토요일</option>
+            </select>
+            <hr>
+            <label for="classification">나이</label>
+            <input type="text" id="classification" placeholder="아동, 청소년, 성인 중 하나 입력">
+            <button onclick="cation();">입장료</button>
+            <div id="sc"></div>
+		</div>
+	</body>
+</html>
+

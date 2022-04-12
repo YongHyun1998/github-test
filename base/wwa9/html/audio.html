@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>audio태그</title>
+</head>
+<body>
+    <h3>audio 태그</h3>
+    <hr>
+    <audio src="/wwa9/mp3/rn.mp3" id="m1"></audio>
+    <button id="player">play</button>
+    <button id="stop">stop</button>
+    <script type="text/javascript">
+        let player = document.getElementById("player");
+        let stop = document.getElementsById("stop");
+        let m1 = document.getElementById("m1");
+        player.onclick = function() {
+            m1.muted = false;
+            m1.play();
+        }
+        stop.onclick = function() {
+            m1.pause()
+            m1.currentTime = 0 ;
+        }
+    </script>
+</body>
+</html>

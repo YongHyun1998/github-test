@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스택 & 큐 & 힙 & webapi</title>
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+    <style type="text/css">
+        * {
+            margin: 5px;
+        }
+        div:not(.wrap) {
+            width: 100px;
+            height: 100px;
+            background-color: #ff6600;  
+            position: relative;
+        }
+    </style>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- javascript -->
+    <script type="text/javascript">
+        $(function() {
+            function move(target) {
+                target = $(target);
+                target.animate({left: 200}, 2000)
+                        .animate({width: 200}, 2000)
+                        .animate({height: 200});
+            }
+
+            $("button:eq(0)").click(function() {
+                move(".m1");
+                $(this).prop("disabled", true);
+            });
+            $("button:eq(1)").click(function() {
+                $(".m1").stop(false, false);
+            });
+        });
+    </script>  
+</head>
+<body>
+    <div class="wrap">
+        <h3>스택 & 큐 & 힙 & webapi</h3>
+        <hr>
+        <ul>
+            <li>스택() : 실행될 명령어가 차례대로 저장되는 공간(선입선출 - 먼저 지정된 명령이 먼저 실행)</li>
+            <li>큐(queue) : 명령어가 저장되는 공간</li>
+            <li>힙(heap) : 객체, 변수등이 저장되는 공간</li>
+            <li>webapi : 웹의 명령어가 저장되는 공간</li>
+        </ul>
+        <button>play</button>
+        <button>stop()</button>
+        <div class="m1"></div>
+        <div cc=></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>슬라이드</title>
+		<link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+		<style type="text/css">
+			.slide-wraper {
+				width: 100px;
+				height: 100px;
+				overflow: hidden;
+				position: relative;
+			}
+			.slide-mover {
+				width: 300px;
+				height: 100px;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			.slide-mover::after {
+				clear: both;
+				content: '';
+				display: table;
+			}
+			.slide {
+				float: left;
+				width: 100px;
+				height: 100px;
+			}
+			.slide:first-child {
+				background-color: red;
+			}
+			.slide:nth-child(2) {
+				background-color: green;
+			}
+			.slide:last-child {
+				background-color: blue;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function () {
+				// 1. 슬라이더가 한 칸 넘기기
+				// 2. 다음을 누르면 다음 슬라이더로 이동
+				// 3. 이전 버튼을 누르면 이전 슬리이더로 이동
+
+				const slideMover = document.querySelector(".slide-mover");
+				const nextBtn = document.querySelector(".next");
+				const prevBtn = document.querySelector(".prev");
+				const start = document.querySelector(".start");
+				const stop = document.querySelector(".stop");
+				var slidePos = 0, timeId; //0 -100 -200
+				slideMover.style.transition = '.4s';
+				
+				//slideMover.style.left = "-100px";
+
+				//0 -100 -200
+				nextBtn.onclick = function () {
+					nextMove();
+				};
+
+				// -200 -100 0
+				prevBtn.onclick = function () {
+					prevMove();
+				};
+
+				start.onclick = function () {
+					timeId = auto();
+				};
+
+				stop.onclick = function () {
+					if (timeId != undefined) {
+						clearInterval(timeId);
+					}
+				};
+
+				function nextMove() {
+					if (slidePos == -200) {
+						return;
+					}
+					slidePos -= 100;
+
+					slideMover.style.left = `${slidePos}px`;
+				}
+
+				function prevMove() {
+					if (slidePos == 0) {
+						return;
+					}
+					slidePos += 100;
+
+					slideMover.style.left = `${slidePos}px`;
+				}
+
+				function auto() {
+					var flag = 0;
+
+					return setInterval(function() {
+						if (slidePos == 0) {
+							//nextMove();	
+							flag = 0;
+						} else if (slidePos == -200) {
+							//prevMove();
+							flag = 1;
+						}
+
+						if (flag == 0) {
+							nextMove();
+						} else {
+							prevMove();
+						}
+					}, 2000);
+				}
+			};
+		</script>
+	</head>
+	<body>
+		<div class="wrap">
+			<h3>슬라이드</h3>
+			<hr>
+			<div class="my-slider">
+				<div class="slide-wraper">
+					<div class="slide-mover">
+						<div class="slide"></div>
+						<div class="slide"></div>
+						<div class="slide"></div>
+					</div>
+				</div>
+				<div><div class="prev">이전</div><div class="next">다음</div></div>
+				<div><div class="start">자동</div><div class="stop">멈춤</div></div>
+			</div>
+		</div>
+	</body>
+</html>

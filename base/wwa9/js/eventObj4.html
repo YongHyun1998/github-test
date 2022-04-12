@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>mouseenter() / mouseover()</title>
+        <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+        <style type="text/css">
+            #outer, #outer2 {
+				display: inline-block;
+				background-color: lightgreen;
+				width: 200px;
+				height: 200px;
+			}
+			#inner, #inner2 {
+				background-color: red;
+				width: 50px;
+				height: 50px;
+			}
+        </style>
+        <script type="text/javascript">
+			window.onload = function() {
+				var outer = document.querySelector("#outer");
+				var inner = document.querySelector("#inner");
+				var outer2 = document.querySelector("#outer2");
+				var inner2 = document.querySelector("#inner2");
+				outer.onmouseenter = function() {
+					alert('부모 이벤트');
+				}
+				outer2.onmouseover = function() {
+					alert('부모 이벤트');
+				}
+				// inner.onmouseenter = function() {
+				// 	alert('자식 이벤트');	
+				// }
+			}
+        </script>
+    </head>
+    <body>
+        <div class="wrap">
+			<h3>mouseenter() / mouseover()</h3>
+			<hr>
+			<p>mouseenter(), mouseleave() - 버블링이 발생 안함</p>
+			<p>mouseover(), mouseout() - 버블링이 발생</p>
+			<div id="outer">
+				<div id="inner"></div>
+				mouseenter
+			</div>
+			<div id="outer2">
+				<div id="inner2"></div>
+				mouseover
+			</div>
+        </div>
+    </body>
+</html>

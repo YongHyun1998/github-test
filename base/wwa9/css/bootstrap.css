@@ -1,0 +1,47 @@
+[class*=col-] > div {
+	height: 100px;
+	background-color: red;
+}
+@media (min-width: 992px) {
+	.col-hide {
+		display: none;
+	}
+}
+@media (min-width: 1200px) {
+	.col-hide {
+		display: block;
+	}
+}
+
+.container:nth-of-type(2) {
+	border: 1px solid black;
+	border-radius: 5px;
+	background-color: lightgray;
+	padding: 10px;
+}
+div.header, div.footer {
+	border: 1px solid black;
+	border-radius: 5px;
+	background-color: lightgreen;
+	height: 75px;
+	margin-bottom: 10px;
+}
+.main {
+	border: 1px solid black;
+	border-radius: 5px;
+	padding: 10px;
+	background: white;
+	margin-bottom: 10px;
+}
+.sidemenu, .content {
+	border: 1px solid black;
+	height: 400px !important;
+	background-color: lightpink !important;
+	border-radius: 5px;
+}
+.content {
+	background-color: lightsalmon !important;
+}
+div.footer {
+	margin-bottom: 0;
+}

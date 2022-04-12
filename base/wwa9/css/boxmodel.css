@@ -1,0 +1,19 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.box > div {
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	padding: 10px;
+	border: 10px solid blue;
+	margin: 10px;
+	box-sizing: content-box;
+}
+.box > div:last-child {
+	/*전체 넓이/높이에 안쪽 여백과 테두리를 자동으로 계산*/
+	box-sizing: border-box;
+}

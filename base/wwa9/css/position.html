@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>position</title>
+		<link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+		<link rel="stylesheet" type="text/css" href="/wwa9/css/position.css">
+	</head>
+	<body>
+		<div class="wrap">
+			<h3>position</h3>
+			<hr>
+			<ul>
+				<li>static : 기본값이며 위치를 변경할 수 없음. z-index값이 적용되지 않음</li>
+				<li>relative : 위치를 변경할 수 있으나 자리를 차지함(움직이는 기준이 생성된 위치).</li>
+				<li>absolute: 위치를 변경할 수 있으나 부모에게 position값을 가지고 있어야 함.(부모기준으로 위치 이동, 자리를 차지하지 않음)</li>
+				<li>fixed: viewport에 고정(스크롤을 해도 고정, 자리를 차지하지 않음)</li>
+				<li>sticky: 스크롤이 해당요소에 오기까지 relative속성을 가지며 스크롤이 해당요소보다 아래로 오면 fixed소성을 가짐(구형 브라우저에서 작동하지 않음, 자리를 차지, top속성을 지정, 부모의 높이가 커야함.)</li>
+			</ul>
+			<hr>
+			<div class="box">
+				<div class="static">static</div>
+				<div class="relative">relative</div>
+				<div class="static">static</div>
+				<div class="absolute">absolute</div>
+				<div class="static">static</div>
+				<div class="fixed">fixed</div>
+				<div class="static">static</div>
+				<div class="sticky">sticky</div>
+				<div class="static">static</div>
+			</div>
+		</div>
+	</body>
+</html>

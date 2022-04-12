@@ -1,0 +1,68 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.container {
+	width: 1024px;
+	margin: 0 auto;
+}
+.full-container {
+    width: 75%;
+    margin: 0 auto 1.953125%;
+}
+.row::after {
+	content: '';
+	clear: both;
+	display: table;
+}
+div[class^=col-] {
+	float: left;
+	margin-right: 1.953125%;
+}
+div[class^=col-]:last-child {
+	margin-right: 0;
+}
+div.col-1 {
+	width: 6.542969%;	
+}
+div.col-2 {
+	width: 15.03906%;	
+}
+div.col-3 {
+	width: 23.53516%;	
+}
+div.col-4 {
+	width: 32.03125%;	
+}
+div.col-5 {
+	width: 40.52734%;
+}
+div.col-6 {
+	width: 49.02344%;	
+}
+div.col-7 {
+	width: 57.51953%;	
+}
+div.col-8 {
+	width: 66.01563%;	
+}
+div.col-9 {
+	width: 74.51172%;	
+}
+div.col-10 {
+	width: 83.00781%;	
+}
+div.col-11 {
+	width: 91.50391%;	
+}
+div.col-12 {
+	width: 100%;	
+}
+
+
+div[class^=col-] > div:not(.row) {
+    width: 100%;
+    height: 100px;
+    background-color: red;
+}

@@ -1,0 +1,122 @@
+@charset "UTF-8";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+li {
+    list-style: none;
+}
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.f-l {
+    float: left;
+}
+body {
+    background: whitesmoke;
+}
+.wrap {
+    width: 100%;
+    max-width: 1020px;
+    margin: 0 auto;
+}
+/* ------------------------------- */
+.header {
+    position: relative;
+    background: orange;
+    color: white;
+    height: 60px;
+    line-height: 60px;
+    margin: 5px 0px 10px 0px;
+    padding-left: 10px;
+}
+#showmenu {
+    display: none;
+}
+.bugger {
+    /*display: none;*/
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    top: 0;
+    right: 0;
+    text-indent: -9999999px;
+}
+
+/* ------------------------------- */
+.contents {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.lnb {
+    width: 200px;
+    margin-right: 30px;
+    margin-left: 10px;
+}
+.lnb li {
+    background: lightgreen;
+    margin-bottom: 10px;
+    padding: 10px 100px 10px 10px;
+    text-decoration: underline;
+}
+.main {
+    width: calc(100% - (10px + 200px + 30px + 300px + 20px + 10px));
+    margin-right: 10px;
+    text-decoration: underline;
+}
+.sidemenu {
+    width: 300px;
+    float: right;
+    margin-right: 20px;
+    background: lightgreen;
+    padding: 20px 30px 20px 15px;
+}
+/* --------------------------------- */
+.footer {
+    background: lightsteelblue;
+    height: 40px;
+    line-height: 40px;
+    margin: 0px 10px 10px 10px;
+}
+
+@media all and (max-width: 1020px) {
+    .wrap {
+        width: 95%;
+    }
+    .main {
+        width: calc(100% - 240px);
+        margin-right: 0;
+    }
+    .sidemenu {
+        width: 100%;
+        margin-right: 0;
+        margin-top: 50px;
+    }
+    .footer {
+        margin: 0;
+    }
+}
+
+@media all and (max-width: 500px) {
+    .wrap {
+        width: 85%;
+    }
+    .bugger {
+        display: block;
+    }
+    .lnb, .main {
+        width: 100%;
+        margin: 0;
+        float: none;
+    }
+    #showmenu ~ div.contents > .lnb {
+        display: none;
+    }
+    #showmenu:checked ~ div.contents > .lnb {
+        display: block;
+    }
+}

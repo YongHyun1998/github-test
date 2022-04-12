@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    #gnb {
+      list-style: none;
+    }
+    #gnb::after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+    #gnb > li {
+      float: left;
+      padding: 5px 25px;
+      border: 1px solid;
+      position: relative;
+    }
+    #gnb > li > span {
+      display: block;
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid black;
+      bottom: 0px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: none;
+    }
+    #gnb > li:nth-child(1) > span {
+      border-bottom-color: red;
+    }
+    #gnb > li:nth-child(2) > span {
+      border-bottom-color: green;
+    }
+    #gnb > li:nth-child(3) > span {
+      border-bottom-color: blue;
+    }
+    #gnb > li:nth-child(4) > span {
+      border-bottom-color: orange;
+    }
+    #bottom-menu {
+      position: relative;
+      top: -1px;
+    }
+    #bottom-menu > div {
+      position: absolute;
+      height: 150px;
+      width: 100%;
+      display: none;
+    }
+    #bottom-menu > div:nth-child(1) {
+      background-color: red;
+    }
+    #bottom-menu > div:nth-child(2) {
+      background-color: green;
+    }
+    #bottom-menu > div:nth-child(3) {
+      background-color: blue;
+    }
+    #bottom-menu > div:nth-child(4) {
+      background-color: orange;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    $(function() {
+      $("#gnb > li").mouseenter(function() {
+        var index = $(this).data("order");
+        $("#gnb > li > span").css("display", "none");
+        $(this).find("span").css("display", "block");
+        $("#bottom-menu > div").css("display", "none");
+        $("#bottom-menu > div").eq(index).css("display", "block");
+      });
+    });
+  </script>
+</head>
+<body>
+  <ul id="gnb">
+    <li data-order="0">m1<span></span></li>
+    <li data-order="1">m2<span></span></li>
+    <li data-order="2">m3<span></span></li>
+    <li data-order="3">m4<span></span></li>
+  </ul>
+  <div id="bottom-menu">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>삭제 메서드</title>
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+    <style type="text/css">
+
+    </style>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- javascript -->
+    <script type="text/javascript">
+        $(function() {
+            console.log($("a").attr("href"));
+            console.log($("a").attr("target", "_self"));
+            console.log($("a").attr("href", ""));
+            console.log($("a").removeAttr("alt"));
+            
+            var cnt = 0;
+
+            $("ol").click(function() {
+                $(this).empty();
+                cnt = 0;
+            });
+            
+            $("h3").click(function() {
+                if ($("ol > li").length != 0 && cnt == 0) {
+                    console.log("run");
+                    cnt = $("ol > li").length;
+                }
+                cnt++;
+                $("ol").append(`<li>${cnt}</li>`);
+            });
+
+            var wrap = $(".wrap");
+
+            $("button").click(function() {
+                if($(".wrap").length) {
+                    $(".wrap").remove();
+                } else {
+                    wrap.appendTo("body");
+                }
+            });
+
+            var ol = null; //0, null, undefined, ""(공백), false
+
+            $("input:button").click(function() {
+                ol = $("ol").detach();
+                console.log(ol);
+            });
+        });
+    </script>
+</head>
+<body>
+    <button>wrap 삭제</button>
+    <div class="wrap">
+        <h3>삭제 메서드</h3>
+        <hr>
+        <a href="http://greenart.co.kr" alt="그린" target="_blank">그린</a>
+        <ol>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ol>
+        <input type="button" value="링크삭제">
+    </div>
+</body>
+</html>

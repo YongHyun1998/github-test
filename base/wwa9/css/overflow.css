@@ -1,0 +1,26 @@
+.box {
+    width: 450px;
+}
+.box > div {
+    float: left;
+    width: 47%;
+    height: 98px;
+    margin-right: calc(6% - 4px);
+    margin-bottom: 21px;
+    border: 1px solid red;
+}
+.box > div:nth-child(2n) {
+    margin-right: 0;
+}
+.hidden {
+    overflow: hidden;
+}
+.auto {
+    overflow: auto;
+}
+.scroll {
+    overflow-y: scroll;
+}
+.visible {
+    overflow: visible;
+}

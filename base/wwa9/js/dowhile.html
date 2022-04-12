@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>do while문</title>
+        <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+        <script type="text/javascript">
+            var n = 10;
+            var sum = 0;
+
+            do {
+                sum += n;
+                n++;
+            } while (n < 8)
+
+            console.log(sum);
+
+            // 예시
+            function getSum() {
+				var counter = Number(document.getElementById("counter").value);
+				var dis = document.getElementById("dis");
+				var n = 1;
+                var sum = 0;
+
+				do {
+					sum += n;
+					n++;
+				} while (n <= counter)
+				dis.innerText = `${counter}까지의 합은 ${sum}입니다.`;
+			}
+        </script>
+    </head>
+    <body>
+        <div class="wrap">
+            <h3>반복문</h3>
+            <hr>
+            <h4>do while</h4>
+            <pre>
+do {
+    실행문
+} while (조건문);
+            </pre>
+            <div>
+                <div id="dis"></div>
+                <input type="number" id="counter" placeholder="합계를 계산 할 수를 입력하세요.">
+                <button onclick="getSum();">합계</button>
+            </div>
+        </div>
+    </body>
+</html>

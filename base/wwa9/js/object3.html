@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>객체 (클래스)</title>
+		<link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+		<script type="text/javascript">
+			class People {
+				constructor(name, age, inCountry) { //생성자 함수
+					//속성 설정
+					this.name = name;
+					this.age = age;
+					this.inCountry = inCountry;
+				}
+
+				//메소드 설정
+				printOut() {
+					var inOut = "내국인";
+					if (!this.inCountry) {
+						var inOut = "외국인";
+					}
+
+					return (`안녕하세요~\n저의 이름은 ${this.name}이고 나이는 ${this.age}이며 ${inOut} 입니다~\n잘부탁드립니다!`);
+				}
+
+				//값을 받는(지정) 방법 //set
+				set setAge(age) {
+					if(1 < age && age < 130 && !isNaN(age)) {
+						this.age = age + 1;
+					}
+				}
+				//값을 리턴하는 방법 //get
+				get getAge() {
+					return this.age;
+				}
+			}
+
+			var hong = new People("홍길동", 28, true);
+			console.log(hong.printOut());
+			// hong.age = 'tes'; //set
+			// console.log(hong.age); //get
+
+			hong.setAge = 'tett';
+			console.log(hong.getAge);
+		</script>
+	</head>
+	<body>
+		<div class="wrap">
+			<h3>객체 (클래스)</h3>
+			<hr>
+			<p>class 키워드를 사용하여 객체 생성</p>
+		</div>
+	</body>
+</html>

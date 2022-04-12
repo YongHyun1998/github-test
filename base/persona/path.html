@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style type="text/css">
+        .wrap {
+            /*width: 960px;*/
+            width: 100%;
+            margin: 0 auto;
+            height: 500px;
+            background-color: lightgreen;
+        }
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        ul::after {
+            clear: both;
+            display: table;
+            content: '';
+        }
+        ul > li {
+            float: left;
+            /*width: 313.3333px;*/
+            width: 32.63889%;
+            height: 100px;
+            /*margin-right: 10px;*/
+            margin-right: 1.041667%;
+            background-color: red;
+        }
+        ul > li:last-child {
+            margin-right: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        해당넓이 / 전체넓이 * 100
+     -->
+    <div class="wrap">
+        <div></div>
+        <div>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

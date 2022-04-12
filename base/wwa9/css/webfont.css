@@ -1,0 +1,9 @@
+@font-face {
+	font-family: heart;
+	src: url(/wwa9/fonts/Bigdey.ttf);
+}
+
+.bigdey {
+	font-family: heart;
+	font-size: 100px;
+}

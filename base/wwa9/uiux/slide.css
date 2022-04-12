@@ -1,0 +1,27 @@
+.wrap {
+    width: 100%;
+    margin: 0
+}
+.swiper { 
+    /* 슬라이더 크기 */
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide img {
+    width: 100%;
+}
+.swiper .swiper-pagination {
+    bottom: 400px;
+    left: 0;
+    width: 100%;
+}
+.swiper-pagination-bullet {
+    /* bullet 디자인 변경 */
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    background-color: black;
+    opacity: 0.6;
+    color: white;
+}

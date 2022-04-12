@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>기타 선택메서드</title>
+		<link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+		<style type="text/css">
+			* {
+				margin: 5px;
+			}
+		</style>
+
+		<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				// $("#m1 > div").add("#m1 > p").css("border", "2px solid red");
+				// $("#m1 > *").css("border", "2px solid red");
+				$("#m1 > div, #m1 > p").css("border", "2px solid red");
+
+
+				// console.log($("#m2").children("p").addBack());
+				// $("#m2").children("p").addBack().css("border", "2px solid orange");
+				$("#m2, #m2 > p").css("border", "2px solid orange");
+
+
+				$("#m3").find("span").css("border", "2px solid yellow").end().find("em").css("border", "2px solid yellow");
+
+				if ($("#m4").children().is("p")) {
+					console.log("p 요소가 존재합니다.");
+					$("#m4").children("p").text("p 요소가 존재합니다.");
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<div class="wrap">
+			<h3>기타 선택메서드</h3>
+			<hr>
+			<div id="m1">
+				<div>내용1_1</div>
+				<p>내용1_2</p>
+			</div>
+			<div id="m2">
+				<p>내용2</p>
+			</div>
+			<div id="m3">
+				<span>내용3_1</span>
+				<em>내용3_2</em>
+			</div>
+			<div id="m4">
+				<p>내용4</p>
+			</div>
+		</div>
+	</body>
+</html>

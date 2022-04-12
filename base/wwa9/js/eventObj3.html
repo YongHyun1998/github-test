@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>preventDefault() / stopPropagation()</title>
+        <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+        <style type="text/css">
+            #outer {
+                width: 200px;
+                height: 200px;
+                background-color: lightgreen;
+            }
+            #inner {
+                width: 50px;
+                height: 50px;
+                background-color: red;
+            }
+        </style>
+        <script type="text/javascript">
+            window.onload = function(loadEvent) {
+                var naver = document.getElementById("naver");
+                naver.onclick = function(clickEvent) {
+                    alert('go naver');
+                    clickEvent.preventDefault();
+                }
+
+                outer.addEventListener('click', function(
+                    clickEvent) {
+                    alert('부모 클릭');
+                });
+                inner.addEventListener('click', function(
+                    clickEvent) {
+                    alert('자식 클릭');
+                    clickEvent.stopPropagation();
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <div class="wrap">
+            <h3>preventDefault() / stopPropagation()</h3>
+            <hr>
+            <p>preventDefault() : 브라우저 기본 기능 막기</p>
+            <div><a href="http://www.naver.com" id="naver">네이버</a></div>
+            <p>stopPropagation() : 자식에게 전달된 이벤트를 차단</p>
+
+            <div id="outer">
+                <div id="inner">클릭</div>
+            </div>
+        </div>
+    </body>
+</html>

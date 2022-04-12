@@ -1,0 +1,37 @@
+.sns {
+	list-style: none;
+	overflow: hidden;
+}
+.sns > li {
+	width: 37px;
+	height: 36px;
+	float: left;
+	margin-right: 5px;
+	background-image: url(https://i.stack.imgur.com/fu607.png);
+	background-size: 268px auto;
+	cursor: pointer;
+	text-indent: -1000000px;
+}
+.sns > li:first-child {
+	background-position: -5px -3px;
+}
+.sns > li:nth-child(2) {
+	background-position: -48px -3px
+}
+.sns > li:nth-child(3) {
+	background-position: -48px -83px
+}
+.sns > li:nth-child(4) {
+	background-position: -138px -3px
+}
+
+.ang {
+	background-image: url(https://d3pr5r64n04s3o.cloudfront.net/tuts/373_sprites/angry_birds.png);
+	width: 100px;
+	height: 100px;
+	text-indent: -100000px;
+	background-position: -11px -14px;
+}
+.ang:hover {
+	background-position: -11px -220px;
+}

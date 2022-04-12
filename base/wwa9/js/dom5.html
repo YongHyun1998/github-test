@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Form 객체</title>
+    <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+    <style type="text/css">
+
+    </style>
+    <script type="text/javascript">
+        window.onload = function() {
+            var far1 = document.frm1;
+            var far2 = document.frm2;
+            // console.log(frm1); //frm1
+            // console.log(frm1.search); //frm1 > search
+            console.log(frm1.search.placeholder); //frm1 > placeholder
+            console.log(document.forms['frm1']); //frm1
+            console.log(document.forms[1]); //frm2
+            console.log(document.forms[1].elements[2]);
+            console.dir(document.forms[1].elements[2]); //frm2 > input:nth-child[3]
+            console.dir(document.forms[1][2]); //input > input:nth-child[3]
+            
+            frm2.onsubmit = function() { // 'onsubmit' 함수 할당
+                if (document.forms[1][0].value === "") {
+                    document.forms[0][0].value = "과목을 입력하세요.";
+                    document.forms[0][0].style.backgroundColor = "hotpink";
+                    document.body.style.backgroundColor = "red";
+                    document.forms[1][0].focus(); //과목입력에 포커스
+                    return false; //전송 실패
+                }
+            
+            };
+            console.log(document.forms[1].credit) //frm2 > credit
+            console.log(document.forms[1]['my-check']) //frm2 > my-check '-'는 함수에서 '빼기'기호가 되므로 에러가뜸
+            console.log(document.getElementsByName('my-check')); //my-check
+			console.log(document.getElementsByName('my-line')); //my-line
+			console.log(document.getElementsByName('my-div')[0].style.height="50px"); //my-div값 height="50px"
+			console.log(document.getElementsByName('my-div')[0].style.background="blue"); //my-div값 background="blue"
+            console.dir(frm2); //frm2 > form
+
+            var chk1 = document.forms[1]['my-check']; //my-check
+            chk1.onchange = function() {
+                console.log(chk1.checked); 
+                if (chk1.checked) {
+                    document.body.style.backgroundColor = "green"; //my-check하면 그린
+                } else {
+                    document.body.style.backgroundColor = "transparent"; //my-check 제외 투명
+                }
+            }
+        };
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <h3>DOM Form 객체</h3>
+        <div name="my-div"></div>
+        <hr name="my-line">
+        <form action="#" name="frm1">
+            <input type="search" name="search" placeholder="검색어입력">
+            <input type="submit" value="확인">
+        </form>
+        <form action="https://www.naver.com" name="frm2">
+            <input type="text" name="subject" placeholder="과목입력">
+            <input type="password" name="credit" placeholder="학점입력">
+            <input type="checkbox" name="my-check">
+            <input type="submit" value="확인">
+        </form>
+    </div>
+</body>
+</html>

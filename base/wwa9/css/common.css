@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+* {
+	margin: 0;
+	padding: 0;
+
+	/*인풋의 포커스가 넘어갈 경우 생기는 테두리*/
+	outline: none;
+}
+.wrap {
+	width: 85%;
+
+	/*위쪽 오/왼 아래쪽*/
+	margin: 25px auto 40px;
+}
+.certifyBox {
+	display: none;
+}
+a {
+	text-decoration: none;
+}
+b {
+	color: red;
+}
+hr {
+	/*위/아래 오/왼*/
+	margin: 15px 0;
+}
+ul {
+	margin-left: 45px;
+}
+body > li {
+	margin: 2px 0;
+}
+ul ul {
+	margin-bottom: 15px;
+}
+table, table th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+th {
+	border: 2px solid red !important;
+	padding: 5px 25px;
+	background-color: lightgreen;
+}
+td {
+	padding: 3px 25px;
+}

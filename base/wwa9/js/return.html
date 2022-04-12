@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>함수의 리턴, 매개변수</title>
+		<link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+		<script type="text/javascript">
+			function ret() {
+				return 100 + '도';
+			}
+
+			var str = "물은 " + ret() + "에서 끓는다.";
+
+			console.log(str);
+
+			function counter() {
+				for(var i = 0; i < 100; i++) {
+					console.log(i);
+					if(i === 78) {
+						return; //함수의 종료
+						//break;
+					}
+				}
+
+				console.log("함수 끝");
+			}
+
+			counter();
+
+
+			//parameta(매개변수) - 함수를 정의할 때 사용되는 값
+			function process(kor, eng, math) {
+				var avg = (kor + eng + math) / 3;
+				return avg;
+			}
+
+			//agument(인자) - 함수를 사용할 때 사용되는 값
+			var math = 99;
+			var kor = function() {
+				return 100;
+			};
+			console.log(process(75, 85, math));
+			console.log(process(kor(), 75, 55));
+			console.log(process(95, 100, 77));
+
+			var average = function(s1, s2) {
+				var avg = (s1 + s2) / 2;
+				console.log(avg);
+			};
+			average(15, 25);
+
+			(function(s1, s2) {
+				var avg = (s1 + s2) / 2;
+				console.log(avg);
+			})(12, 44);
+
+			((s1, s2) => {
+				var avg = (s1 + s2) / 2;
+				console.log(avg);
+			})(77, 88);
+
+			function sum() {
+				//arguments 객체 
+				console.log(arguments.length - 1);
+
+				var hap = 0;
+
+				for(var i = 0; i < arguments.length - 1; i++) {
+					if(typeof arguments[i] === 'number') {
+						hap += arguments[i]	
+					}
+				}
+
+				console.log(arguments[arguments.length - 1]);
+
+				return hap;
+			}
+
+			console.log(sum(9, 32, '고길동' ,21, 433, '김길동'));
+			console.log(sum(9, 433, '홍길동'));
+			console.log(sum(12, 50, 85, 41, 145, 74, '박길동'));
+		</script>
+	</head>
+	<body>
+		<div class="wrap">
+			<h3>함수의 리턴, 매개변수</h3>
+			<hr>	
+			<h4>return</h4>
+			<p>함수에서 만든 값은 반환, 리턴함.</p>
+			<p>함수에서 break역활을 함.</p>
+			<p>인자의 수를 모를 경우 arguments 객체를 사용</p>
+		</div>
+	</body>
+</html>

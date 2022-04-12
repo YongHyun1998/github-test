@@ -1,0 +1,41 @@
+body {
+	height: 2000px;
+}
+.wrap, .box {
+	height: 100%;
+}
+.box > div {
+	width: 100px;
+	height: 100px;
+}
+.static {
+	position: static;
+	background-color: lightgreen;
+	opacity: 0.7;
+}
+.relative {
+	position: relative;
+	background-color: lightpink;
+	top: -15px;
+	right: 15px;
+	z-index: -1;
+}
+.absolute {
+	position: absolute;
+	background-color: lightsalmon;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+.fixed {
+	position: fixed;
+	background-color: lightskyblue;
+	right: 0;
+	bottom: 150px;
+}
+.sticky {
+	position: sticky;
+	background-color: lightcoral;
+	top: 0;
+	z-index: 1;
+}
