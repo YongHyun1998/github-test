@@ -1,0 +1,7 @@
+html.on, body.on {
+    touch-action: none;
+    -webkit-overflow-scrolling: none;
+    overflow: hidden;
+    /* 이외의 브라우저 */
+    overscroll-behavior: none;
+}

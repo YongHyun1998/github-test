@@ -11,10 +11,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <!-- 스와이퍼 css -->
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+    <!-- 폰트 어썸 -->
+    <script src="https://kit.fontawesome.com/16e06adab7.js" crossorigin="anonymous"></script>
     <!-- css -->
     <link rel="stylesheet" type="text/css" href="puradak.css">
     <!-- 스와이퍼 js -->
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <!-- javascript -->
     <script type="text/javascript" src="puradak.js"></script>
 </head>
@@ -38,15 +42,34 @@
                 <ul class="gnb">
                     <li>
                         <a href="#">브랜드소개</a>
-                        <ul id="menu1">
+                        <ul class="menu1">
                             <li><a href="#">푸라닭 소개</a></li>
                             <li><a href="#">푸라닭 전문성</a></li>
                             <li><a href="#">푸라닭 컨셉</a></li>
                             <li><a href="#">푸라닭 BI</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">메뉴안내</a></li>
-                    <li><a href="#">창업안내</a></li>
+                    <li>
+                        <a href="#">메뉴안내</a>
+                        <ul class="menu2">
+                            <li><a href="#">전체메뉴</a></li>
+                            <li><a href="#">베스트 메뉴</a></li>
+                            <li><a href="#">치킨 메뉴</a></li>
+                            <li><a href="#">사이드 메뉴</a></li>
+                            <li><a href="#">전용상품</a></li>
+                            <li><a href="#">나만의 레시피</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">창업안내</a>
+                        <ul class="menu3">
+                            <li><a href="#">왜 푸라닭인가</a></li>
+                            <li><a href="#">창업절차</a></li>
+                            <li><a href="#">창업비용</a></li>
+                            <li><a href="#">창업문의</a></li>
+                            <li><a href="#">창업 FAQ</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#">매장찾기</a></li>
                 </ul>
             </div>
@@ -57,30 +80,98 @@
             </div>
         </div>
     </div>
+    <div class="header-mobile">
+        <div class="mob-float clearfix">
+            <div class="mob-img">
+                <img src="../port01/img/h1_logo.png" alt="h1_logo"><span></span>
+            </div>
+            <div class="mob-bug">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-nav">
+        <div class="mob-button">
+            <div class="mob-sua">
+                <a href="#">회사소개</a>
+                <a href="#">이벤트</a>
+                <a href="#">가맹점게시판</a>
+            </div>
+        </div>
+        <div class="mob-mypage clearfix">
+            <div>
+                <a href="#"><p>LOGIN</p></a>
+            </div>
+            <div>
+                <a href="#"><p>회원가입</p></a>
+            </div>
+        </div>
+        <ul class="mob-menu">
+            <li>
+                <a href="#">
+                    브랜드소개
+                    <i class="fa-solid fa-chevron-down"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    메뉴안내
+                    <i class="fa-solid fa-chevron-down"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    창업안내
+                    <i class="fa-solid fa-chevron-down"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    매장찾기
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+            </li>
+        </ul>
+        <div class="mob-human">
+            <img src="img/img_human01.png" alt="01"><span></span>
+        </div>
+    </div>
+    <div class="bg-shadow"></div>
     <div id="slider1">
         <div class="swiper swiper1">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
-            <!-- Slides -->
-            <div class="swiper-slide">
-                <img src="https://puradakchicken.com/upload/mainbanner/main_pc_옥수수3종.png" alt="swiper1-1">
-            </div>
-            <div class="swiper-slide">
-                <img src="https://puradakchicken.com/upload/mainbanner/main_pc_피피자.png" alt="swiper1-2">
-            </div>
-            <div class="swiper-slide">
-                <img src="https://puradakchicken.com/upload/mainbanner/211108_main_pc2.png" alt="swiper1-3">
-            </div>
-            <div class="swiper-slide">
-                <img src="https://puradakchicken.com/upload/mainbanner/210720_블랙마요-롤링배너.jpg" alt="swiper1-4">
-            </div>
-            <div class="swiper-slide">
-                <img src="https://puradakchicken.com/upload/mainbanner/[홈페이지_배너]텐더-치바로우.jpg" alt="swiper1-5">
-            </div>
-            <div class="swiper-slide">
-            </div>
-            <div class="swiper-slide"></div>
-            <div class="swiper-slide"></div>
+                <!-- Slides -->
+                <div class="swiper-slide">
+                    <img src="https://puradakchicken.com/upload/mainbanner/main_pc_옥수수3종.png" alt="swiper1-1"><span></span>
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://puradakchicken.com/upload/mainbanner/main_pc_피피자.png" alt="swiper1-2"><span></span>
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://puradakchicken.com/upload/mainbanner/211108_main_pc2.png" alt="swiper1-3"><span></span>
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://puradakchicken.com/upload/mainbanner/210720_블랙마요-롤링배너.jpg" alt="swiper1-4"><span></span>
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://puradakchicken.com/upload/mainbanner/[홈페이지_배너]텐더-치바로우.jpg" alt="swiper1-5"><span></span>
+                </div>
+                <div class="swiper-slide">
+                    <div class="video-wrap">
+                        <iframe width="100%" height="310" src="https://www.youtube.com/embed/DwmghKxpLko?autoplay=1&mute=1&playlist=DwmghKxpLko&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="video-wrap">
+                        <iframe width="100%" height="310" src="https://www.youtube.com/embed/MOZN2uU45a8?autoplay=1&mute=1&playlist=MOZN2uU45a8&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="video-wrap">
+                        <iframe width="100%" height="310" src="https://www.youtube.com/embed/PT4-mnz6hq0?autoplay=1&mute=1&playlist=PT4-mnz6hq0&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
             </div>
             <!-- If we need pagination -->
             <div class="swiper-pagination"></div>
@@ -118,6 +209,28 @@
                 <div class="swiper-slide">
                     <img src="../port01/img/box8.jpg" alt="box8"></div>
                 </div>
+            </div>
+            <div class="swiper swiper_mob">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                        <img src="../port01/img/box1.jpg" alt="box1"></div>
+                    <div class="swiper-slide">
+                        <img src="../port01/img/box2.jpg" alt="box2"></div>
+                    <div class="swiper-slide">
+                        <img src="../port01/img/box3.jpg" alt="box3"></div>
+                    <div class="swiper-slide">
+                        <img src="../port01/img/box4.jpg" alt="box4"></div>
+                    <div class="swiper-slide">
+                        <img src="../port01/img/box5.jpg" alt="box5"></div>
+                    <div class="swiper-slide">
+                        <img src="../port01/img/box6.jpg" alt="box6"></div>
+                    <div class="swiper-slide">
+                        <img src="../port01/img/box7.jpg" alt="box7"></div>
+                    <div class="swiper-slide">
+                        <img src="../port01/img/box8.jpg" alt="box8"></div>
+                    </div>
             </div>
             <!-- If we need navigation buttons -->
             <div class="swiper-button-prev swiper2-pre"></div>
@@ -178,7 +291,19 @@
     <div id="btm">
         <div><img src="../port01/img/call.jpg" alt="call"></div>
     </div>
-    <div id="quick_btm"></div>
+    <div id="quick">
+        <div id="quick_btm">
+            <div class="qb_call">
+                <div class="qb_img">
+                    <img src="img/img_human01.png" alt="human01"><span></span>
+                </div>
+                <div class="qb_text">
+                    <p>창업문의</p><p>1668-2921</p>
+                </div>
+                <span class="qb_button">문의하기<i class="fa-solid fa-chevron-right"></i></span>
+            </div>
+        </div>
+    </div>
     <div id="footer">
         <div class="f-wid">
             <div class="f-top clearfix">

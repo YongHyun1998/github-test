@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery를 활용한 스크롤효과(up, down 클릭시 scroll 이동을 천천히 이동)</title>
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="/wwa9/css/common.css">
+    <style type="text/css">
+        body {
+            height: 10000px;
+        }
+        #up-down {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99999;
+        }
+    </style>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- javascript -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // 스크롤효과
+            // hide #up-down first
+            $("#up-down").hide();
+            // fade in & fade Out #up-down
+            $(function () {
+                $(window).scroll(function () {
+                    if ($(this).scrollTop() > 100) {
+                        $('#up-down').fadeIn(300);
+                    } else {
+                        $('#up-down').fadeOut(300);
+                    }
+                });
+
+                // scroll body to 0px on click : 제일 상단
+                $('#getBackTop_up').click(function () {
+                    $('body,html').animate({
+                        scrollTop: 5000
+                    }, 700);
+                    return false;
+                });
+
+                // scroll body to $(document).height() on click : 제일 하단
+                $('#getBackTop_dn').click(function () {
+                    $('body,html').animate({
+                        scrollTop: $(document).height()
+                    }, 700);
+                    return false;
+                });
+            });
+        });
+        
+    </script>
+</head>
+<body>
+    <div id="up-down">
+        <div class="up-point">
+            <a href="#" id="getBackTop_up"><img src="img/top.png" alt="top"><span></span></a>
+        </div>
+        <div class="down-point">
+            <a href="#" id="getBackTop_dn"><img src="img/bot.png" alt="bot"><span></span></a>
+        </div>
+    </div>
+</body>
+</html>

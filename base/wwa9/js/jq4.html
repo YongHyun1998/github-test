@@ -198,6 +198,13 @@
 						// console.log(eq);
 						console.log(lt);
 						lineBorder(lt);
+					} else if ($(this).text() === "index(선택자)") {
+						var element = $("input").filter("#index");
+						if (element.val() === "") {
+							alert($(this).index());
+							return false
+						}
+						alert($(element.val()).index());
 					}
 				});
 
@@ -236,36 +243,41 @@
 				<button>.nav의 자식 다음[next()]</button>
 				<button>.nav의 자식 모든다음[nextAll()]</button>
 				<input type="text" placeholder="태그이름을 적어주세요." id="until">
-				<button>.nav의 자식 다음 부터 ~ 까지[nextUntil()]</button>
+				&nbsp;<button>.nav의 자식 다음 부터 ~ 까지[nextUntil()]</button>
 				<hr>
 				<button>.nav의 자식 이전[prev()]</button>
 				<input type="text" placeholder="태그이름을 적어주세요." id="prev">
-				<button>.nav의 자식 이전 ~ 까지[prevUntil()]</button>
+				&nbsp;<button>.nav의 자식 이전 ~ 까지[prevUntil()]</button>
 				<hr>
 				<input type="text" placeholder="태그이름을 적어주세요." id="sibling">
-				<button>.nav의 자식 형제들</button>
+				&nbsp;<button>.nav의 자식 형제들</button>
 				<hr>
 				<input type="text" placeholder="태그이름을 적어주세요." id="find">
-				<button>.nav의 자식 검색</button>
+				&nbsp;<button>.nav의 자식 검색</button>
 				<hr>
 				<input type="text" placeholder="태그이름을 적어주세요." id="filter">
-				<button>해당요소 필터</button>
+				&nbsp;<button>해당요소 필터</button>
 				<hr>
 				<input type="text" placeholder="태그이름을 적어주세요." id="not">
-				<button>not</button>
+				&nbsp;<button>not</button>
 				<hr>
 				<input type="text" placeholder="태그이름을 적어주세요." id="has">
-				<button>has(요소) - 요소를 가지고 있는 부모요소선택</button>
+				&nbsp;<button>has(선택자) - 요소를 가지고 있는 부모요소선택</button>
 				<hr>
 				<input type="number" placeholder="index를 입력하세요" id="eq">
-				<button>eq(index)</button>
+				&nbsp;<button>eq(index)</button>
 				<hr>
 				<input type="number" placeholder="index를 입력하세요" id="gt">
-				<button>gt(index)</button>
+				&nbsp;<button>gt(index)</button>
 				<hr>
 				<input type="number" placeholder="index를 입력하세요" id="lt">
-				<button>lt(index)</button>
+				&nbsp;<button>lt(index)</button>
+				<hr>
+				<input type="text" placeholder="태그를 입력하세요" id="index">
+				&nbsp;<button>index(선택자)</button>
 			</div>
 		</div>
+		<hr>
+		
 	</body>
 </html>
