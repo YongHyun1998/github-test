@@ -1,0 +1,32 @@
+1. new버튼으로 repository생성
+
+    Repository name: 저장소의 이름
+    Description: 저장소에 대한 간단한 설명
+    Public: 저장소를 모두에게 공개
+    Private: 지정된 사람에게만 공개
+
+initialize this repository with a README를 체크해주면 저장소가 생성될 때 README.md 파일이 자동으로 함께 생성된다.
+
+2. 올릴 폴더 우클릭 후 git bash here 클릭
+
+3. 초기설정하기 (했으면 4번으로)
+    $ git config --global user.name
+    (user.name에 가입시 지정했던 이름)
+    $ git config --global user.email
+    (user.email에 가입시 지정했던 이메일)
+
+4.Repository로 이동 후 HTTPS에 해당하는 url 복사하기
+
+5.
+    git init입력
+    폴더안에 .git폴더 생성된걸 확인 후
+
+    git add .
+    입력 후
+
+    git commit -m "입력하고싶은 메세지" 로 커밋로그 작성
+
+    commit한 파일 업로드하기
+    $ git push -u https://github.com/YongHyun1998/Portfolio.git master
+
+    붙여넣기 shift + insert

@@ -25,6 +25,8 @@
     <script src="https://unpkg.com/typeit@8.5.4/dist/index.umd.js"></script>
     <!-- AOS js -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- 폰트 어썸 -->
+    <script src="https://kit.fontawesome.com/16e06adab7.js" crossorigin="anonymous"></script>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <!-- jQuery ui cdn -->
@@ -32,18 +34,20 @@
     <!-- javascript -->
     <script type="text/javascript" src="Yong_Hyun.js"></script>
 </head>
-<body>
+<body class="on">
+    <div id="load">
+        <div class="loader"></div>
+    </div>
     <div id="header">
         <div class="header_margin clearfix">
             <div class="logo">
-                <p><a href="#main">Yong Hyun</a></p>
+                <a href="#main"><img src="Yong_Hyun_img/logo.png" alt="logo"></a>
             </div>
             <div class="nav">
                 <ul class="clearfix">
                     <li class="nav1"><a href="#main">Home</a></li>
                     <li class="nav2"><a href="#About">About</a></li>
                     <li class="nav3"><a href="#portfolio-web">Portfolio(Web)</a></li>
-                    <li class="nav4"><a href="#Portfolio-Etc">Portfolio(Etc.)</a></li>
                     <li class="nav5"><a href="#Contact">Contact</a></li>
                 </ul>
             </div>
@@ -51,7 +55,7 @@
     </div>
     <div id="main">
         <div class="video1">
-            <video src="Yong_Hyun_img/typing.mp4" autoplay muted></video>
+            <video src="Yong_Hyun_img/typing.mp4" autoplay muted loop></video>
         </div>
         <div class="hello">
             <p id="companionMethods"></p>
@@ -65,161 +69,389 @@
             </div>
         </div>
     </div>
-    <div id="About">
-        <div class="about-title">
-            <p class="txt1"
-            data-aos="fade-up"
-            data-aos-delay="300"
-            data-aos-easing="ease-out-cubic">About</p>
-            <div class="txt-line"
-            data-aos="fade-up"
-            data-aos-delay="300"
-            data-aos-easing="ease-out-cubic"></div>
-            <div class="keep"
-            data-aos="fade-up"
-            data-aos-delay="500"
-            data-aos-easing="ease-out-cubic">
-                <img src="Yong_Hyun_img/about.png" alt="keep"><span></span>
-            </div>
-            <p class="txt2"
-            data-aos="fade-up"
-            data-aos-delay="700"
-            data-aos-easing="ease-out-cubic">
-            하는 디자이너 김용현입니다.</p>
-        </div>
-        <div class="about-txt clearfix">
-            <div class="profile"
-            data-aos="fade-up"
-            data-aos-delay="900"
-            data-aos-easing="ease-out-cubic">
-                <h2>PROFILE</h2>
-                <div class="profile-left clearfix"
+    <div id="About-bg">
+        <div id="About">
+            <div class="about-title">
+                <p class="txt1"
                 data-aos="fade-up"
-                data-aos-delay="1100"
+                data-aos-delay="300"
                 data-aos-easing="ease-out-cubic">
-                    <div class="profile-left-txt">
-                        <p>이름</p>
-                        <p>주소</p>
-                        <p>연락처</p>
-                        <p>E-mail</p>
-                    </div>
-                    <div class="profile-right-txt">
-                        <p>김용현</p>
-                        <p>부산 남구</p>
-                        <p>010-2288-4907</p>
-                        <p>dyd741852@naver.com</p>
-                    </div>
-                </div>                
-            </div>
-            <div class="license"
-            data-aos="fade-up"
-            data-aos-delay="900"
-            data-aos-easing="ease-out-cubic">
-                <h2>LICENSE</h2>
-                <div class="license-right clearfix"
+                About
+                </p>
+                <div class="txt-line"
                 data-aos="fade-up"
-                data-aos-delay="1100"
+                data-aos-delay="400"
                 data-aos-easing="ease-out-cubic">
-                    <div class="license-left-txt">
-                        <p>2022. 05</p>
-                        <p>2022. 02</p>
-                        <p>2017. &nbsp;12</p>
-                        <p>2017. &nbsp;09</p>
-                    </div>
-                    <div class="license-right-txt">
-                        <p>그린컴퓨터아카데미 웹디자인 교육 이수</p>
-                        <p>부산과학기술대학교 산업디자인과 졸업</p>
-                        <p>e-Test Professionals 마스터</p>
-                        <p>ATCCADQ-DESIGN 2급</p>
+                </div>
+                <div class="keep"
+                data-aos="fade-up"
+                data-aos-delay="500"
+                data-aos-easing="ease-out-cubic">
+                    <img src="Yong_Hyun_img/about.png" alt="keep"><span></span>
+                </div>
+                <p class="txt2"
+                data-aos="fade-up"
+                data-aos-delay="700"
+                data-aos-easing="ease-out-cubic">
+                하는 디자이너 김용현입니다.
+                </p>
+            </div>
+            <div class="about-txt clearfix">
+                <div class="profile"
+                data-aos="fade-up"
+                data-aos-delay="900"
+
+                data-aos-easing="ease-out-cubic">
+                    <h2>PROFILE</h2>
+                    <div class="profile-left clearfix"
+                    data-aos="fade-up"
+                    data-aos-delay="1100"
+                    data-aos-easing="ease-out-cubic">
+                        <div class="profile-left-txt">
+                            <p>이름</p>
+                            <p>주소</p>
+                            <p>연락처</p>
+                            <p>E-mail</p>
+                        </div>
+                        <div class="profile-right-txt">
+                            <p>김용현</p>
+                            <p>부산 남구</p>
+                            <p>010-2288-4907</p>
+                            <p>dyd741852@naver.com</p>
+                        </div>
+                    </div>                
+                </div>
+                <div class="license"
+                data-aos="fade-up"
+                data-aos-delay="900"
+                data-aos-easing="ease-out-cubic">
+                    <h2>LICENSE</h2>
+                    <div class="license-right clearfix"
+                    data-aos="fade-up"
+                    data-aos-delay="1100"
+                    data-aos-easing="ease-out-cubic">
+                        <div class="license-left-txt">
+                            <p>2022. 05</p>
+                            <p>2022. 02</p>
+                            <p>2017. &nbsp;12</p>
+                            <p>2017. &nbsp;09</p>
+                        </div>
+                        <div class="license-right-txt">
+                            <p>그린컴퓨터아카데미 웹디자인 교육 이수</p>
+                            <p>부산과학기술대학교 산업디자인과 졸업</p>
+                            <p>e-Test Professionals 마스터</p>
+                            <p>ATCCADQ-DESIGN 2급</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="about-skill"
-        data-aos="fade-up"
-        data-aos-delay="1500"
-        data-aos-easing="ease-out-cubic">
-            <h2>Skill</h2>
-            <div class="skill-doughnut clearfix">
-                <div class="chart1">
-                    <canvas id="myChartOne" width="170" height="170"></canvas>
-                    <img src="Yong_Hyun_img/html.png" alt="html5"><span></span>
-                </div>
-                <div class="chart2">
-                    <canvas id="myChartTwo" width="170" height="170"></canvas>
-                    <img src="Yong_Hyun_img/css.png" alt="css3"><span></span>
-                </div>
-                <div class="chart3">
-                    <canvas id="myChartThree" width="170" height="170"></canvas>
-                    <img src="Yong_Hyun_img/js.png" alt="js"><span></span>
-                </div>
-                <div class="chart4">
-                    <canvas id="myChartFour" width="170" height="170"></canvas>
-                    <img src="Yong_Hyun_img/jquery.png" alt="jquery"><span></span>
-                </div>
-                <div class="chart5">
-                    <canvas id="myChartFive" width="170" height="170"></canvas>
-                    <img src="Yong_Hyun_img/ps.png" alt="ps"><span></span>
-                </div>
-                <div class="chart6">
-                    <canvas id="myChartSix" width="170" height="170"></canvas>
-                    <img src="Yong_Hyun_img/ai.png" alt="ai"><span></span>
+            <div class="about-skill"
+            data-aos="fade-up"
+            data-aos-delay="1500"
+            data-aos-easing="ease-out-cubic">
+                <h2>Skill</h2>
+                <div class="skill-doughnut clearfix">
+                    <div class="chart1">
+                        <canvas id="myChartOne" width="170" height="170"></canvas>
+                        <img src="Yong_Hyun_img/html.png" alt="html5"><span></span>
+                    </div>
+                    <div class="chart2">
+                        <canvas id="myChartTwo" width="170" height="170"></canvas>
+                        <img src="Yong_Hyun_img/css.png" alt="css3"><span></span>
+                    </div>
+                    <div class="chart3">
+                        <canvas id="myChartThree" width="170" height="170"></canvas>
+                        <img src="Yong_Hyun_img/js.png" alt="js"><span></span>
+                    </div>
+                    <div class="chart4">
+                        <canvas id="myChartFour" width="170" height="170"></canvas>
+                        <img src="Yong_Hyun_img/jquery.png" alt="jquery"><span></span>
+                    </div>
+                    <div class="chart5">
+                        <canvas id="myChartFive" width="170" height="170"></canvas>
+                        <img src="Yong_Hyun_img/ps.png" alt="ps"><span></span>
+                    </div>
+                    <div class="chart6">
+                        <canvas id="myChartSix" width="170" height="170"></canvas>
+                        <img src="Yong_Hyun_img/ai.png" alt="ai"><span></span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <div id="portfolio-web">
-        <div class="web-title"
+        <div class="web-title">
+            <p class="txt1"
             data-aos="fade-up"
             data-aos-delay="300"
+            data-aos-once="true"
             data-aos-easing="ease-out-cubic">
-            <p class="txt1">Portfolio(Web)</p>
-            <div class="txt-line"></div>
-        </div>
-        <div>
-            <h2>VANS</h2>
-            <img src="" alt="VANS"><span></span>
-            <div>
-                <h4>주요 기능</h4> 슬라이더 이벤트
-                <h4>사용 언어</h4> html css js..
-                <h4>제작기간</h4> 2주
-                <h4>기여도</h4> 100%
-            </div>
-            <h2>PURADAK</h2>
-            <img src="" alt="PURADAK"><span></span>
-            <div>
-                <h4>주요 기능</h4> 슬라이더 이벤트
-                <h4>사용 언어</h4> html css js..
-                <h4>제작기간</h4> 2주
-                <h4>기여도</h4> 100%
-            </div>
-            <h2>LED.ART</h2>
-            <img src="" alt="LED.ART"><span></span>
-            <div>
-                <h4>주요 기능</h4> 슬라이더 이벤트
-                <h4>사용 언어</h4> html css js..
-                <h4>제작기간</h4> 2주
-                <h4>기여도</h4> 100%
-            </div>
-        </div>
-    </div>
-    <div id="Portfolio-Etc">
-        <div class="web-title"
+            Portfolio(Web)
+            </p>
+            <div class="txt-line"
             data-aos="fade-up"
-            data-aos-delay="300"
+            data-aos-delay="400"
+            data-aos-once="true"
             data-aos-easing="ease-out-cubic">
-            <p class="txt1">Portfolio(.Etc)</p>
-            <div class="txt-line"></div>
+            </div>
+        </div>
+        <div class="portfolio-01">
+            <h2 class="font-h2"
+            data-aos="fade-up"
+            data-aos-delay="700"
+            data-aos-once="true"
+            data-aos-easing="ease-out-cubic">
+            01. 반응형 웹 페이지 VANS
+            </h2>
+            <div class="portfolio-img">
+                <div class="mac-img"
+                data-aos="fade-up"
+                data-aos-delay="1000"
+                data-aos-once="true"
+                data-aos-easing="ease-out-cubic">
+                    <img src="Yong_Hyun_img/mac.png" alt="mac" class="mac"><span></span>
+                    <div class="mac-overflow">
+                        <img src="Yong_Hyun_img/vans-mac.png" alt="vans-mac" class="vans-mac"><span></span>
+                    </div>
+                </div>
+                <div class="pad-img"
+                data-aos="fade-up"
+                data-aos-delay="1200"
+                data-aos-once="true"
+                data-aos-easing="ease-out-cubic">
+                    <img src="Yong_Hyun_img/pad.png" alt="pad" class="pad"><span></span>
+                    <div class="pad-overflow">
+                        <img src="Yong_Hyun_img/vans-pad.png" alt="vans-pad" class="vans-pad"><span></span>
+                    </div>
+                </div>
+                <div class="phone-img"
+                data-aos="fade-up"
+                data-aos-delay="1400"
+                data-aos-once="true"
+                data-aos-easing="ease-out-cubic">
+                    <img src="Yong_Hyun_img/phone.png" alt="phone" class="phone"><span></span>
+                    <div class="phone-overflow">
+                        <img src="Yong_Hyun_img/vans-phone.png" alt="vans-phone" class="vans-phone"><span></span>
+                    </div>
+                </div>
+            </div>
+            <div data-aos="fade-up"
+            data-aos-delay="1600"
+            data-aos-once="true"
+            data-aos-easing="ease-out-cubic">
+                <button class="custom-btn">
+                    <a href="https://dyd741852.cafe24.com/wwa9/portfolio/vans/vans.html" target="_blank">
+                        <span>웹 페이지 이동</span>
+                    </a>
+                </button>
+            </div>
+            <div class="portfolio-txt clearfix">
+                <div
+                data-aos="fade-up"
+                data-aos-delay="1800"
+                data-aos-once="true"
+                data-aos-easing="ease-out-cubic">
+                    <h4>사용 언어</h4>
+                    <p>HTML5, CSS3, javascript, jQuery</p>
+                </div>
+                <div
+                data-aos="fade-up"
+                data-aos-delay="2000"
+                data-aos-once="true"
+                data-aos-easing="ease-out-cubic">
+                    <h4>제작기간</h4>
+                    <p>2주</p>
+                </div>
+                <div
+                data-aos="fade-up"
+                data-aos-delay="2200"
+                data-aos-once="true"
+                data-aos-easing="ease-out-cubic">
+                    <h4>참여도</h4>
+                    <p>100%</p>
+                </div>
+                <div
+                data-aos="fade-up"
+                data-aos-delay="2400"
+                data-aos-once="true"
+                data-aos-easing="ease-out-cubic">
+                    <h4>주요 기능</h4>
+                    <p>PC메뉴바 호버, Mobile메뉴 클릭, 메뉴 슬라이드, Swiper, 반응형 웹 페이지<br>(가로 해상도 480px, 768px, 1024px, 1280px 미만 적용)</p>
+                </div>
+            </div>
+        </div>
+        <div class="portfolio-02">
+            <h2 class="font-h2"
+            data-aos="fade-up"
+            data-aos-delay="700"
+            data-aos-once="true"
+            data-aos-easing="ease-out-cubic">
+            02. 반응형 웹 페이지 PURADAK
+            </h2>
+            <div class="portfolio-img">
+                <div class="mac-img"
+                data-aos="fade-up"
+                data-aos-delay="1000"
+                data-aos-once="true"
+                data-aos-easing="ease-out-cubic">
+                    <img src="Yong_Hyun_img/mac.png" alt="mac" class="mac"><span></span>
+                    <div class="mac-overflow">
+                        <img src="Yong_Hyun_img/puradak-mac.png" alt="puradak-mac" class="puradak-mac"><span></span>
+                    </div>
+                </div>
+                <div class="pad-img"
+                data-aos="fade-up"
+                data-aos-delay="1200"
+                data-aos-once="true"
+                data-aos-easing="ease-out-cubic">
+                    <img src="Yong_Hyun_img/pad.png" alt="pad" class="pad"><span></span>
+                    <div class="pad-overflow">
+                        <img src="Yong_Hyun_img/puradak-pad.png" alt="puradak-pad" class="puradak-pad"><span></span>
+                    </div>
+                </div>
+                <div class="phone-img"
+                data-aos="fade-up"
+                data-aos-delay="1400"
+                data-aos-once="true"
+                data-aos-easing="ease-out-cubic">
+                    <img src="Yong_Hyun_img/phone.png" alt="phone" class="phone"><span></span>
+                    <div class="phone-overflow">
+                        <img src="Yong_Hyun_img/puradak-phone.png" alt="puradak-phone" class="puradak-phone"><span></span>
+                    </div>
+                </div>
+            </div>
+            <div data-aos="fade-up"
+            data-aos-delay="1600"
+            data-aos-once="true"
+            data-aos-easing="ease-out-cubic">
+                <button class="custom-btn">
+                    <a href="https://dyd741852.cafe24.com/wwa9/portfolio/port01/puradak.html" target="_blank">
+                        <span>웹 페이지 이동</span>
+                    </a>
+                </button>
+            </div>
+            <div class="portfolio-txt clearfix">
+                <div
+                data-aos="fade-up"
+                data-aos-delay="1800"
+                data-aos-once="true"
+                data-aos-easing="ease-out-cubic">
+                    <h4>사용 언어</h4>
+                    <p>HTML5, CSS3, javascript, jQuery</p>
+                </div>
+                <div
+                data-aos="fade-up"
+                data-aos-delay="2000"
+                data-aos-once="true"
+                data-aos-easing="ease-out-cubic">
+                    <h4>제작기간</h4>
+                    <p>5일</p>
+                </div>
+                <div
+                data-aos="fade-up"
+                data-aos-delay="2200"
+                data-aos-once="true"
+                data-aos-easing="ease-out-cubic">
+                    <h4>참여도</h4>
+                    <p>100%</p>
+                </div>
+                <div
+                data-aos="fade-up"
+                data-aos-delay="2400"
+                data-aos-once="true"
+                data-aos-easing="ease-out-cubic">
+                    <h4>주요 기능</h4>
+                    <p>상단 메뉴 호버, 스와이퍼(동영상 자동재생), Position 스크롤 이벤트, Mobile 메뉴 클릭 이벤트, 반응형 웹 페이지<br>(가로 해상도 480px, 768px, 1024px, 1280px 미만 적용)</p>
+                </div>
+            </div>
+        </div>
+        <div class="portfolio-03">
+            <h2 class="font-h2"
+            data-aos="fade-up"
+            data-aos-delay="700"
+            data-aos-once="true"
+            data-aos-easing="ease-out-cubic">
+            03. 웹 페이지 LED.ART
+            </h2>
+            <div class="portfolio-img">
+                <div class="mac-img"
+                data-aos="fade-up"
+                data-aos-delay="1000"
+                data-aos-once="true"
+                data-aos-easing="ease-out-cubic">
+                    <img src="Yong_Hyun_img/mac.png" alt="mac" class="mac"><span></span>
+                    <div class="mac-overflow">
+                        <img src="Yong_Hyun_img/ledart-mac.png" alt="ledart-mac" class="ledart-mac"><span></span>
+                    </div>
+                </div>
+            </div>
+            <div data-aos="fade-up"
+            data-aos-delay="1300"
+            data-aos-once="true"
+            data-aos-easing="ease-out-cubic">
+                <button class="custom-btn">
+                    <a href="https://dyd741852.cafe24.com/wwa9/portfolio/port02/ledart.html" target="_blank">
+                        <span>웹 페이지 이동</span>
+                    </a>
+                </button>
+            </div>
+            <div class="portfolio-txt clearfix">
+                <div
+                data-aos="fade-up"
+                data-aos-delay="1500"
+                data-aos-once="true"
+                data-aos-easing="ease-out-cubic">
+                    <h4>사용 언어</h4>
+                    <p>HTML5, CSS3, javascript, jQuery</p>
+                </div>
+                <div
+                data-aos="fade-up"
+                data-aos-delay="1700"
+                data-aos-once="true"
+                data-aos-easing="ease-out-cubic">
+                    <h4>제작기간</h4>
+                    <p>3일</p>
+                </div>
+                <div
+                data-aos="fade-up"
+                data-aos-delay="1900"
+                data-aos-once="true"
+                data-aos-easing="ease-out-cubic">
+                    <h4>참여도</h4>
+                    <p>100%</p>
+                </div>
+                <div
+                data-aos="fade-up"
+                data-aos-delay="2100"
+                data-aos-once="true"
+                data-aos-easing="ease-out-cubic">
+                    <h4>주요 기능</h4>
+                    <p>클릭 이벤트(Kor 메뉴, up&down 버튼), 스크롤 이벤트(up&down 버튼, 메뉴 fixed), AOS(스크롤 애니메이션)</p>
+                </div>
+            </div>
         </div>
     </div>
     <div id="Contact">
         <div class="web-title"
             data-aos="fade-up"
             data-aos-delay="300"
+            data-aos-once="true"
             data-aos-easing="ease-out-cubic">
             <p class="txt1">Contact</p>
             <div class="txt-line"></div>
+            <div>
+                <h2>제 포트폴리오를 봐주셔서 감사합니다 :)</h2>
+                <p><i class="fa-solid fa-envelope"></i></p>
+                <p>dyd741852@naver.com</p>
+                <p><i class="fa-solid fa-mobile"></i></p>
+                <p>010-2288-4907</p>
+                <p><i class="fa-brands fa-github"></i></p>
+            </div>
         </div>
+    </div>
+    <div id="footer">
+        <p>본 페이지는 상업적 목적이 아닌 개인 포트폴리오용으로 제작되었습니다.</p>
+        <p>© 2022 Yong Hyun. All Rights Reserved.</p>
     </div>
 </body>
 </html>

@@ -303,6 +303,10 @@ html.on, body.on {
     /* 이외의 브라우저 */
     overscroll-behavior: none;
 }
+#quick_btm.on {
+    position: absolute;
+    top: -80px;
+}
 /* swiper */
 .swiper1 { 
     width: 100%;
@@ -520,10 +524,6 @@ html.on, body.on {
     width: 100%;
 }
 /* quick*/
-#quick_btm.on {
-    position: absolute;
-    top: -80px;
-}
 #quick {
     position: relative;
     width: 100%;

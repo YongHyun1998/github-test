@@ -1,4 +1,8 @@
 $(document).ready(function() {
+    // 로드
+    $("#load").fadeOut(1500);
+    $('body').removeClass('on')
+
     new TypeIt("#companionMethods", {
         speed: 60,
         waitUntilVisible: true,
@@ -81,7 +85,7 @@ window.onload = function() {
                     "#fc490b",
                     "white",
                 ],
-                borderWidth: 1, //경계선 굵기
+                borderWidth: 0, //경계선 굵기
                 scaleBeginAtZero: true,
                 hoverOffset: -10,
             }],
@@ -102,7 +106,7 @@ window.onload = function() {
                     "#2196f3",
                     "white",
                 ],
-                borderWidth: 1, //경계선 굵기
+                borderWidth: 0, //경계선 굵기
                 scaleBeginAtZero: true,
                 hoverOffset: -10,
             }],
@@ -124,7 +128,7 @@ window.onload = function() {
                     "#ffda3e",
                     "white",
                 ],
-                borderWidth: 1, //경계선 굵기
+                borderWidth: 0, //경계선 굵기
                 scaleBeginAtZero: true,
                 hoverOffset: -10,
             }],
@@ -145,7 +149,7 @@ window.onload = function() {
                     "#193556",
                     "white",
                 ],
-                borderWidth: 1, //경계선 굵기
+                borderWidth: 0, //경계선 굵기
                 scaleBeginAtZero: true,
                 hoverOffset: -10,
             }],
@@ -166,7 +170,7 @@ window.onload = function() {
                     "#01b4dd",
                     "white",
                 ],
-                borderWidth: 1, //경계선 굵기
+                borderWidth: 0, //경계선 굵기
                 scaleBeginAtZero: true,
                 hoverOffset: -10,
             }],
@@ -186,7 +190,7 @@ window.onload = function() {
                     "#ff7f18",
                     "white",
                 ],
-                borderWidth: 1, //경계선 굵기
+                borderWidth: 0, //경계선 굵기
                 scaleBeginAtZero: true,
                 hoverOffset: -10,
             }],
@@ -196,6 +200,7 @@ window.onload = function() {
             cutout: "80%",
         }
     });
+
     // AOS 
     AOS.init();
 }
